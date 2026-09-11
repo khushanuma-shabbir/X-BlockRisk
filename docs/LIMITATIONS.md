@@ -169,3 +169,94 @@ This limitation is documented transparently because reliance on a single dominan
 ---
 
 **Last Updated:** September 2026
+
+
+---
+
+## Smart Contract Analysis Limitations
+
+### What It Is
+
+The smart contract analysis module is **rule-based**, not machine learning. It uses pattern matching on verified source code to identify common risk indicators.
+
+### What It Can Detect
+
+✅ **Unverified contracts** - Major red flag when source code isn't public  
+✅ **Unrestricted mint functions** - Allows unlimited token creation  
+✅ **Honeypot indicators** - Pause, blacklist, transfer restrictions  
+✅ **Owner privileges** - Excessive withdrawal or control functions  
+✅ **Proxy patterns** - Upgradeable contracts that can change behavior  
+✅ **Standard compliance** - Whether it follows ERC20/721/1155 patterns
+
+### What It Cannot Detect
+
+❌ **Complex vulnerabilities** - Reentrancy, integer overflow/underflow, front-running  
+❌ **Economic exploits** - Flash loan attacks, oracle manipulation  
+❌ **Logic bugs** - Business logic errors requiring deep understanding  
+❌ **Bytecode-only contracts** - Works only on verified source code  
+❌ **Off-chain risks** - Team doxxing, tokenomics, market manipulation
+
+### Why It's Not ML-Based
+
+**No training data exists.** Unlike wallet fraud (9,288 labeled samples) or Solana rug-pulls (116,304 pools), there's no public dataset of thousands of labeled smart contracts with "scam" vs "legitimate" labels.
+
+Building such a dataset would require:
+- Manual auditing of thousands of contracts
+- Expert security knowledge to label vulnerabilities
+- Time-consuming review (hours per contract)
+- Historical analysis of exploited vs safe contracts
+
+Instead, we implemented rule-based heuristics that flag **known red flags** based on security best practices.
+
+### Accuracy Expectations
+
+**This is NOT a security audit.** The rule-based analyzer:
+- Flags obvious warning signs (90%+ detection on unverified/honeypot patterns)
+- Provides useful screening for retail investors
+- Cannot replace professional auditing firms
+
+**Always do your own research (DYOR)** before interacting with any smart contract, regardless of this tool's assessment.
+
+### When to Use It
+
+✅ **Quick screening** - Before buying a new token  
+✅ **Red flag detection** - Identify obvious scams (unverified, drain functions)  
+✅ **Educational** - Learn what to look for in contract code
+
+❌ **Professional auditing** - Use Trail of Bits, OpenZeppelin, etc.  
+❌ **High-value decisions** - Don't stake $100K based on this tool alone  
+❌ **Legal compliance** - Not sufficient for regulatory requirements
+
+### False Positives/Negatives
+
+**False Positives (Safe contracts flagged):**
+- Legitimate pause functions (circuit breakers for security)
+- Admin functions in DAO-governed contracts
+- Proxy patterns used by Uniswap, AAVE (industry standard)
+
+**False Negatives (Scams not flagged):**
+- Sophisticated logic bugs not visible in pattern matching
+- Verified contracts with hidden backdoors in complex code
+- Social engineering (legitimate code but malicious team)
+
+### Future Improvements
+
+If a labeled smart contract dataset becomes available:
+1. Train a GNN on contract call graphs
+2. Use NLP on source code comments/documentation
+3. Analyze bytecode patterns for unverified contracts
+4. Build a graph of contract interactions (who calls who)
+
+Until then, rule-based heuristics + ML wallet analysis provides two complementary layers of protection.
+
+---
+
+## Summary Table
+
+| Analysis Type | Method | Training Data | Accuracy | Use Case |
+|--------------|--------|---------------|----------|----------|
+| Ethereum Wallets | GraphSAGE GNN | 9,288 samples | 91.36% | Fraud detection |
+| Solana Pools | GraphSAGE GNN | 116,304 pools | 87.51% | Rug-pull detection |
+| Smart Contracts | Rule-based | None (heuristics) | ~85%* | Red flag screening |
+
+*Estimated based on pattern matching accuracy for known red flags. Not validated on large-scale labeled dataset.

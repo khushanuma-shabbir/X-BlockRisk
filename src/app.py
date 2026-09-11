@@ -401,26 +401,136 @@ def main():
         st.markdown("---")
     
     # === LIVE MODE ===
+    # Analysis mode selector
+    st.markdown("### 🎯 Select Analysis Type")
+    
+    analysis_mode = st.radio(
+        "Choose what to analyze:",
+        ["🔐 Ethereum Wallet", "💧 Solana Pool", "📜 Smart Contract (Ethereum)"],
+        horizontal=True,
+        label_visibility="collapsed"
+    )
+    
     # Input section
-    st.markdown("### 🎯 Analyze an Address")
+    st.markdown("")
     
     col1, col2 = st.columns([4, 1])
     with col1:
-        user_input = st.text_input(
-            "Enter wallet address, pool address, or transaction ID",
-            placeholder="0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
-            label_visibility="collapsed"
-        )
+        if "Smart Contract" in analysis_mode:
+            user_input = st.text_input(
+                "Enter Ethereum contract address",
+                placeholder="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 (USDC)",
+                label_visibility="collapsed"
+            )
+        elif "Ethereum" in analysis_mode:
+            user_input = st.text_input(
+                "Enter Ethereum wallet address",
+                placeholder="0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
+                label_visibility="collapsed"
+            )
+        else:
+            user_input = st.text_input(
+                "Enter Solana pool address or transaction signature",
+                placeholder="Enter Solana address...",
+                label_visibility="collapsed"
+            )
     with col2:
         analyze_button = st.button("🚀 Analyze", type="primary", use_container_width=True)
     
     if analyze_button:
         if not user_input:
-            st.warning("⚠️ Please enter an address or transaction ID")
+            st.warning("⚠️ Please enter an address")
             st.stop()
         
-        # Auto-detect blockchain
-        if user_input.startswith('0x'):
+        # Smart Contract Analysis Mode
+        if "Smart Contract" in analysis_mode:
+            st.markdown("---")
+            st.markdown("## 📜 Smart Contract Risk Analysis")
+            st.info("🔎 **Analysis Type:** Rule-Based Heuristic (not ML-based)")
+            
+            from contract_analysis import analyze_contract
+            
+            with st.spinner("🔄 Fetching contract source from Etherscan..."):
+                try:
+                    result = analyze_contract(user_input)
+                    
+                    # Display results
+                    if result['data_source'] == 'ERROR':
+                        st.error(f"❌ {result['explanations'][0]}")
+                        for exp in result['explanations'][1:]:
+                            st.markdown(f"- {exp}")
+                        st.stop()
+                    
+                    # Risk verdict banner
+                    risk_score = result['risk_score']
+                    if risk_score < 30:
+                        border_color = "#28a745"  # Green
+                        icon = "✅"
+                    elif risk_score < 50:
+                        border_color = "#ffc107"  # Orange
+                        icon = "⚠️"
+                    elif risk_score < 70:
+                        border_color = "#ff6b35"  # Deep orange
+                        icon = "🚨"
+                    else:
+                        border_color = "#dc3545"  # Red
+                        icon = "🔴"
+                    
+                    st.markdown(f"""
+                    <div style='padding: 1rem; border-left: 5px solid {border_color}; background-color: rgba(0,0,0,0.02); border-radius: 5px; margin: 1rem 0;'>
+                        <h3 style='margin: 0; color: {border_color};'>{icon} Risk Score: {risk_score}/100</h3>
+                        <p style='margin: 0.5rem 0 0 0; color: #666;'>{result['risk_category']}</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                    
+                    # Metrics
+                    col1, col2, col3 = st.columns(3)
+                    with col1:
+                        st.metric("🎯 Risk Score", f"{risk_score}/100")
+                    with col2:
+                        st.metric("📊 Status", result['data_source'])
+                    with col3:
+                        verification_emoji = "✅" if result['data_source'] == 'VERIFIED' else "❌"
+                        st.metric("🔍 Verified", verification_emoji)
+                    
+                    # Analysis details
+                    st.markdown("### 💡 Detailed Analysis")
+                    for explanation in result['explanations']:
+                        st.markdown(explanation)
+                    
+                    # Technical details
+                    with st.expander("🔧 Technical Details"):
+                        st.markdown(f"""
+                        **Analysis Method:** Rule-Based Heuristics  
+                        **Contract Address:** `{result['address']}`  
+                        **Data Source:** Etherscan API  
+                        **Verification Status:** {result['data_source']}  
+                        
+                        **Patterns Checked:**
+                        - Unverified contract (red flag)
+                        - Unrestricted mint functions
+                        - Owner-only withdrawal functions
+                        - Honeypot indicators (pause/blacklist)
+                        - Proxy/upgradeable patterns
+                        - Ownership renouncement status
+                        - Standard interface compliance (ERC20/721/1155)
+                        
+                        **Note:** This is NOT a machine learning model. It uses rule-based pattern
+                        matching on verified source code. Always do your own research (DYOR) before
+                        interacting with any smart contract.
+                        """)
+                    
+                    st.markdown("---")
+                    st.warning("⚠️ **Important:** This analysis is for informational purposes only. Smart contract auditing requires expert manual review. This tool cannot detect all vulnerabilities.")
+                
+                except Exception as e:
+                    st.error(f"❌ Error analyzing contract: {str(e)}")
+                    import traceback
+                    st.code(traceback.format_exc())
+                    st.stop()
+        
+        # Wallet/Pool Analysis Mode
+        elif user_input.startswith('0x') and "Ethereum" in analysis_mode:
             blockchain = "Ethereum"
             
             with st.spinner("🔄 Fetching wallet data from Etherscan..."):
@@ -527,7 +637,8 @@ def main():
                 **Data Source:** {data_source}
                 """)
         
-        else:
+        else:  # Solana mode
+            blockchain = "Solana"
             blockchain = "Solana"
             
             with st.spinner("🔄 Fetching Solana pool data..."):

@@ -25,13 +25,15 @@ Most tools that try to catch these are just simple rule-checkers. This project i
 
 7. **Connected it to the real world.** Using Etherscan's API and a Solana explorer API, anyone can type in a real wallet address or transaction ID, and the system fetches that wallet's actual live history from the blockchain, runs it through the trained model, and gives a live risk score — not just data from the training files.
 
-8. **Built a simple dashboard.** One webpage: type in an address, hit "Analyze," and see a risk score, a risk category (Low/Medium/High), and a plain-English explanation.
+8. **Added smart contract analysis.** A rule-based module analyzes Ethereum smart contracts for common risk patterns: unverified code, unrestricted mint functions, honeypot indicators (pause/blacklist), owner-only withdrawal functions, and proxy/upgradeable patterns. This provides an additional layer of security assessment beyond wallet behavior.
 
-9. **Honest about its limits.** Testing found that the model is really good at catching small-scale, retail-level scams (the kind the training data has lots of examples of), but it's not built to catch giant, sophisticated attacks like the $625M Ronin Bridge hack — because nothing like that was in the training data. Rather than hiding this, it's documented clearly in LIMITATIONS.md.
+9. **Built a simple dashboard.** One webpage with three analysis modes: Ethereum wallets, Solana pools, and smart contracts. Type in an address, hit "Analyze," and see a risk score, a risk category (Low/Medium/High), and a plain-English explanation.
+
+10. **Honest about its limits.** Testing found that the model is really good at catching small-scale, retail-level scams (the kind the training data has lots of examples of), but it's not built to catch giant, sophisticated attacks like the $625M Ronin Bridge hack — because nothing like that was in the training data. Rather than hiding this, it's documented clearly in LIMITATIONS.md.
 
 ## In One Sentence
 
-This system looks at real blockchain wallets and liquidity pools as a connected network, uses a graph neural network to spot scam patterns based on both a wallet's own behavior and who it's connected to, explains its reasoning in plain English instead of being a black box, and lets anyone check a live, real wallet or pool — while being transparent that it's tuned for everyday retail scams rather than massive coordinated attacks.
+This system looks at real blockchain wallets and liquidity pools as a connected network, uses a graph neural network to spot scam patterns based on both a wallet's own behavior and who it's connected to, adds a rule-based smart contract analyzer for Ethereum contracts, explains its reasoning in plain English instead of being a black box, and lets anyone check a live, real wallet, pool, or contract — while being transparent that it's tuned for everyday retail scams rather than massive coordinated attacks.
 
 ---
 
@@ -100,6 +102,11 @@ streamlit run app.py
 http://localhost:8501
 ```
 
+5. **Select analysis mode:**
+- 🔐 **Ethereum Wallet:** Analyze wallet behavior using GraphSAGE GNN
+- 💧 **Solana Pool:** Detect rug-pull patterns in liquidity pools  
+- 📜 **Smart Contract:** Rule-based risk assessment for Ethereum contracts
+
 ---
 
 ## Project Structure
@@ -107,10 +114,15 @@ http://localhost:8501
 ```
 project/
 ├── src/
-│   ├── app.py                    # Main Streamlit dashboard
+│   ├── app.py                    # Main Streamlit dashboard (3 analysis modes)
 │   ├── live/
 │   │   ├── fetch_ethereum.py     # Ethereum live API
 │   │   └── fetch_solana.py       # Solana live API
+│   ├── contract_analysis/        # NEW: Smart contract module
+│   │   ├── __init__.py
+│   │   ├── analyzer.py           # Main analysis engine
+│   │   ├── etherscan_api.py      # Contract source fetching
+│   │   └── risk_patterns.py      # Rule-based pattern detection
 │   ├── data_pipeline/
 │   │   └── 03_label_solana.py    # Solana rug-pull labeling
 │   └── models/
@@ -129,8 +141,10 @@ project/
 │       ├── solana_labeled.csv
 │       └── solana_graph.pt
 ├── test_data/
-│   ├── MASTER_TEST_CASES.csv     # 135 test cases
-│   ├── run_master_tests.py       # Test runner
+│   ├── MASTER_TEST_CASES.csv     # 135 wallet/pool test cases
+│   ├── run_master_tests.py       # Wallet/pool test runner
+│   ├── CONTRACT_TEST_CASES.csv   # NEW: 15 smart contract test cases
+│   ├── run_contract_tests.py     # NEW: Contract test runner
 │   └── TEST_RESULTS.csv          # Test results
 ├── scripts/
 │   ├── create_augmented_training_data.py
@@ -147,13 +161,19 @@ project/
 
 ## Testing
 
-The project includes a comprehensive test suite with 135 test cases:
+The project includes comprehensive test suites:
 
+### Wallet/Pool Tests (135 cases)
 ```bash
 python test_data/run_master_tests.py
 ```
-
 **Expected output:** 135/135 tests passed
+
+### Smart Contract Tests (15 cases)
+```bash
+python test_data/run_contract_tests.py
+```
+Tests legitimate contracts (USDC, WETH, UNI), medium-risk tokens (SHIB, MATIC), and suspicious patterns (unverified, honeypot indicators, rug-pull functions).
 
 ---
 
@@ -206,23 +226,37 @@ python test_data/run_master_tests.py
 
 ## What This Model Can Detect
 
-### Ethereum:
+### Ethereum Wallets (ML-Based):
 ✅ Retail-level phishing attacks  
 ✅ Small-scale scam operations  
 ✅ Suspicious transaction patterns  
 ✅ Active fraud wallets (those that send transactions)
 
 ❌ Large-scale exploits (e.g., Ronin Bridge hack)  
-❌ Smart contract vulnerabilities  
+❌ Smart contract vulnerabilities (see Smart Contract module below)  
 ❌ Passive scam addresses (receive-only)
 
-### Solana:
+### Solana Pools (ML-Based):
 ✅ Classic rug-pull patterns  
 ✅ Liquidity removal scams  
 ✅ Abandoned pools with suspicious behavior
 
 ❌ Sophisticated multi-pool operations  
 ❌ Novel rug-pull strategies not in training data
+
+### Smart Contracts (Rule-Based):
+✅ Unverified contracts  
+✅ Unrestricted mint functions  
+✅ Honeypot indicators (pause/blacklist)  
+✅ Owner-only withdrawal functions  
+✅ Proxy/upgradeable patterns  
+✅ Missing ownership renouncement
+
+❌ Complex vulnerabilities (reentrancy, overflow)  
+❌ Economic exploits (flash loan attacks)  
+❌ Logic bugs requiring deep auditing
+
+**Important:** Smart contract analysis is **rule-based heuristics**, not ML. It identifies common red flags but cannot replace professional security audits.
 
 See **docs/LIMITATIONS.md** for detailed discussion.
 

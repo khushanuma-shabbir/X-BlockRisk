@@ -1,0 +1,15 @@
+test_id,contract_address,expected_risk,expected_label,description,notes
+SC_LEGIT_001,0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48,LOW,LEGITIMATE,USDC Stablecoin - Centre Consortium,Well-known ERC20 stablecoin with verified source code
+SC_LEGIT_002,0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2,LOW,LEGITIMATE,Wrapped Ether (WETH) - Official,Standard WETH implementation verified and audited
+SC_LEGIT_003,0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984,LOW,LEGITIMATE,Uniswap Token (UNI),Governance token for Uniswap DEX
+SC_LEGIT_004,0x6B175474E89094C44Da98b954EedeAC495271d0F,LOW,LEGITIMATE,Dai Stablecoin,MakerDAO's decentralized stablecoin
+SC_LEGIT_005,0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599,LOW,LEGITIMATE,Wrapped Bitcoin (WBTC),Bitcoin on Ethereum - BitGo custody
+SC_MEDIUM_001,0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE,MEDIUM,MEDIUM_RISK,SHIBA INU Token,High-volume meme token with concentrated ownership
+SC_MEDIUM_002,0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0,MEDIUM,MEDIUM_RISK,Matic Token (Polygon),Layer 2 token with proxy upgrade patterns
+SC_HIGH_001,0x0000000000000000000000000000000000000001,HIGH,UNVERIFIED,Unverified Test Contract,Contract without verified source code (red flag)
+SC_HIGH_002,0x0000000000000000000000000000000000000002,HIGH,SUSPICIOUS,Contract with Pause/Blacklist,Honeypot indicators detected
+SC_HIGH_003,0x0000000000000000000000000000000000000003,HIGH,SUSPICIOUS,Unrestricted Mint Pattern,Mint function without proper access controls
+SC_HIGH_004,0x0000000000000000000000000000000000000004,HIGH,SUSPICIOUS,Owner Drain Functions,Multiple owner-only withdrawal functions
+SC_HIGH_005,0x0000000000000000000000000000000000000005,CRITICAL,SCAM,Explicit Rug Pull Functions,Contains drain/rug/sweep function names
+SC_EDGE_001,0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D,LOW,LEGITIMATE,Uniswap V2 Router,DEX router contract - upgradeable but legitimate
+SC_EDGE_002,0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45,LOW,LEGITIMATE,Uniswap V3 Router,Newer router implementation with complex logic
