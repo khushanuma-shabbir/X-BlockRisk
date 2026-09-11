@@ -257,13 +257,18 @@ def compute_features(address, txs, erc20_txs):
             features[key] = 0
     
     # Validate feature dict matches training data columns
-    is_valid, missing, extra = validate_feature_dict(features)
-    if not is_valid:
-        print(f"[WARNING] Feature validation failed!")
-        if missing:
-            print(f"  Missing columns: {missing}")
-        if extra:
-            print(f"  Extra columns: {extra}")
+    try:
+        validation_result = validate_feature_dict(features)
+        # Handle 2-value return: (is_valid, missing)
+        if len(validation_result) == 2:
+            is_valid, missing = validation_result
+            if not is_valid:
+                print(f"[WARNING] Feature validation failed!")
+                print(f"  Missing columns: {missing}")
+        else:
+            print(f"[WARNING] Unexpected validation result: {validation_result}")
+    except Exception as e:
+        print(f"[WARNING] Feature validation error: {e}")
     
     return features
 
