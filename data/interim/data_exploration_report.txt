@@ -1,0 +1,184 @@
+DATA EXPLORATION REPORT - RAW DATA (BEFORE CLEANING)
+================================================================================
+Generated before any data cleaning or preprocessing
+This serves as the 'BEFORE' baseline for the project documentation
+================================================================================
+
+
+1. DATASET SHAPE
+   Rows: 9,841
+   Columns: 51
+
+2. COLUMN DATA TYPES
+   float64: 39 columns
+   int64: 9 columns
+   str: 3 columns
+
+3. COLUMN NAMES AND TYPES
+   Unnamed: 0: int64
+   Index: int64
+   Address: str
+   FLAG: int64
+   Avg min between sent tnx: float64
+   Avg min between received tnx: float64
+   Time Diff between first and last (Mins): float64
+   Sent tnx: int64
+   Received Tnx: int64
+   Number of Created Contracts: int64
+   Unique Received From Addresses: int64
+   Unique Sent To Addresses: int64
+   min value received: float64
+   max value received : float64
+   avg val received: float64
+   min val sent: float64
+   max val sent: float64
+   avg val sent: float64
+   min value sent to contract: float64
+   max val sent to contract: float64
+   avg value sent to contract: float64
+   total transactions (including tnx to create contract: int64
+   total Ether sent: float64
+   total ether received: float64
+   total ether sent contracts: float64
+   total ether balance: float64
+    Total ERC20 tnxs: float64
+    ERC20 total Ether received: float64
+    ERC20 total ether sent: float64
+    ERC20 total Ether sent contract: float64
+    ERC20 uniq sent addr: float64
+    ERC20 uniq rec addr: float64
+    ERC20 uniq sent addr.1: float64
+    ERC20 uniq rec contract addr: float64
+    ERC20 avg time between sent tnx: float64
+    ERC20 avg time between rec tnx: float64
+    ERC20 avg time between rec 2 tnx: float64
+    ERC20 avg time between contract tnx: float64
+    ERC20 min val rec: float64
+    ERC20 max val rec: float64
+    ERC20 avg val rec: float64
+    ERC20 min val sent: float64
+    ERC20 max val sent: float64
+    ERC20 avg val sent: float64
+    ERC20 min val sent contract: float64
+    ERC20 max val sent contract: float64
+    ERC20 avg val sent contract: float64
+    ERC20 uniq sent token name: float64
+    ERC20 uniq rec token name: float64
+    ERC20 most sent token type: str
+    ERC20_most_rec_token_type: str
+
+4. MISSING VALUES
+   Columns with missing values: 25
+   Total missing values: 22,635
+    ERC20 most sent token type: 2697 (27.41%)
+    ERC20_most_rec_token_type: 871 (8.85%)
+    ERC20 total ether sent: 829 (8.42%)
+    ERC20 total Ether received: 829 (8.42%)
+    ERC20 uniq sent addr: 829 (8.42%)
+    ERC20 uniq rec addr: 829 (8.42%)
+    ERC20 uniq sent addr.1: 829 (8.42%)
+    ERC20 total Ether sent contract: 829 (8.42%)
+    Total ERC20 tnxs: 829 (8.42%)
+    ERC20 avg time between sent tnx: 829 (8.42%)
+
+5. TARGET VARIABLE - FLAG (Fraud Label)
+   Class 0 (Legitimate): 7,662 (77.86%)
+   Class 1 (Fraud): 2,179 (22.14%)
+
+6. NUMERIC COLUMNS STATISTICS
+   Number of numeric columns: 48
+
+   Summary Statistics (describe()):
+        Unnamed: 0        Index         FLAG  Avg min between sent tnx  Avg min between received tnx  Time Diff between first and last (Mins)      Sent tnx  Received Tnx  Number of Created Contracts  Unique Received From Addresses  Unique Sent To Addresses  min value received  max value received   avg val received  min val sent   max val sent  avg val sent  min value sent to contract  max val sent to contract  avg value sent to contract  total transactions (including tnx to create contract  total Ether sent  total ether received  total ether sent contracts  total ether balance   Total ERC20 tnxs   ERC20 total Ether received   ERC20 total ether sent   ERC20 total Ether sent contract   ERC20 uniq sent addr   ERC20 uniq rec addr   ERC20 uniq sent addr.1   ERC20 uniq rec contract addr   ERC20 avg time between sent tnx   ERC20 avg time between rec tnx   ERC20 avg time between rec 2 tnx   ERC20 avg time between contract tnx   ERC20 min val rec   ERC20 max val rec   ERC20 avg val rec   ERC20 min val sent   ERC20 max val sent   ERC20 avg val sent   ERC20 min val sent contract   ERC20 max val sent contract   ERC20 avg val sent contract   ERC20 uniq sent token name   ERC20 uniq rec token name
+count  9841.000000  9841.000000  9841.000000               9841.000000                   9841.000000                             9.841000e+03   9841.000000   9841.000000                  9841.000000                     9841.000000               9841.000000         9841.000000          9841.000000       9841.000000   9841.000000    9841.000000   9841.000000                 9841.000000               9841.000000                 9841.000000                                           9841.000000      9.841000e+03          9.841000e+03                 9841.000000         9.841000e+03        9012.000000                 9.012000e+03             9.012000e+03                       9012.000000            9012.000000           9012.000000              9012.000000                    9012.000000                            9012.0                           9012.0                             9012.0                                9012.0         9012.000000        9.012000e+03        9.012000e+03         9.012000e+03         9.012000e+03         9.012000e+03                        9012.0                        9012.0                        9012.0                  9012.000000                 9012.000000
+mean   4920.000000  1815.049893     0.221421               5086.878721                   8004.851184                             2.183333e+05    115.931714    163.700945                     3.729702                       30.360939                 25.840159           43.845153           523.152481        100.711721      4.800090     314.617297     44.755731                    0.000003                  0.000008                    0.000005                                            283.362362      1.016092e+04          1.163832e+04                    0.000008         1.477395e+03          36.255659                 1.296207e+08             1.386849e+07                        110.939207               5.638038              7.598535                 0.003440                       4.901909                               0.0                              0.0                                0.0                                   0.0          485.614688        1.252524e+08        4.346203e+06         1.174126e+04         1.303594e+07         6.318389e+06                           0.0                           0.0                           0.0                     1.384931                    4.826676
+std    2840.996333  1222.621830     0.415224              21486.549974                  23081.714801                             3.229379e+05    757.226361    940.836550                   141.445583                      298.621112                263.820410          325.929139         13008.821539       2885.002236    138.609682    6629.212643    239.080215                    0.000225                  0.000516                    0.000323                                           1352.404013      3.583227e+05          3.642048e+05                    0.000516         2.424254e+05         447.528908                 1.053858e+10             1.180390e+09                       6128.634953             105.252500             81.818470                 0.065698                      17.246576                               0.0                              0.0                                0.0                                   0.0        16883.278712        1.053741e+10        2.141192e+08         1.053567e+06         1.179905e+09         5.914764e+08                           0.0                           0.0                           0.0                     6.735121                   16.678607
+min       0.000000     1.000000     0.000000                  0.000000                      0.000000                             0.000000e+00      0.000000      0.000000                     0.000000                        0.000000                  0.000000            0.000000             0.000000          0.000000      0.000000       0.000000      0.000000                    0.000000                  0.000000                    0.000000                                              0.000000      0.000000e+00          0.000000e+00                    0.000000        -1.560535e+07           0.000000                 0.000000e+00             0.000000e+00                          0.000000               0.000000              0.000000                 0.000000                       0.000000                               0.0                              0.0                                0.0                                   0.0            0.000000        0.000000e+00        0.000000e+00         0.000000e+00         0.000000e+00         0.000000e+00                           0.0                           0.0                           0.0                     0.000000                    0.000000
+25%    2460.000000   821.000000     0.000000                  0.000000                      0.000000                             3.169300e+02      1.000000      1.000000                     0.000000                        1.000000                  1.000000            0.001000             1.000000          0.426905      0.000000       0.164577      0.086184                    0.000000                  0.000000                    0.000000                                              4.000000      2.262059e-01          2.670424e+00                    0.000000         6.214900e-04           0.000000                 0.000000e+00             0.000000e+00                          0.000000               0.000000              0.000000                 0.000000                       0.000000                               0.0                              0.0                                0.0                                   0.0            0.000000        0.000000e+00        0.000000e+00         0.000000e+00         0.000000e+00         0.000000e+00                           0.0                           0.0                           0.0                     0.000000                    0.000000
+50%    4920.000000  1641.000000     0.000000                 17.340000                    509.770000                             4.663703e+04      3.000000      4.000000                     0.000000                        2.000000                  2.000000            0.095856             6.000000          1.729730      0.049126       4.999380      1.606000                    0.000000                  0.000000                    0.000000                                              8.000000      1.248680e+01          3.052963e+01                    0.000000         1.722000e-03           1.000000                 1.000000e-12             0.000000e+00                          0.000000               0.000000              1.000000                 0.000000                       1.000000                               0.0                              0.0                                0.0                                   0.0            0.000000        0.000000e+00        0.000000e+00         0.000000e+00         0.000000e+00         0.000000e+00                           0.0                           0.0                           0.0                     0.000000                    1.000000
+75%    7380.000000  2601.000000     0.000000                565.470000                   5480.390000                             3.040710e+05     11.000000     27.000000                     0.000000                        5.000000                  3.000000            2.000000            67.067040         22.000000      0.998800      61.520653     21.999380                    0.000000                  0.000000                    0.000000                                             54.000000      1.009990e+02          1.010000e+02                    0.000000         4.452000e-02           3.000000                 1.003370e+02             0.000000e+00                          0.000000               0.000000              2.000000                 0.000000                       2.000000                               0.0                              0.0                                0.0                                   0.0            0.001523        9.900000e+01        2.946467e+01         0.000000e+00         0.000000e+00         0.000000e+00                           0.0                           0.0                           0.0                     0.000000                    2.000000
+max    9840.000000  4729.000000     1.000000             430287.670000                 482175.490000                             1.954861e+06  10000.000000  10000.000000                  9995.000000                     9999.000000               9287.000000        10000.000000        800000.000000     283618.831600  12000.000000  520000.000000  12000.000000                    0.020000                  0.046029                    0.023014                                          19995.000000      2.858096e+07          2.858159e+07                    0.046029         1.428864e+07       10001.000000                 1.000020e+12             1.120000e+11                     416000.000000            6582.000000           4293.000000                 3.000000                     782.000000                               0.0                              0.0                                0.0                                   0.0       990000.000000        1.000000e+12        1.724181e+10         1.000000e+08         1.120000e+11         5.614756e+10                           0.0                           0.0                           0.0                   213.000000                  737.000000
+
+7. DUPLICATE ROWS
+   Exact duplicate rows: 0
+
+8. CONSTANT/ZERO-VARIANCE COLUMNS
+   Columns with only one unique value: 7
+       ERC20 avg time between sent tnx
+       ERC20 avg time between rec tnx
+       ERC20 avg time between rec 2 tnx
+       ERC20 avg time between contract tnx
+       ERC20 min val sent contract
+       ERC20 max val sent contract
+       ERC20 avg val sent contract
+
+
+1. INDIVIDUAL FILE SHAPES
+   2021.csv: 1,703 rows, 12 columns
+   2022.csv: 3,695 rows, 12 columns
+   2023.csv: 15,477 rows, 12 columns
+   Jan_2024-Nov_2024.csv: 95,433 rows, 12 columns
+
+   COMBINED DATASET: 116,308 rows, 12 columns
+
+2. COLUMN DATA TYPES
+   str: 7 columns
+   float64: 5 columns
+
+3. COLUMN NAMES AND TYPES
+   LIQUIDITY_POOL_ADDRESS: str
+   MINT: str
+   TOTAL_ADDED_LIQUIDITY: float64
+   TOTAL_REMOVED_LIQUIDITY: float64
+   NUM_LIQUIDITY_ADDS: float64
+   NUM_LIQUIDITY_REMOVES: float64
+   ADD_TO_REMOVE_RATIO: float64
+   LAST_POOL_ACTIVITY_TIMESTAMP: str
+   FIRST_POOL_ACTIVITY_TIMESTAMP: str
+   LAST_SWAP_TIMESTAMP: str
+   LAST_SWAP_TX_ID: str
+   INACTIVITY_STATUS: str
+
+4. MISSING VALUES
+   Columns with missing values: 11
+   LAST_SWAP_TX_ID: 623 (0.54%)
+   LAST_SWAP_TIMESTAMP: 623 (0.54%)
+   MINT: 4 (0.0%)
+   TOTAL_REMOVED_LIQUIDITY: 4 (0.0%)
+   TOTAL_ADDED_LIQUIDITY: 4 (0.0%)
+   NUM_LIQUIDITY_ADDS: 4 (0.0%)
+   NUM_LIQUIDITY_REMOVES: 4 (0.0%)
+   LAST_POOL_ACTIVITY_TIMESTAMP: 4 (0.0%)
+   ADD_TO_REMOVE_RATIO: 4 (0.0%)
+   FIRST_POOL_ACTIVITY_TIMESTAMP: 4 (0.0%)
+   INACTIVITY_STATUS: 4 (0.0%)
+
+5. TARGET VARIABLE
+   NO LABEL COLUMN EXISTS - will be engineered in Step 3
+
+6. KEY COLUMNS FOR RUG-PULL DETECTION
+   TOTAL_ADDED_LIQUIDITY: min=0.00, max=3451332965517890048.00, mean=47015484460122.74
+   TOTAL_REMOVED_LIQUIDITY: min=1.00, max=5568529311687140352.00, mean=146444110443098.34
+   NUM_LIQUIDITY_ADDS: min=1.00, max=11780606.00, mean=1400.67
+   NUM_LIQUIDITY_REMOVES: min=1.00, max=11795428.00, mean=968.40
+   INACTIVITY_STATUS: {'Active': 93749, 'Inactive': 22555}
+
+7. NUMERIC COLUMNS STATISTICS
+   Number of numeric columns: 5
+
+   Summary Statistics (describe()):
+       TOTAL_ADDED_LIQUIDITY  TOTAL_REMOVED_LIQUIDITY  NUM_LIQUIDITY_ADDS  NUM_LIQUIDITY_REMOVES  ADD_TO_REMOVE_RATIO
+count           1.163040e+05             1.163040e+05        1.163040e+05           1.163040e+05         1.163040e+05
+mean            4.701548e+13             1.464441e+14        1.400667e+03           9.684045e+02         6.613697e+04
+std             1.023856e+16             2.178581e+16        6.820402e+04           6.744009e+04         8.720293e+06
+min             1.000000e-09             1.000000e+00        1.000000e+00           1.000000e+00         1.800672e-17
+25%             5.702012e+01             1.135878e+02        2.000000e+00           2.000000e+00         4.482402e-01
+50%             5.928520e+04             9.400434e+04        6.000000e+00           4.000000e+00         9.140659e-01
+75%             4.420064e+06             9.055780e+06        2.000000e+01           1.600000e+01         1.134797e+00
+max             3.451333e+18             5.568529e+18        1.178061e+07           1.179543e+07         1.988868e+09
+
+8. DUPLICATE ROWS
+   Exact duplicate rows: 3
+
+9. INACTIVITY STATUS DISTRIBUTION
+   {'Active': 93749, 'Inactive': 22555}

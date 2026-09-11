@@ -1,0 +1,15 @@
+================================================================================
+DATA EXPLORATION REPORT (BEFORE CLEANING)
+================================================================================
+
+ETHEREUM DATASET:
+  Shape: (9841, 51)
+  Duplicates: 0
+  Missing values: 22635
+  Class balance: {0: np.int64(7662), 1: np.int64(2179)}
+
+SOLANA DATASET (MERGED):
+  Shape: (116308, 12)
+  Duplicates: 3
+  Missing values: 1282
+  Inactivity status: {'Active': np.int64(93749), 'Inactive': np.int64(22555)}

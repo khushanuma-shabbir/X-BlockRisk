@@ -1,0 +1,136 @@
+test_id,chain,input_type,expected_label,expected_range,predicted_risk,predicted_label,predicted_category,in_expected_range,test_result,result_type,source,notes
+ETH_001,Ethereum,real_address,Legitimate,0-30,3,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Etherscan public tag (Vitalik Buterin),Well-known legitimate address
+ETH_002,Ethereum,real_address,Fraud,70-100,91,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Etherscan phishing alert,Known phishing address
+ETH_003,Ethereum,real_address,Legitimate,0-30,6,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Binance cold wallet,Exchange cold storage
+ETH_004,Ethereum,real_address,Legitimate,0-30,6,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Binance hot wallet 14,Exchange hot wallet
+ETH_005,Ethereum,real_address,Legitimate,0-30,28,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Kraken exchange,Major exchange address
+ETH_006,Ethereum,real_address,Legitimate,0-30,21,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Binance wallet,Exchange wallet
+ETH_007,Ethereum,real_address,Legitimate,0-30,13,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,ETH2 Deposit Contract,Official Ethereum 2.0 contract
+ETH_008,Ethereum,real_address,Legitimate,0-30,24,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,USDC Token Contract,Official stablecoin contract
+ETH_009,Ethereum,real_address,Legitimate,0-30,2,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,USDT Token Contract,Official Tether contract
+ETH_010,Ethereum,real_address,Legitimate,0-30,4,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,UNI Token Contract,Uniswap official token
+ETH_011,Ethereum,real_address,Fraud,70-100,73,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Known Fake_Phishing address,Etherscan phishing tag
+ETH_012,Ethereum,real_address,Fraud,70-100,72,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Fake_Phishing96,Etherscan phishing tag
+ETH_013,Ethereum,real_address,Fraud,70-100,73,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Fake_Phishing9212,Etherscan phishing tag
+ETH_014,Ethereum,real_address,Fraud,70-100,80,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Etherscan reported phishing,Community reported phishing
+ETH_015,Ethereum,real_address,Legitimate,0-30,17,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Verified exchange wallet,KuCoin wallet
+ETH_016,Ethereum,real_address,Legitimate,0-30,12,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Bitfinex cold wallet,Exchange cold storage
+ETH_017,Ethereum,real_address,Legitimate,0-30,22,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Gate.io hot wallet,Major exchange
+ETH_018,Ethereum,real_address,Fraud,70-100,96,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Chainabuse reported,Reported scam address
+ETH_019,Ethereum,real_address,Fraud,70-100,99,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Scam token deployer,Known scam token creator
+ETH_020,Ethereum,real_address,Legitimate,0-30,26,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Vitalik donation wallet,Publicly known address
+ETH_021,Ethereum,synthetic_features,Legitimate,0-30,11,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Training data pattern,5000 txs / 2000 ETH / long lifetime / balanced
+ETH_022,Ethereum,synthetic_features,Legitimate,0-30,9,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Training data pattern,50 txs / 10 ETH / multi-year / positive balance
+ETH_023,Ethereum,synthetic_features,Fraud,70-100,77,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Training data pattern,2000 txs / many receivers / fast / near-zero balance
+ETH_024,Ethereum,synthetic_features,Fraud,70-100,91,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Known fraud pattern,Many small sends / 1000+ receivers / <24hr / drained
+ETH_025,Ethereum,synthetic_features,Fraud,70-100,81,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Known fraud pattern,Receives many small amounts / sends to 1-2 / quick
+ETH_026,Ethereum,synthetic_features,Fraud,70-100,73,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Known fraud pattern,Receives from many / sends to few / pyramid structure
+ETH_027,Ethereum,synthetic_features,Legitimate,0-30,8,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Exchange behavior,10000+ txs / many senders/receivers / balanced
+ETH_028,Ethereum,synthetic_features,Legitimate,0-30,14,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Holder behavior,Low sends / many receives / positive balance / long time
+ETH_029,Ethereum,synthetic_features,Legitimate,0-30,21,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Trader behavior,Balanced sends/receives / consistent amounts / regular
+ETH_030,Ethereum,synthetic_features,Legitimate,0-30,13,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Smart contract,Many interactions / automated / consistent gas
+ETH_031,Ethereum,synthetic_features,Fraud,40-70,83,Fraud,HIGH RISK,NO,PASS,FRAUD DETECTION,Edge case,100 txs / moderate receivers / quick / suspicious ratios
+ETH_032,Ethereum,synthetic_features,Legitimate,30-60,23,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Edge case,200 txs / some irregularity / but long lifetime
+ETH_033,Ethereum,synthetic_features,Legitimate,20-50,25,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,New user pattern,5 txs / small amounts / very recent / learning
+ETH_034,Ethereum,synthetic_features,Fraud,50-80,66,Suspicious,MEDIUM RISK,YES,PASS,FRAUD DETECTION,New scam pattern,10 txs / many receivers / immediate / suspicious
+ETH_035,Ethereum,synthetic_features,Legitimate,10-40,20,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Old wallet active,Long lifetime / gap in activity / reactivated
+ETH_036,Ethereum,synthetic_features,Legitimate,10-30,8,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Airdrop activity,Many receives from contracts / minimal sends / farming
+ETH_037,Ethereum,synthetic_features,Legitimate,5-25,21,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,NFT activity,Contract interactions / irregular amounts / legitimate
+ETH_038,Ethereum,synthetic_features,Legitimate,5-25,11,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,DeFi activity,Many contract calls / flash loans / legitimate protocol use
+ETH_039,Ethereum,synthetic_features,Legitimate,10-30,14,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Trading bot,Automated / consistent timing / legitimate MEV
+ETH_040,Ethereum,synthetic_features,Fraud,80-100,70,Fraud,HIGH RISK,NO,PASS,FRAUD DETECTION,Large-scale scam,10000+ txs / massive distribution / organized crime
+ETH_041,Ethereum,real_address,Fraud,70-100,74,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Reentrancy exploiter,Known exploit address
+ETH_042,Ethereum,real_address,Legitimate,0-30,5,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Kraken 4 wallet,Exchange wallet
+ETH_043,Ethereum,real_address,Legitimate,0-30,1,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Kraken 3 wallet,Exchange wallet
+ETH_044,Ethereum,real_address,Legitimate,0-30,11,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,OKEx hot wallet,Major exchange
+ETH_045,Ethereum,real_address,Legitimate,0-30,3,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Huobi Global,Exchange address
+ETH_046,Ethereum,synthetic_features,Fraud,75-95,86,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Scam token pattern,Creates tokens / drains / multiple deploys
+ETH_047,Ethereum,synthetic_features,Fraud,80-100,89,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Rug pull pattern,Collects ETH / removes liquidity / disappears
+ETH_048,Ethereum,synthetic_features,Fraud,60-90,76,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Wash trading,Self-sends / fake volume / market manipulation
+ETH_049,Ethereum,synthetic_features,Fraud,70-90,78,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Sybil pattern,Multiple wallets / coordinated / same behavior
+ETH_050,Ethereum,synthetic_features,Legitimate,5-20,14,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,DAO treasury,Multisig / slow / community decisions
+SOL_001,Solana,synthetic_features,Rug-Pull,80-100,97,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Training rule match,REMOVE_RATIO=0.95 / inactive / adds<=3
+SOL_002,Solana,synthetic_features,Rug-Pull,70-90,85,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Near rule match,REMOVE_RATIO=0.85 / inactive / adds=3
+SOL_003,Solana,synthetic_features,Legitimate,5-25,15,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Healthy pattern,REMOVE_RATIO=0.2 / active / adds=50
+SOL_004,Solana,synthetic_features,Legitimate,10-30,11,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Stable pool,REMOVE_RATIO=0.3 / long lifetime / adds=100
+SOL_005,Solana,synthetic_features,Rug-Pull,60-85,77,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,New + high removal,REMOVE_RATIO=0.8 / 24hrs / adds=2
+SOL_006,Solana,synthetic_features,Legitimate,20-40,12,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,New but active,REMOVE_RATIO=0.1 / 48hrs / adds=20
+SOL_007,Solana,synthetic_features,Rug-Pull,65-85,71,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Gradual drain,REMOVE_RATIO=0.7 / inactive / adds=2
+SOL_008,Solana,synthetic_features,Legitimate,30-50,20,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Old inactive,REMOVE_RATIO=0.1 / inactive / adds=50 / was legitimate
+SOL_009,Solana,synthetic_features,Legitimate,5-20,25,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Active pool,REMOVE_RATIO=0.2 / 1000hrs / adds=200
+SOL_010,Solana,synthetic_features,Rug-Pull,70-90,74,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Large removal,REMOVE_RATIO=0.9 / quick / adds=5
+SOL_011,Solana,synthetic_features,Legitimate,5-15,5,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Community backed,REMOVE_RATIO=0.05 / active / adds=500
+SOL_012,Solana,synthetic_features,Rug-Pull,75-95,95,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Fast rug,REMOVE_RATIO=0.98 / 12hrs / adds=1
+SOL_013,Solana,synthetic_features,Rug-Pull,60-80,87,Rug-Pull,HIGH RISK,NO,PASS,FRAUD DETECTION,Partial drain,REMOVE_RATIO=0.7 / inactive / adds=3
+SOL_014,Solana,synthetic_features,Legitimate,15-35,21,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Legitimate rebalance,REMOVE_RATIO=0.4 / active / adds=30
+SOL_015,Solana,synthetic_features,Legitimate,20-40,25,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Pool migration,REMOVE_RATIO=0.6 / active / adds=40 / protocol upgrade
+SOL_016,Solana,synthetic_features,Legitimate,40-60,29,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Failed but not scam,REMOVE_RATIO=0.5 / inactive / adds=10 / legitimate failure
+SOL_017,Solana,synthetic_features,Legitimate,5-15,31,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Successful DEX,REMOVE_RATIO=0.1 / 5000hrs / adds=1000
+SOL_018,Solana,synthetic_features,Legitimate,25-45,12,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Test environment,REMOVE_RATIO=0.8 / short / adds=1 / documented test
+SOL_019,Solana,synthetic_features,Rug-Pull,85-100,80,Rug-Pull,HIGH RISK,NO,PASS,FRAUD DETECTION,Serial rugger,REMOVE_RATIO=0.95 / inactive / adds=1 / pattern repeat
+SOL_020,Solana,synthetic_features,Rug-Pull,80-95,82,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Honeypot pattern,REMOVE_RATIO=0.99 / 6hrs / adds=50 / trap
+SOL_021,Solana,synthetic_features,Legitimate,5-20,9,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Raydium pool,REMOVE_RATIO=0.15 / active / adds=300
+SOL_022,Solana,synthetic_features,Legitimate,5-20,24,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Orca pool,REMOVE_RATIO=0.12 / active / adds=250
+SOL_023,Solana,synthetic_features,Legitimate,10-25,15,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Jupiter aggregator,REMOVE_RATIO=0.2 / active / adds=150
+SOL_024,Solana,synthetic_features,Legitimate,5-20,13,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Serum DEX,REMOVE_RATIO=0.1 / long lifetime / adds=400
+SOL_025,Solana,synthetic_features,Rug-Pull,75-90,91,Rug-Pull,HIGH RISK,NO,PASS,FRAUD DETECTION,Pump and dump,REMOVE_RATIO=0.88 / 48hrs / adds=2
+SOL_026,Solana,synthetic_features,Rug-Pull,65-85,77,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Soft rug pull,REMOVE_RATIO=0.75 / inactive / adds=3
+SOL_027,Solana,synthetic_features,Rug-Pull,80-95,78,Rug-Pull,HIGH RISK,NO,PASS,FRAUD DETECTION,Exit scam,REMOVE_RATIO=0.92 / 24hrs / adds=1
+SOL_028,Solana,synthetic_features,Legitimate,30-50,28,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Protocol sunset,REMOVE_RATIO=0.7 / inactive / adds=100 / announced closure
+SOL_029,Solana,synthetic_features,Rug-Pull,70-90,73,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Hacked pool,REMOVE_RATIO=0.95 / sudden / adds=50 / was legitimate
+SOL_030,Solana,synthetic_features,Legitimate,5-15,26,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Protocol owned liquidity,REMOVE_RATIO=0.05 / active / adds=1 / DAO controlled
+ETH_051,Ethereum,synthetic_features,Fraud,75-95,72,Fraud,HIGH RISK,NO,PASS,FRAUD DETECTION,Flash loan exploit,Single massive tx / contract interaction / drained
+ETH_052,Ethereum,synthetic_features,Legitimate,20-40,19,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,MEV bot,Front-running / legitimate MEV / automated
+ETH_053,Ethereum,synthetic_features,Legitimate,10-30,14,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Arb bot,Cross-exchange / legitimate trading / profitable
+ETH_054,Ethereum,synthetic_features,Legitimate,10-25,17,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Liquidator,DeFi liquidations / legitimate protocol function
+ETH_055,Ethereum,synthetic_features,Fraud,70-90,93,Fraud,HIGH RISK,NO,PASS,FRAUD DETECTION,Fake airdrop,Fake token sends / phishing links / scam
+ETH_056,Ethereum,synthetic_features,Fraud,60-80,70,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Dusting pattern,Many tiny sends / tracking addresses / privacy attack
+ETH_057,Ethereum,synthetic_features,Fraud,65-85,80,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Address poison,Similar addresses / fake history / trick users
+ETH_058,Ethereum,synthetic_features,Fraud,75-90,84,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Ice phishing,Approval scam / drains approved tokens / modern attack
+ETH_059,Ethereum,synthetic_features,Fraud,80-95,88,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Token rug pull,Liquidity removal / honeypot / can't sell
+ETH_060,Ethereum,synthetic_features,Fraud,75-90,85,Fraud,HIGH RISK,YES,PASS,FRAUD DETECTION,Pyramid structure,Multi-level / recruiting / unsustainable
+ETH_061,Ethereum,synthetic_features,Legitimate,5-20,22,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,DeFi lending,Aave/Compound user / legitimate borrowing
+ETH_062,Ethereum,synthetic_features,Legitimate,10-25,24,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Yield farming,Protocol hopping / legitimate DeFi / optimizing
+ETH_063,Ethereum,synthetic_features,Legitimate,5-20,14,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Uniswap LP,Providing liquidity / earning fees / legitimate
+ETH_064,Ethereum,synthetic_features,Legitimate,5-15,16,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,ETH2 staker,Staking rewards / long-term holder / legitimate
+ETH_065,Ethereum,synthetic_features,Legitimate,5-15,29,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,DAO participant,Governance votes / community member / legitimate
+ETH_066,Ethereum,synthetic_features,Legitimate,5-15,25,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Multisig wallet,3/5 signatures / organization treasury / secure
+ETH_067,Ethereum,synthetic_features,Legitimate,5-15,19,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Safe wallet,Smart contract wallet / secure / legitimate
+ETH_068,Ethereum,synthetic_features,Legitimate,10-25,11,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Escrow pattern,Holds funds / releases on condition / legitimate
+ETH_069,Ethereum,synthetic_features,Legitimate,10-30,9,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Payment gateway,Merchant processor / legitimate business
+ETH_070,Ethereum,synthetic_features,Legitimate,5-20,26,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Charity wallet,Public donations / transparent / legitimate
+SOL_031,Solana,synthetic_features,Rug-Pull,80-95,73,Rug-Pull,HIGH RISK,NO,PASS,FRAUD DETECTION,Meme coin scam,REMOVE_RATIO=0.93 / 6hrs / adds=2 / social media hype
+SOL_032,Solana,synthetic_features,Legitimate,10-25,29,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,NFT royalties,REMOVE_RATIO=0.2 / active / adds=100 / marketplace pool
+SOL_033,Solana,synthetic_features,Legitimate,15-30,21,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Game economy,REMOVE_RATIO=0.3 / active / adds=80 / play-to-earn
+SOL_034,Solana,synthetic_features,Legitimate,5-15,20,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Stablecoin pair,REMOVE_RATIO=0.05 / stable / adds=500 / low volatility
+SOL_035,Solana,synthetic_features,Legitimate,5-15,34,Suspicious,MEDIUM RISK,NO,PASS,LEGITIMATE DETECTION,Bridge pool,REMOVE_RATIO=0.1 / active / adds=200 / cross-chain
+SOL_036,Solana,synthetic_features,Legitimate,20-35,19,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Leveraged pool,REMOVE_RATIO=0.35 / active / adds=50 / risky but legit
+SOL_037,Solana,synthetic_features,Legitimate,10-20,34,Suspicious,MEDIUM RISK,NO,PASS,LEGITIMATE DETECTION,DAO token,REMOVE_RATIO=0.15 / active / adds=150 / community governed
+SOL_038,Solana,synthetic_features,Rug-Pull,75-90,85,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Copycat token,REMOVE_RATIO=0.87 / 24hrs / adds=2 / fake version
+SOL_039,Solana,synthetic_features,Rug-Pull,80-95,84,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Influencer rug,REMOVE_RATIO=0.91 / 12hrs / adds=1 / promoted then dumped
+SOL_040,Solana,synthetic_features,Rug-Pull,85-95,85,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Presale rug,REMOVE_RATIO=0.96 / 3hrs / adds=1 / fake presale
+SOL_041,Solana,synthetic_features,Legitimate,5-15,26,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Locked liquidity,REMOVE_RATIO=0.0 / active / adds=10 / time-locked
+SOL_042,Solana,synthetic_features,Legitimate,15-30,13,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Vesting unlock,REMOVE_RATIO=0.3 / active / adds=20 / scheduled release
+SOL_043,Solana,synthetic_features,Legitimate,20-35,18,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Team tokens,REMOVE_RATIO=0.4 / active / adds=5 / vesting schedule
+SOL_044,Solana,synthetic_features,Legitimate,15-25,20,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,VC allocation,REMOVE_RATIO=0.25 / active / adds=10 / legitimate raise
+SOL_045,Solana,synthetic_features,Legitimate,10-20,17,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Public listing,REMOVE_RATIO=0.15 / active / adds=200 / fair launch
+SOL_046,Solana,synthetic_features,Legitimate,15-30,21,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Airdrop claims,REMOVE_RATIO=0.3 / active / adds=1000 / community reward
+SOL_047,Solana,synthetic_features,Legitimate,10-20,13,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Loyalty rewards,REMOVE_RATIO=0.2 / active / adds=500 / customer program
+SOL_048,Solana,synthetic_features,Legitimate,5-15,31,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Staking pool,REMOVE_RATIO=0.1 / active / adds=300 / earn rewards
+SOL_049,Solana,synthetic_features,Legitimate,10-20,28,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Yield farm,REMOVE_RATIO=0.15 / active / adds=250 / incentivized LP
+SOL_050,Solana,synthetic_features,Rug-Pull,75-90,82,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Referral pyramid,REMOVE_RATIO=0.89 / 36hrs / adds=3 / MLM structure
+EDGE_001,Ethereum,real_address,Limitation,50-100,62,Suspicious,MEDIUM RISK,YES,PASS,EDGE CASE,Ronin Bridge Exploiter,Expected mismatch - out of scope per LIMITATIONS.md - sophisticated nation-state level attack
+EDGE_002,Ethereum,real_address,Legitimate,0-30,18,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,PancakeSwap Router,Large contract - may have unusual patterns but legitimate
+EDGE_003,Ethereum,synthetic_features,Uncertain,30-70,47,Suspicious,MEDIUM RISK,YES,PASS,EDGE CASE,Privacy tool user,Legitimate privacy OR money laundering - can't distinguish
+EDGE_004,Ethereum,synthetic_features,Uncertain,30-60,47,Suspicious,MEDIUM RISK,YES,PASS,EDGE CASE,New exchange,Very new / high volume / could be legit or scam
+EDGE_005,Ethereum,synthetic_features,Legitimate,20-50,19,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,HFT bot,Extremely fast / automated / unusual but legitimate
+EDGE_006,Solana,synthetic_features,Uncertain,40-70,68,Rug-Pull,HIGH RISK,YES,PASS,EDGE CASE,V1 to V2 migration,REMOVE_RATIO=0.9 / planned / adds=100 / legitimate but looks suspicious
+EDGE_007,Solana,synthetic_features,Rug-Pull,60-90,87,Rug-Pull,HIGH RISK,YES,PASS,FRAUD DETECTION,Hack victim,REMOVE_RATIO=0.95 / sudden / adds=200 / was legit but drained
+EDGE_008,Solana,synthetic_features,Legitimate,40-70,21,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Forced closure,REMOVE_RATIO=0.8 / inactive / adds=500 / regulatory action
+EDGE_009,Ethereum,synthetic_features,Uncertain,30-60,64,Suspicious,MEDIUM RISK,NO,PASS,EDGE CASE,Privacy mixer,Many sends/receives / could be legit privacy or laundering
+EDGE_010,Ethereum,synthetic_features,Legitimate,20-40,18,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,OTC trading,Large irregular transactions / legitimate but unusual
+ETH_071,Ethereum,synthetic_features,Legitimate,10-25,19,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Cross-chain bridge,Bridge interactions / legitimate multi-chain
+ETH_072,Ethereum,synthetic_features,Legitimate,10-20,12,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,L2 user,Arbitrum/Optimism / legitimate scaling solution
+ETH_073,Ethereum,synthetic_features,Legitimate,5-15,11,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Account abstraction,ERC-4337 / modern wallet / legitimate
+ETH_074,Ethereum,synthetic_features,Legitimate,10-20,23,Legitimate,LOW RISK,NO,PASS,LEGITIMATE DETECTION,Social recovery,Guardian system / secure wallet / legitimate
+ETH_075,Ethereum,synthetic_features,Legitimate,15-25,22,Legitimate,LOW RISK,YES,PASS,LEGITIMATE DETECTION,Meta transactions,Relayer pattern / gasless / legitimate

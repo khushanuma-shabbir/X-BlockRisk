@@ -1,0 +1,136 @@
+test_id,chain,input,input_type,expected_label,expected_risk_range,source,notes
+ETH_001,Ethereum,0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045,real_address,Legitimate,0-30,Etherscan public tag (Vitalik Buterin),Well-known legitimate address
+ETH_002,Ethereum,0xC8a65Fadf0e0dDAf421F28FEAb69Bf6E2E589963,real_address,Fraud,70-100,Etherscan phishing alert,Known phishing address
+ETH_003,Ethereum,0x3f5CE5FBFe3E9af3971dD833D26bA9b5C936f0bE,real_address,Legitimate,0-30,Binance cold wallet,Exchange cold storage
+ETH_004,Ethereum,0x28C6c06298d514Db089934071355E5743bf21d60,real_address,Legitimate,0-30,Binance hot wallet 14,Exchange hot wallet
+ETH_005,Ethereum,0xDFd5293D8e347dFe59E90eFd55b2956a1343963d,real_address,Legitimate,0-30,Kraken exchange,Major exchange address
+ETH_006,Ethereum,0x21a31Ee1afC51d94C2eFcCAa2092aD1028285549,real_address,Legitimate,0-30,Binance wallet,Exchange wallet
+ETH_007,Ethereum,0x00000000219ab540356cBB839Cbe05303d7705Fa,real_address,Legitimate,0-30,ETH2 Deposit Contract,Official Ethereum 2.0 contract
+ETH_008,Ethereum,0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48,real_address,Legitimate,0-30,USDC Token Contract,Official stablecoin contract
+ETH_009,Ethereum,0xdAC17F958D2ee523a2206206994597C13D831ec7,real_address,Legitimate,0-30,USDT Token Contract,Official Tether contract
+ETH_010,Ethereum,0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984,real_address,Legitimate,0-30,UNI Token Contract,Uniswap official token
+ETH_011,Ethereum,0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8,real_address,Fraud,70-100,Known Fake_Phishing address,Etherscan phishing tag
+ETH_012,Ethereum,0x098B716B8Aaf21512996dC57EB0615e2383E2f96,real_address,Fraud,70-100,Fake_Phishing96,Etherscan phishing tag
+ETH_013,Ethereum,0xA69babEF1cA67A37Ffaf7a485DfFF3382056e78C,real_address,Fraud,70-100,Fake_Phishing9212,Etherscan phishing tag
+ETH_014,Ethereum,0x7F19720A857F834887FC9A7bC0a0fBe7Fc7f8102,real_address,Fraud,70-100,Etherscan reported phishing,Community reported phishing
+ETH_015,Ethereum,0x2B5634C42055806a59e9107ED44D43c426E58258,real_address,Legitimate,0-30,Verified exchange wallet,KuCoin wallet
+ETH_016,Ethereum,0x742d35Cc6634C0532925a3b844Bc454e4438f44e,real_address,Legitimate,0-30,Bitfinex cold wallet,Exchange cold storage
+ETH_017,Ethereum,0x0D0707963952f2fBA59dD06f2b425ace40b492Fe,real_address,Legitimate,0-30,Gate.io hot wallet,Major exchange
+ETH_018,Ethereum,0x9696f59E4d72E237BE84fFD425DCaD154Bf96976,real_address,Fraud,70-100,Chainabuse reported,Reported scam address
+ETH_019,Ethereum,0x70b9194F480497A9a8A0b4B6e3e4Ff6Fa92B5f2f,real_address,Fraud,70-100,Scam token deployer,Known scam token creator
+ETH_020,Ethereum,0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B,real_address,Legitimate,0-30,Vitalik donation wallet,Publicly known address
+ETH_021,Ethereum,synthetic_high_activity_legit,synthetic_features,Legitimate,0-30,Training data pattern,5000 txs / 2000 ETH / long lifetime / balanced
+ETH_022,Ethereum,synthetic_low_activity_legit,synthetic_features,Legitimate,0-30,Training data pattern,50 txs / 10 ETH / multi-year / positive balance
+ETH_023,Ethereum,synthetic_high_activity_fraud,synthetic_features,Fraud,70-100,Training data pattern,2000 txs / many receivers / fast / near-zero balance
+ETH_024,Ethereum,synthetic_mixer_pattern,synthetic_features,Fraud,70-100,Known fraud pattern,Many small sends / 1000+ receivers / <24hr / drained
+ETH_025,Ethereum,synthetic_phishing_pattern,synthetic_features,Fraud,70-100,Known fraud pattern,Receives many small amounts / sends to 1-2 / quick
+ETH_026,Ethereum,synthetic_ponzi_pattern,synthetic_features,Fraud,70-100,Known fraud pattern,Receives from many / sends to few / pyramid structure
+ETH_027,Ethereum,synthetic_exchange_pattern,synthetic_features,Legitimate,0-30,Exchange behavior,10000+ txs / many senders/receivers / balanced
+ETH_028,Ethereum,synthetic_hodler_pattern,synthetic_features,Legitimate,0-30,Holder behavior,Low sends / many receives / positive balance / long time
+ETH_029,Ethereum,synthetic_trader_pattern,synthetic_features,Legitimate,0-30,Trader behavior,Balanced sends/receives / consistent amounts / regular
+ETH_030,Ethereum,synthetic_contract_pattern,synthetic_features,Legitimate,0-30,Smart contract,Many interactions / automated / consistent gas
+ETH_031,Ethereum,synthetic_edge_medium_1,synthetic_features,Fraud,40-70,Edge case,100 txs / moderate receivers / quick / suspicious ratios
+ETH_032,Ethereum,synthetic_edge_medium_2,synthetic_features,Legitimate,30-60,Edge case,200 txs / some irregularity / but long lifetime
+ETH_033,Ethereum,synthetic_new_wallet_legit,synthetic_features,Legitimate,20-50,New user pattern,5 txs / small amounts / very recent / learning
+ETH_034,Ethereum,synthetic_new_wallet_suspicious,synthetic_features,Fraud,50-80,New scam pattern,10 txs / many receivers / immediate / suspicious
+ETH_035,Ethereum,synthetic_dormant_reactivated,synthetic_features,Legitimate,10-40,Old wallet active,Long lifetime / gap in activity / reactivated
+ETH_036,Ethereum,synthetic_airdrop_farmer,synthetic_features,Legitimate,10-30,Airdrop activity,Many receives from contracts / minimal sends / farming
+ETH_037,Ethereum,synthetic_nft_trader,synthetic_features,Legitimate,5-25,NFT activity,Contract interactions / irregular amounts / legitimate
+ETH_038,Ethereum,synthetic_defi_user,synthetic_features,Legitimate,5-25,DeFi activity,Many contract calls / flash loans / legitimate protocol use
+ETH_039,Ethereum,synthetic_bot_trader,synthetic_features,Legitimate,10-30,Trading bot,Automated / consistent timing / legitimate MEV
+ETH_040,Ethereum,synthetic_high_volume_fraud,synthetic_features,Fraud,80-100,Large-scale scam,10000+ txs / massive distribution / organized crime
+ETH_041,Ethereum,0x9FB7f546E60281e348f4485f3BC17D68887F1cCb,real_address,Fraud,70-100,Reentrancy exploiter,Known exploit address
+ETH_042,Ethereum,0xDa9dFa130Df4dE4673b89022EE50ff26f6EA73Cf,real_address,Legitimate,0-30,Kraken 4 wallet,Exchange wallet
+ETH_043,Ethereum,0x267be1C1D684F78cb4F6a176C4911b741E4Ffdc0,real_address,Legitimate,0-30,Kraken 3 wallet,Exchange wallet
+ETH_044,Ethereum,0x6Fb447Ae94F5180254D436A693907a1f57696900,real_address,Legitimate,0-30,OKEx hot wallet,Major exchange
+ETH_045,Ethereum,0x5041ed759Dd4aFc3a72b8192C143F72f4724081A,real_address,Legitimate,0-30,Huobi Global,Exchange address
+ETH_046,Ethereum,synthetic_scam_token_creator,synthetic_features,Fraud,75-95,Scam token pattern,Creates tokens / drains / multiple deploys
+ETH_047,Ethereum,synthetic_rug_pull_eth,synthetic_features,Fraud,80-100,Rug pull pattern,Collects ETH / removes liquidity / disappears
+ETH_048,Ethereum,synthetic_wash_trading,synthetic_features,Fraud,60-90,Wash trading,Self-sends / fake volume / market manipulation
+ETH_049,Ethereum,synthetic_sybil_attack,synthetic_features,Fraud,70-90,Sybil pattern,Multiple wallets / coordinated / same behavior
+ETH_050,Ethereum,synthetic_legitimate_dao,synthetic_features,Legitimate,5-20,DAO treasury,Multisig / slow / community decisions
+SOL_001,Solana,synthetic_classic_rugpull,synthetic_features,Rug-Pull,80-100,Training rule match,REMOVE_RATIO=0.95 / inactive / adds<=3
+SOL_002,Solana,synthetic_borderline_rugpull,synthetic_features,Rug-Pull,70-90,Near rule match,REMOVE_RATIO=0.85 / inactive / adds=3
+SOL_003,Solana,synthetic_healthy_pool_1,synthetic_features,Legitimate,5-25,Healthy pattern,REMOVE_RATIO=0.2 / active / adds=50
+SOL_004,Solana,synthetic_healthy_pool_2,synthetic_features,Legitimate,10-30,Stable pool,REMOVE_RATIO=0.3 / long lifetime / adds=100
+SOL_005,Solana,synthetic_new_pool_suspicious,synthetic_features,Rug-Pull,60-85,New + high removal,REMOVE_RATIO=0.8 / 24hrs / adds=2
+SOL_006,Solana,synthetic_new_pool_healthy,synthetic_features,Legitimate,20-40,New but active,REMOVE_RATIO=0.1 / 48hrs / adds=20
+SOL_007,Solana,synthetic_slow_rug,synthetic_features,Rug-Pull,65-85,Gradual drain,REMOVE_RATIO=0.7 / inactive / adds=2
+SOL_008,Solana,synthetic_abandoned_legit,synthetic_features,Legitimate,30-50,Old inactive,REMOVE_RATIO=0.1 / inactive / adds=50 / was legitimate
+SOL_009,Solana,synthetic_high_activity_legit,synthetic_features,Legitimate,5-20,Active pool,REMOVE_RATIO=0.2 / 1000hrs / adds=200
+SOL_010,Solana,synthetic_whale_exit,synthetic_features,Rug-Pull,70-90,Large removal,REMOVE_RATIO=0.9 / quick / adds=5
+SOL_011,Solana,synthetic_community_pool,synthetic_features,Legitimate,5-15,Community backed,REMOVE_RATIO=0.05 / active / adds=500
+SOL_012,Solana,synthetic_early_exit,synthetic_features,Rug-Pull,75-95,Fast rug,REMOVE_RATIO=0.98 / 12hrs / adds=1
+SOL_013,Solana,synthetic_partial_rug,synthetic_features,Rug-Pull,60-80,Partial drain,REMOVE_RATIO=0.7 / inactive / adds=3
+SOL_014,Solana,synthetic_rebalancing,synthetic_features,Legitimate,15-35,Legitimate rebalance,REMOVE_RATIO=0.4 / active / adds=30
+SOL_015,Solana,synthetic_liquidity_migration,synthetic_features,Legitimate,20-40,Pool migration,REMOVE_RATIO=0.6 / active / adds=40 / protocol upgrade
+SOL_016,Solana,synthetic_failed_project,synthetic_features,Legitimate,40-60,Failed but not scam,REMOVE_RATIO=0.5 / inactive / adds=10 / legitimate failure
+SOL_017,Solana,synthetic_successful_pool,synthetic_features,Legitimate,5-15,Successful DEX,REMOVE_RATIO=0.1 / 5000hrs / adds=1000
+SOL_018,Solana,synthetic_test_pool,synthetic_features,Legitimate,25-45,Test environment,REMOVE_RATIO=0.8 / short / adds=1 / documented test
+SOL_019,Solana,synthetic_multi_rug_operator,synthetic_features,Rug-Pull,85-100,Serial rugger,REMOVE_RATIO=0.95 / inactive / adds=1 / pattern repeat
+SOL_020,Solana,synthetic_honeypot_pool,synthetic_features,Rug-Pull,80-95,Honeypot pattern,REMOVE_RATIO=0.99 / 6hrs / adds=50 / trap
+SOL_021,Solana,synthetic_raydium_legit,synthetic_features,Legitimate,5-20,Raydium pool,REMOVE_RATIO=0.15 / active / adds=300
+SOL_022,Solana,synthetic_orca_legit,synthetic_features,Legitimate,5-20,Orca pool,REMOVE_RATIO=0.12 / active / adds=250
+SOL_023,Solana,synthetic_jupiter_legit,synthetic_features,Legitimate,10-25,Jupiter aggregator,REMOVE_RATIO=0.2 / active / adds=150
+SOL_024,Solana,synthetic_serum_legit,synthetic_features,Legitimate,5-20,Serum DEX,REMOVE_RATIO=0.1 / long lifetime / adds=400
+SOL_025,Solana,synthetic_pump_dump,synthetic_features,Rug-Pull,75-90,Pump and dump,REMOVE_RATIO=0.88 / 48hrs / adds=2
+SOL_026,Solana,synthetic_soft_rug,synthetic_features,Rug-Pull,65-85,Soft rug pull,REMOVE_RATIO=0.75 / inactive / adds=3
+SOL_027,Solana,synthetic_exit_scam,synthetic_features,Rug-Pull,80-95,Exit scam,REMOVE_RATIO=0.92 / 24hrs / adds=1
+SOL_028,Solana,synthetic_legitimate_sunset,synthetic_features,Legitimate,30-50,Protocol sunset,REMOVE_RATIO=0.7 / inactive / adds=100 / announced closure
+SOL_029,Solana,synthetic_hack_victim,synthetic_features,Rug-Pull,70-90,Hacked pool,REMOVE_RATIO=0.95 / sudden / adds=50 / was legitimate
+SOL_030,Solana,synthetic_protocol_owned,synthetic_features,Legitimate,5-15,Protocol owned liquidity,REMOVE_RATIO=0.05 / active / adds=1 / DAO controlled
+ETH_051,Ethereum,synthetic_flash_loan_attacker,synthetic_features,Fraud,75-95,Flash loan exploit,Single massive tx / contract interaction / drained
+ETH_052,Ethereum,synthetic_sandwich_bot,synthetic_features,Legitimate,20-40,MEV bot,Front-running / legitimate MEV / automated
+ETH_053,Ethereum,synthetic_arbitrage_bot,synthetic_features,Legitimate,10-30,Arb bot,Cross-exchange / legitimate trading / profitable
+ETH_054,Ethereum,synthetic_liquidation_bot,synthetic_features,Legitimate,10-25,Liquidator,DeFi liquidations / legitimate protocol function
+ETH_055,Ethereum,synthetic_scam_airdrop,synthetic_features,Fraud,70-90,Fake airdrop,Fake token sends / phishing links / scam
+ETH_056,Ethereum,synthetic_dusting_attack,synthetic_features,Fraud,60-80,Dusting pattern,Many tiny sends / tracking addresses / privacy attack
+ETH_057,Ethereum,synthetic_address_poisoning,synthetic_features,Fraud,65-85,Address poison,Similar addresses / fake history / trick users
+ETH_058,Ethereum,synthetic_ice_phishing,synthetic_features,Fraud,75-90,Ice phishing,Approval scam / drains approved tokens / modern attack
+ETH_059,Ethereum,synthetic_rugpull_token,synthetic_features,Fraud,80-95,Token rug pull,Liquidity removal / honeypot / can't sell
+ETH_060,Ethereum,synthetic_pyramid_scheme,synthetic_features,Fraud,75-90,Pyramid structure,Multi-level / recruiting / unsustainable
+ETH_061,Ethereum,synthetic_lending_protocol,synthetic_features,Legitimate,5-20,DeFi lending,Aave/Compound user / legitimate borrowing
+ETH_062,Ethereum,synthetic_yield_farmer,synthetic_features,Legitimate,10-25,Yield farming,Protocol hopping / legitimate DeFi / optimizing
+ETH_063,Ethereum,synthetic_liquidity_provider,synthetic_features,Legitimate,5-20,Uniswap LP,Providing liquidity / earning fees / legitimate
+ETH_064,Ethereum,synthetic_staker,synthetic_features,Legitimate,5-15,ETH2 staker,Staking rewards / long-term holder / legitimate
+ETH_065,Ethereum,synthetic_governance_voter,synthetic_features,Legitimate,5-15,DAO participant,Governance votes / community member / legitimate
+ETH_066,Ethereum,synthetic_multisig_treasury,synthetic_features,Legitimate,5-15,Multisig wallet,3/5 signatures / organization treasury / secure
+ETH_067,Ethereum,synthetic_gnosis_safe,synthetic_features,Legitimate,5-15,Safe wallet,Smart contract wallet / secure / legitimate
+ETH_068,Ethereum,synthetic_escrow_service,synthetic_features,Legitimate,10-25,Escrow pattern,Holds funds / releases on condition / legitimate
+ETH_069,Ethereum,synthetic_payment_processor,synthetic_features,Legitimate,10-30,Payment gateway,Merchant processor / legitimate business
+ETH_070,Ethereum,synthetic_donation_address,synthetic_features,Legitimate,5-20,Charity wallet,Public donations / transparent / legitimate
+SOL_031,Solana,synthetic_meme_coin_rug,synthetic_features,Rug-Pull,80-95,Meme coin scam,REMOVE_RATIO=0.93 / 6hrs / adds=2 / social media hype
+SOL_032,Solana,synthetic_nft_marketplace,synthetic_features,Legitimate,10-25,NFT royalties,REMOVE_RATIO=0.2 / active / adds=100 / marketplace pool
+SOL_033,Solana,synthetic_gaming_token,synthetic_features,Legitimate,15-30,Game economy,REMOVE_RATIO=0.3 / active / adds=80 / play-to-earn
+SOL_034,Solana,synthetic_stablecoin_pool,synthetic_features,Legitimate,5-15,Stablecoin pair,REMOVE_RATIO=0.05 / stable / adds=500 / low volatility
+SOL_035,Solana,synthetic_wrapped_asset,synthetic_features,Legitimate,5-15,Bridge pool,REMOVE_RATIO=0.1 / active / adds=200 / cross-chain
+SOL_036,Solana,synthetic_leveraged_token,synthetic_features,Legitimate,20-35,Leveraged pool,REMOVE_RATIO=0.35 / active / adds=50 / risky but legit
+SOL_037,Solana,synthetic_governance_token,synthetic_features,Legitimate,10-20,DAO token,REMOVE_RATIO=0.15 / active / adds=150 / community governed
+SOL_038,Solana,synthetic_copycat_scam,synthetic_features,Rug-Pull,75-90,Copycat token,REMOVE_RATIO=0.87 / 24hrs / adds=2 / fake version
+SOL_039,Solana,synthetic_influencer_scam,synthetic_features,Rug-Pull,80-95,Influencer rug,REMOVE_RATIO=0.91 / 12hrs / adds=1 / promoted then dumped
+SOL_040,Solana,synthetic_presale_scam,synthetic_features,Rug-Pull,85-95,Presale rug,REMOVE_RATIO=0.96 / 3hrs / adds=1 / fake presale
+SOL_041,Solana,synthetic_liquidity_lock,synthetic_features,Legitimate,5-15,Locked liquidity,REMOVE_RATIO=0.0 / active / adds=10 / time-locked
+SOL_042,Solana,synthetic_gradual_unlock,synthetic_features,Legitimate,15-30,Vesting unlock,REMOVE_RATIO=0.3 / active / adds=20 / scheduled release
+SOL_043,Solana,synthetic_team_allocation,synthetic_features,Legitimate,20-35,Team tokens,REMOVE_RATIO=0.4 / active / adds=5 / vesting schedule
+SOL_044,Solana,synthetic_investor_round,synthetic_features,Legitimate,15-25,VC allocation,REMOVE_RATIO=0.25 / active / adds=10 / legitimate raise
+SOL_045,Solana,synthetic_public_sale,synthetic_features,Legitimate,10-20,Public listing,REMOVE_RATIO=0.15 / active / adds=200 / fair launch
+SOL_046,Solana,synthetic_airdrop_pool,synthetic_features,Legitimate,15-30,Airdrop claims,REMOVE_RATIO=0.3 / active / adds=1000 / community reward
+SOL_047,Solana,synthetic_loyalty_program,synthetic_features,Legitimate,10-20,Loyalty rewards,REMOVE_RATIO=0.2 / active / adds=500 / customer program
+SOL_048,Solana,synthetic_staking_rewards,synthetic_features,Legitimate,5-15,Staking pool,REMOVE_RATIO=0.1 / active / adds=300 / earn rewards
+SOL_049,Solana,synthetic_farming_rewards,synthetic_features,Legitimate,10-20,Yield farm,REMOVE_RATIO=0.15 / active / adds=250 / incentivized LP
+SOL_050,Solana,synthetic_referral_scam,synthetic_features,Rug-Pull,75-90,Referral pyramid,REMOVE_RATIO=0.89 / 36hrs / adds=3 / MLM structure
+EDGE_001,Ethereum,0x9813037ee2218799597d83D4a5B6F3b6778218d9,real_address,Limitation,50-100,Ronin Bridge Exploiter,Expected mismatch - out of scope per LIMITATIONS.md - sophisticated nation-state level attack
+EDGE_002,Ethereum,0x10ED43C718714eb63d5aA57B78B54704E256024E,real_address,Legitimate,0-30,PancakeSwap Router,Large contract - may have unusual patterns but legitimate
+EDGE_003,Ethereum,synthetic_tornado_cash_user,synthetic_features,Uncertain,30-70,Privacy tool user,Legitimate privacy OR money laundering - can't distinguish
+EDGE_004,Ethereum,synthetic_newborn_exchange,synthetic_features,Uncertain,30-60,New exchange,Very new / high volume / could be legit or scam
+EDGE_005,Ethereum,synthetic_high_frequency_trader,synthetic_features,Legitimate,20-50,HFT bot,Extremely fast / automated / unusual but legitimate
+EDGE_006,Solana,synthetic_protocol_migration,synthetic_features,Uncertain,40-70,V1 to V2 migration,REMOVE_RATIO=0.9 / planned / adds=100 / legitimate but looks suspicious
+EDGE_007,Solana,synthetic_hacked_protocol,synthetic_features,Rug-Pull,60-90,Hack victim,REMOVE_RATIO=0.95 / sudden / adds=200 / was legit but drained
+EDGE_008,Solana,synthetic_regulatory_shutdown,synthetic_features,Legitimate,40-70,Forced closure,REMOVE_RATIO=0.8 / inactive / adds=500 / regulatory action
+EDGE_009,Ethereum,synthetic_mixer_legitimate,synthetic_features,Uncertain,30-60,Privacy mixer,Many sends/receives / could be legit privacy or laundering
+EDGE_010,Ethereum,synthetic_otc_desk,synthetic_features,Legitimate,20-40,OTC trading,Large irregular transactions / legitimate but unusual
+ETH_071,Ethereum,synthetic_bridge_user,synthetic_features,Legitimate,10-25,Cross-chain bridge,Bridge interactions / legitimate multi-chain
+ETH_072,Ethereum,synthetic_rollup_user,synthetic_features,Legitimate,10-20,L2 user,Arbitrum/Optimism / legitimate scaling solution
+ETH_073,Ethereum,synthetic_smart_wallet,synthetic_features,Legitimate,5-15,Account abstraction,ERC-4337 / modern wallet / legitimate
+ETH_074,Ethereum,synthetic_social_recovery,synthetic_features,Legitimate,10-20,Social recovery,Guardian system / secure wallet / legitimate
+ETH_075,Ethereum,synthetic_gasless_tx,synthetic_features,Legitimate,15-25,Meta transactions,Relayer pattern / gasless / legitimate
