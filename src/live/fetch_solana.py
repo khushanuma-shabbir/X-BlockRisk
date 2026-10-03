@@ -137,35 +137,42 @@ def fetch_solana_pool(pool_address):
     Main function: fetch pool data and compute features using Helius API
     Returns: (features_dict, red_flags, data_source)
     """
-    print(f"\n{'='*60}")
-    print(f"Fetching Solana pool data: {pool_address}")
-    print(f"Using: Helius RPC API")
-    print(f"{'='*60}")
+    print("\n" + "="*80)
+    print("STEP 1: LIVE DATA FETCH - RAW API RESPONSE")
+    print("="*80)
+    print(f"Pool Address: {pool_address}")
+    print(f"API: Helius RPC")
+    print("="*80)
     
     # Check for API key
     if not HELIUS_API_KEY:
-        print("[ERROR] Missing Helius API key")
+        print("[ERROR] ❌ Missing Helius API key")
         return None, [
             "No Helius API key configured.",
             "Please add HELIUS_API_KEY to .env file.",
             "Get free key at: https://www.helius.dev/"
         ], "ERROR"
     
-    print(f"[INFO] API Key found (first 10 chars): {HELIUS_API_KEY[:10]}...")
+    print(f"[INFO] API Key found (first 8 chars): {HELIUS_API_KEY[:8]}...")
     
     # Fetch transactions for this pool address
     print(f"[INFO] Fetching transaction history...")
     transactions = fetch_address_transactions(pool_address, limit=1000)
     
+    print(f"\n[DEBUG] Raw API response returned {len(transactions) if transactions else 0} items")
+    if transactions and len(transactions) > 0:
+        print(f"[DEBUG] Sample transaction (first item):")
+        print(f"  {transactions[0]}")
+    
     if not transactions:
-        print(f"[WARNING] No transactions found for this address")
+        print(f"\n❌ CRITICAL: No transactions found for this address")
         return None, [
             "No transaction history found for this address.",
             "This may not be a valid liquidity pool address,",
             "or the pool has no recorded transactions."
         ], "NO_DATA"
     
-    print(f"[INFO] Found {len(transactions)} transactions")
+    print(f"\n✅ Successfully fetched real data: {len(transactions)} transactions")
     
     # Extract timestamps
     timestamps = [tx.get('blockTime', 0) for tx in transactions if tx.get('blockTime')]

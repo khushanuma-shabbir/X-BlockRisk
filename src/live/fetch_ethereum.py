@@ -15,6 +15,7 @@ parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__f
 sys.path.insert(0, parent_dir)
 
 from config.feature_columns import ETHEREUM_FEATURE_COLUMNS, validate_feature_dict
+from src.live.scaler_aware_clipping import clip_features_for_scaler
 
 load_dotenv()
 
@@ -218,6 +219,18 @@ def compute_features(address, txs, erc20_txs):
         features['max val sent to contract'] = 0
         features['avg value sent to contract'] = 0
     
+    # CRITICAL FIX: The training data scaler has extremely small std for these contract features
+    # This causes scaling explosion. Cap to match training data ranges.
+    contract_caps_strict = {
+        'min value sent to contract': 100,  # Training max: 12000, but cap lower
+        'max val sent to contract': 0.02,   # Training max: 0.02 (VERY small!)
+        'avg value sent to contract': 0.05, # Training max: 0.046
+    }
+    
+    for key, cap_value in contract_caps_strict.items():
+        if key in features and features[key] > cap_value:
+            features[key] = cap_value
+    
     # Totals
     features['total transactions (including tnx to create contract'] = len(txs)
     features['total Ether sent'] = sent_txs['value'].sum()
@@ -225,9 +238,27 @@ def compute_features(address, txs, erc20_txs):
     features['total ether sent contracts'] = contract_txs['value'].sum()
     features['total ether balance'] = features['total ether received'] - features['total Ether sent']
     
+    # CRITICAL FIX: Cap extreme values to prevent scaling explosion
+    # These caps match the training data value ranges to ensure compatibility with the scaler
+    caps = {
+        'max val sent': 1000,  # Cap at 1000 ETH
+        'avg val sent': 100,
+        'total Ether sent': 10000,
+        'total ether received': 10000,
+        'total ether sent contracts': 0.05,  # CRITICAL: Training scaler expects tiny values
+    }
+    
+    for key, cap_value in caps.items():
+        if key in features and features[key] > cap_value:
+            print(f"[INFO] Capping {key}: {features[key]:.2f} -> {cap_value}")
+            features[key] = cap_value
+    
     # ERC20 features
     if not erc20_txs.empty:
-        erc20_txs['value'] = pd.to_numeric(erc20_txs['value'], errors='coerce')
+        # CRITICAL FIX: Convert ERC20 token values from raw units to normalized decimals
+        # ERC20 tokens have varying decimals (most common is 18, but can be 6, 8, etc.)
+        # For consistency with training data, we normalize by 1e18 like ETH
+        erc20_txs['value'] = pd.to_numeric(erc20_txs['value'], errors='coerce') / 1e18
         erc20_sent = erc20_txs[erc20_txs['from'].str.lower() == address.lower()]
         erc20_received = erc20_txs[erc20_txs['to'].str.lower() == address.lower()]
         
@@ -247,6 +278,28 @@ def compute_features(address, txs, erc20_txs):
         features['ERC20 avg val sent'] = erc20_sent['value'].mean() if not erc20_sent.empty else 0
         features['ERC20 uniq sent token name'] = erc20_sent['tokenName'].nunique()
         features['ERC20 uniq rec token name'] = erc20_received['tokenName'].nunique()
+        
+        # CRITICAL FIX: Cap extreme ERC20 values to match training data scaler ranges
+        erc20_caps = {
+            'ERC20 total Ether received': 1000000,  # Cap at 1M tokens
+            'ERC20 total ether sent': 1000000,
+            'ERC20 total Ether sent contract': 1000000,
+            'ERC20 max val rec': 100000,
+            'ERC20 max val sent': 100000,
+            'ERC20 avg val rec': 10000,
+            'ERC20 avg val sent': 10000,
+            'ERC20 uniq sent addr': 500,           # Training max: 416000, but cap conservatively
+            'ERC20 uniq rec addr': 500,            # Training max: 6582
+            'ERC20 uniq sent addr.1': 500,         # Training max: 4293
+            'ERC20 uniq rec contract addr': 3,     # Training max: 3 (VERY small!)
+            'ERC20 uniq sent token name': 100,     # Training has huge values but cap conservatively
+            'ERC20 uniq rec token name': 200,      # Training max: 213
+        }
+        
+        for key, cap_value in erc20_caps.items():
+            if key in features and features[key] > cap_value:
+                print(f"[INFO] Capping {key}: {features[key]:.2f} -> {cap_value}")
+                features[key] = cap_value
     else:
         # Zero out ERC20 features
         for key in ['Total ERC20 tnxs', 'ERC20 total Ether received', 'ERC20 total ether sent',
@@ -270,6 +323,10 @@ def compute_features(address, txs, erc20_txs):
     except Exception as e:
         print(f"[WARNING] Feature validation error: {e}")
     
+    # CRITICAL FIX: Clip all features to be within 5σ of training data scaler
+    # This prevents scaling explosion from extreme outliers
+    features = clip_features_for_scaler(features)
+    
     return features
 
 
@@ -287,34 +344,47 @@ def fetch_ethereum_wallet(address_or_tx_id):
     else:
         address = address_or_tx_id
     
-    print(f"\n{'='*60}")
-    print(f"Fetching data for address: {address}")
-    print(f"{'='*60}")
+    print("\n" + "="*80)
+    print("STEP 1: LIVE DATA FETCH - RAW API RESPONSE")
+    print("="*80)
+    print(f"Address: {address}")
+    print(f"API: Etherscan V2")
     
     # Check for API key
     if not ETHERSCAN_API_KEY or ETHERSCAN_API_KEY == 'your_etherscan_api_key_here':
         print("[ERROR] No valid Etherscan API key found in .env file")
         return None, False, ["No Etherscan API key configured. Please add ETHERSCAN_API_KEY to .env file."], "ERROR"
     
+    print(f"API Key (first 8 chars): {ETHERSCAN_API_KEY[:8]}...")
+    
     # Real API calls
     txs = fetch_wallet_transactions(address)
     erc20_txs = fetch_erc20_transactions(address)
     
     if txs.empty and erc20_txs.empty:
-        print(f"\n[RESULT] No transaction history found for this address.")
-        print(f"[RESULT] This could mean:")
+        print(f"\n❌ CRITICAL: No transaction data returned!")
+        print(f"This could mean:")
         print(f"  1. The address has never been used")
-        print(f"  2. The API key has rate limits")
+        print(f"  2. The API key has rate limits or is invalid")
         print(f"  3. The address format is invalid")
+        print(f"  4. API is returning an error (check logs above)")
         return None, False, [
             "No transaction history found for this address.",
             "This address may have never been used, or the API request failed.",
             "Cannot generate risk score without transaction data."
         ], "NO_DATA"
     
-    print(f"\n[SUCCESS] Found {len(txs)} normal transactions and {len(erc20_txs)} ERC20 transactions")
+    print(f"\n✅ Successfully fetched real data:")
+    print(f"  - Normal transactions: {len(txs)}")
+    print(f"  - ERC20 transactions: {len(erc20_txs)}")
+    
+    if not txs.empty:
+        print(f"\nSample transaction data (first 3 rows):")
+        print(txs[['from', 'to', 'value', 'timeStamp']].head(3).to_string())
     
     features = compute_features(address, txs, erc20_txs)
+    
+    print(f"\n✅ Computed {len(features)} features from real transaction data")
     
     # Check if contract
     is_contract, red_flags = check_contract_source(address)

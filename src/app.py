@@ -14,8 +14,8 @@ from sklearn.neighbors import NearestNeighbors
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parent_dir)
 
-from live.fetch_ethereum import fetch_ethereum_wallet
-from live.fetch_solana import fetch_solana_pool
+from src.live.fetch_ethereum import fetch_ethereum_wallet
+from src.live.fetch_solana import fetch_solana_pool
 
 
 class GraphSAGE(torch.nn.Module):
@@ -61,22 +61,92 @@ def load_models():
 
 
 def predict_risk(model, graph, scaler, features, is_ethereum=True):
+    """
+    Predict fraud risk with comprehensive debugging output
+    """
+    print("\n" + "="*80)
+    print("STEP 2: FEATURE VECTOR BEFORE SCALING")
+    print("="*80)
+    print(f"Raw features (count={len(features)}):")
+    for i, (k, v) in enumerate(features.items()):
+        print(f"  [{i:2d}] {k:45s} = {v:15.6f}")
+    
+    # Check for invalid values
+    invalid_features = [(k, v) for k, v in features.items() if not isinstance(v, (int, float)) or (isinstance(v, float) and (v != v or abs(v) == float('inf')))]
+    if invalid_features:
+        print(f"\n⚠️  WARNING: Found {len(invalid_features)} invalid features:")
+        for k, v in invalid_features:
+            print(f"  - {k} = {v}")
+    
+    print("\n" + "="*80)
+    print("STEP 3: SCALING/NORMALIZATION")
+    print("="*80)
+    print(f"Scaler type: {type(scaler).__name__}")
+    print(f"Scaler mean (first 5): {scaler.mean_[:5] if hasattr(scaler, 'mean_') else 'N/A'}")
+    print(f"Scaler scale (first 5): {scaler.scale_[:5] if hasattr(scaler, 'scale_') else 'N/A'}")
+    
     features_scaled = scaler.transform([list(features.values())])[0]
+    
+    print(f"\nScaled features (count={len(features_scaled)}):")
+    for i, val in enumerate(features_scaled):
+        print(f"  [{i:2d}] {val:15.6f}")
+    
+    # Check for extreme scaled values
+    extreme_vals = [(i, val) for i, val in enumerate(features_scaled) if abs(val) > 10]
+    if extreme_vals:
+        print(f"\n⚠️  WARNING: Found {len(extreme_vals)} extreme scaled values (|z| > 10):")
+        for i, val in extreme_vals:
+            print(f"  - Feature {i}: {val:.2f}")
+    
+    print("\n" + "="*80)
+    print("STEP 4: GRAPH CONSTRUCTION (GNN)")
+    print("="*80)
+    print(f"Training graph nodes: {graph.num_nodes}")
+    print(f"Training graph edges: {graph.edge_index.shape[1]}")
+    print(f"Training graph features per node: {graph.num_features}")
+    
     knn = NearestNeighbors(n_neighbors=10, metric='euclidean')
     knn.fit(graph.x.numpy())
-    _, indices = knn.kneighbors([features_scaled])
+    distances, indices = knn.kneighbors([features_scaled])
+    
+    print(f"\nFinding 10 nearest neighbors for new node...")
+    print(f"Neighbor indices: {indices[0]}")
+    print(f"Neighbor distances: {distances[0]}")
+    print(f"Mean neighbor distance: {distances[0].mean():.4f}")
     
     new_node_idx = graph.num_nodes
     new_edges = [[new_node_idx, idx] for idx in indices[0]] + [[idx, new_node_idx] for idx in indices[0]]
     
+    print(f"\nCreated new node at index: {new_node_idx}")
+    print(f"Added {len(new_edges)} edges (bidirectional connections to {len(indices[0])} neighbors)")
+    
     new_x = torch.cat([graph.x, torch.FloatTensor([features_scaled])], dim=0)
     new_edge_index = torch.cat([graph.edge_index, torch.LongTensor(new_edges).t()], dim=1)
     
+    print(f"New graph nodes: {new_x.shape[0]}")
+    print(f"New graph edges: {new_edge_index.shape[1]}")
+    
+    print("\n" + "="*80)
+    print("STEP 5: RAW MODEL OUTPUT")
+    print("="*80)
+    
     with torch.no_grad():
         out = model(new_x, new_edge_index)
-        fraud_prob = torch.exp(out[new_node_idx])[1].item()
+        raw_logits = out[new_node_idx]
+        raw_probs = torch.exp(raw_logits)
+        fraud_prob = raw_probs[1].item()
+        benign_prob = raw_probs[0].item()
+    
+    print(f"Raw logits: {raw_logits.numpy()}")
+    print(f"Raw probabilities (after exp):")
+    print(f"  - Class 0 (benign): {benign_prob:.6f}")
+    print(f"  - Class 1 (fraud):  {fraud_prob:.6f}")
+    print(f"  - Sum (should be ~1.0): {benign_prob + fraud_prob:.6f}")
     
     risk_score = int(fraud_prob * 100)
+    
+    print(f"\nFinal risk score: {risk_score}/100")
+    print("="*80 + "\n")
     
     # Generate Explainable AI reasoning
     reasons = []

@@ -50,5 +50,8 @@ test_output.txt
 .DS_Store
 Thumbs.db
 
+# Raw datasets (too large for git)
+Dataset-Capstone/
+
 # Note: We DO commit trained models and processed data
 # as they are essential for the project to run
