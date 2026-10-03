@@ -25,123 +25,119 @@ ETHERSCAN_BASE_URL = "https://api.etherscan.io/v2/api"  # V2 endpoint
 
 def resolve_tx_to_address(tx_hash):
     """Resolve transaction hash to sender address"""
-    try:
-        response = requests.get(ETHERSCAN_BASE_URL, params={
-            'module': 'proxy',
-            'action': 'eth_getTransactionByHash',
-            'txhash': tx_hash,
-            'apikey': ETHERSCAN_API_KEY
-        }, timeout=10)
-        
-        data = response.json()
-        if data.get('result'):
-            return data['result'].get('from')
-        return None
-    except Exception as e:
-        print(f"Error resolving tx hash: {e}")
-        return None
+    params = {
+        'chainid': '1',
+        'module': 'proxy',
+        'action': 'eth_getTransactionByHash',
+        'txhash': tx_hash,
+        'apikey': ETHERSCAN_API_KEY
+    }
+    
+    response = requests.get(ETHERSCAN_BASE_URL, params=params, timeout=10)
+    data = response.json()
+    
+    if data.get('result'):
+        return data['result'].get('from')
+    
+    return None
 
 
 def fetch_wallet_transactions(address):
     """Fetch normal transactions for wallet using Etherscan V2 API"""
-    try:
-        params = {
-            'chainid': '1',  # Ethereum mainnet
-            'module': 'account',
-            'action': 'txlist',
-            'address': address,
-            'startblock': '0',
-            'endblock': '99999999',
-            'page': '1',
-            'offset': '10000',
-            'sort': 'asc',
-            'apikey': ETHERSCAN_API_KEY
-        }
-        
-        print(f"[DEBUG] Calling Etherscan V2 API...")
-        print(f"[DEBUG] URL: {ETHERSCAN_BASE_URL}")
-        print(f"[DEBUG] API Key (first 4 chars): {ETHERSCAN_API_KEY[:4] if ETHERSCAN_API_KEY else 'None'}...")
-        print(f"[DEBUG] Address: {address}")
-        
-        response = requests.get(ETHERSCAN_BASE_URL, params=params, timeout=10)
-        
-        print(f"[DEBUG] HTTP Status Code: {response.status_code}")
-        print(f"[DEBUG] Raw Response (first 500 chars): {response.text[:500]}...")
-        
-        data = response.json()
-        print(f"[DEBUG] Parsed JSON status: {data.get('status')}")
-        print(f"[DEBUG] Parsed JSON message: {data.get('message')}")
-        print(f"[DEBUG] Result count: {len(data.get('result', [])) if isinstance(data.get('result'), list) else 'N/A'}")
-        
-        if data.get('status') == '1' and data.get('result'):
-            print(f"[SUCCESS] Fetched {len(data['result'])} transactions")
-            return pd.DataFrame(data['result'])
-        else:
-            print(f"[INFO] API returned status={data.get('status')}, message={data.get('message')}")
-        return pd.DataFrame()
-    except Exception as e:
-        print(f"[ERROR] Exception in fetch_wallet_transactions: {type(e).__name__}: {e}")
-        return pd.DataFrame()
+    params = {
+        'chainid': '1',  # Ethereum mainnet
+        'module': 'account',
+        'action': 'txlist',
+        'address': address,
+        'startblock': '0',
+        'endblock': '99999999',
+        'page': '1',
+        'offset': '10000',
+        'sort': 'asc',
+        'apikey': ETHERSCAN_API_KEY
+    }
+    
+    response = requests.get(ETHERSCAN_BASE_URL, params=params, timeout=10)
+    data = response.json()
+    
+    # Raise if API returns error (unless it's "No transactions found")
+    if data.get('status') == '0':
+        message = data.get('message', '')
+        if 'no transactions found' not in message.lower():
+            raise RuntimeError(f"Etherscan API error: {message} (result: {data.get('result', 'N/A')})")
+    
+    if data.get('status') == '1' and isinstance(data.get('result'), list):
+        print(f"[SUCCESS] Fetched {len(data['result'])} transactions")
+        return pd.DataFrame(data['result'])
+    
+    return pd.DataFrame()
 
 
 def fetch_erc20_transactions(address):
     """Fetch ERC20 token transactions using V2 API"""
-    try:
-        params = {
-            'chainid': '1',
-            'module': 'account',
-            'action': 'tokentx',
-            'address': address,
-            'page': '1',
-            'offset': '10000',
-            'startblock': '0',
-            'endblock': '99999999',
-            'sort': 'asc',
-            'apikey': ETHERSCAN_API_KEY
-        }
-        
-        response = requests.get(ETHERSCAN_BASE_URL, params=params, timeout=10)
-        
-        data = response.json()
-        if data.get('status') == '1' and data.get('result'):
-            print(f"[SUCCESS] Fetched {len(data['result'])} ERC20 transactions")
-            return pd.DataFrame(data['result'])
-        return pd.DataFrame()
-    except Exception as e:
-        print(f"[ERROR] Error fetching ERC20 transactions: {e}")
-        return pd.DataFrame()
+    params = {
+        'chainid': '1',
+        'module': 'account',
+        'action': 'tokentx',
+        'address': address,
+        'page': '1',
+        'offset': '10000',
+        'startblock': '0',
+        'endblock': '99999999',
+        'sort': 'asc',
+        'apikey': ETHERSCAN_API_KEY
+    }
+    
+    response = requests.get(ETHERSCAN_BASE_URL, params=params, timeout=10)
+    data = response.json()
+    
+    # Raise if API returns error (unless it's "No transactions found")
+    if data.get('status') == '0':
+        message = data.get('message', '')
+        if 'no transactions found' not in message.lower():
+            raise RuntimeError(f"Etherscan API error: {message} (result: {data.get('result', 'N/A')})")
+    
+    if data.get('status') == '1' and isinstance(data.get('result'), list):
+        print(f"[SUCCESS] Fetched {len(data['result'])} ERC20 transactions")
+        return pd.DataFrame(data['result'])
+    
+    return pd.DataFrame()
 
 
 def check_contract_source(address):
     """Check if address is a contract and analyze source code"""
-    try:
-        response = requests.get(ETHERSCAN_BASE_URL, params={
-            'module': 'contract',
-            'action': 'getsourcecode',
-            'address': address,
-            'apikey': ETHERSCAN_API_KEY
-        }, timeout=10)
+    params = {
+        'chainid': '1',
+        'module': 'contract',
+        'action': 'getsourcecode',
+        'address': address,
+        'apikey': ETHERSCAN_API_KEY
+    }
+    
+    response = requests.get(ETHERSCAN_BASE_URL, params=params, timeout=10)
+    data = response.json()
+    
+    # Raise if API returns error
+    if data.get('status') == '0':
+        message = data.get('message', '')
+        raise RuntimeError(f"Etherscan API error: {message}")
+    
+    if data.get('status') == '1' and data.get('result'):
+        source_code = data['result'][0].get('SourceCode', '')
         
-        data = response.json()
-        if data.get('status') == '1' and data.get('result'):
-            source_code = data['result'][0].get('SourceCode', '')
+        red_flags = []
+        if source_code:
+            # Simple keyword-based red flags
+            if 'onlyOwner' in source_code and 'mint' in source_code.lower():
+                red_flags.append("Owner-only mint function detected")
+            if 'renounceOwnership' not in source_code and 'owner' in source_code.lower():
+                red_flags.append("No renounceOwnership function found")
+            if 'selfdestruct' in source_code.lower():
+                red_flags.append("Self-destruct capability present")
             
-            red_flags = []
-            if source_code:
-                # Simple keyword-based red flags
-                if 'onlyOwner' in source_code and 'mint' in source_code.lower():
-                    red_flags.append("Owner-only mint function detected")
-                if 'renounceOwnership' not in source_code and 'owner' in source_code.lower():
-                    red_flags.append("No renounceOwnership function found")
-                if 'selfdestruct' in source_code.lower():
-                    red_flags.append("Self-destruct capability present")
-                
-                return True, red_flags
-            return False, []
-        return False, []
-    except Exception as e:
-        print(f"Error checking contract: {e}")
-        return False, []
+            return True, red_flags
+    
+    return False, []
 
 
 def compute_features(address, txs, erc20_txs):

@@ -39,16 +39,35 @@ class GraphSAGE(torch.nn.Module):
 
 @st.cache_resource
 def load_models():
+    """Load GNN-22 model (non-ERC20 features only) - Research Prototype"""
     base_path = os.path.join(os.path.dirname(__file__), '..')
     
-    eth_graph = torch.load(os.path.join(base_path, 'data/processed/ethereum_graph_augmented.pt'), weights_only=False)
-    eth_model = GraphSAGE(eth_graph.num_features, 64, 2, 0.4)
-    eth_model.load_state_dict(torch.load(os.path.join(base_path, 'models/ethereum/model_augmented.pt'), weights_only=True))
-    eth_model.eval()
+    # Load GNN-22 checkpoint
+    checkpoint = torch.load(
+        os.path.join(base_path, 'models/ethereum_clean/gnn_22feat.pt'),
+        weights_only=False
+    )
     
-    with open(os.path.join(base_path, 'models/ethereum/scaler_augmented.pkl'), 'rb') as f:
+    # Load scaler
+    with open(os.path.join(base_path, 'models/ethereum_clean/scaler_22feat.pkl'), 'rb') as f:
         eth_scaler = pickle.load(f)
     
+    # Load training features for k-NN
+    import numpy as np
+    train_features = np.load(os.path.join(base_path, 'models/ethereum_clean/train_features_22.npy'))
+    
+    # Initialize model
+    eth_model = GraphSAGE(22, 64, 2, 0.4)
+    eth_model.load_state_dict(checkpoint['model_state_dict'])
+    eth_model.eval()
+    
+    # Extract metadata
+    threshold = checkpoint['threshold']
+    feature_list = checkpoint['feature_list']
+    
+    print(f"[MODEL] Loaded GNN-22: {len(feature_list)} features, threshold={threshold:.4f}")
+    
+    # Solana (unchanged)
     sol_graph = torch.load(os.path.join(base_path, 'data/processed/solana_graph.pt'), weights_only=False)
     sol_model = GraphSAGE(sol_graph.num_features, 64, 2, 0.4)
     sol_model.load_state_dict(torch.load(os.path.join(base_path, 'models/solana/model_tuned.pt'), weights_only=True))
@@ -57,98 +76,58 @@ def load_models():
     with open(os.path.join(base_path, 'models/solana/scaler.pkl'), 'rb') as f:
         sol_scaler = pickle.load(f)
     
-    return eth_model, eth_graph, eth_scaler, sol_model, sol_graph, sol_scaler
+    return eth_model, train_features, eth_scaler, threshold, feature_list, sol_model, sol_graph, sol_scaler
 
 
-def predict_risk(model, graph, scaler, features, is_ethereum=True):
+def predict_risk(model, train_features, scaler, features, threshold, feature_list, is_ethereum=True):
     """
-    Predict fraud risk with comprehensive debugging output
+    Predict fraud risk using GNN-22 (research prototype)
     """
-    print("\n" + "="*80)
-    print("STEP 2: FEATURE VECTOR BEFORE SCALING")
-    print("="*80)
-    print(f"Raw features (count={len(features)}):")
-    for i, (k, v) in enumerate(features.items()):
-        print(f"  [{i:2d}] {k:45s} = {v:15.6f}")
+    import numpy as np
     
-    # Check for invalid values
-    invalid_features = [(k, v) for k, v in features.items() if not isinstance(v, (int, float)) or (isinstance(v, float) and (v != v or abs(v) == float('inf')))]
-    if invalid_features:
-        print(f"\n⚠️  WARNING: Found {len(invalid_features)} invalid features:")
-        for k, v in invalid_features:
-            print(f"  - {k} = {v}")
+    # Extract 22 non-ERC20 features in correct order
+    feature_vector = np.array([features.get(f, 0.0) for f in feature_list])
     
-    print("\n" + "="*80)
-    print("STEP 3: SCALING/NORMALIZATION")
-    print("="*80)
-    print(f"Scaler type: {type(scaler).__name__}")
-    print(f"Scaler mean (first 5): {scaler.mean_[:5] if hasattr(scaler, 'mean_') else 'N/A'}")
-    print(f"Scaler scale (first 5): {scaler.scale_[:5] if hasattr(scaler, 'scale_') else 'N/A'}")
+    # Apply signed log1p transformation
+    feature_vector_log = np.sign(feature_vector) * np.log1p(np.abs(feature_vector))
     
-    features_scaled = scaler.transform([list(features.values())])[0]
+    # Scale using trained scaler
+    features_scaled = scaler.transform(feature_vector_log.reshape(1, -1))[0]
     
-    print(f"\nScaled features (count={len(features_scaled)}):")
-    for i, val in enumerate(features_scaled):
-        print(f"  [{i:2d}] {val:15.6f}")
-    
-    # Check for extreme scaled values
-    extreme_vals = [(i, val) for i, val in enumerate(features_scaled) if abs(val) > 10]
-    if extreme_vals:
-        print(f"\n⚠️  WARNING: Found {len(extreme_vals)} extreme scaled values (|z| > 10):")
-        for i, val in extreme_vals:
-            print(f"  - Feature {i}: {val:.2f}")
-    
-    print("\n" + "="*80)
-    print("STEP 4: GRAPH CONSTRUCTION (GNN)")
-    print("="*80)
-    print(f"Training graph nodes: {graph.num_nodes}")
-    print(f"Training graph edges: {graph.edge_index.shape[1]}")
-    print(f"Training graph features per node: {graph.num_features}")
-    
+    # Find 10 nearest neighbors in training data
     knn = NearestNeighbors(n_neighbors=10, metric='euclidean')
-    knn.fit(graph.x.numpy())
+    knn.fit(train_features)
     distances, indices = knn.kneighbors([features_scaled])
     
-    print(f"\nFinding 10 nearest neighbors for new node...")
-    print(f"Neighbor indices: {indices[0]}")
-    print(f"Neighbor distances: {distances[0]}")
-    print(f"Mean neighbor distance: {distances[0].mean():.4f}")
+    # Build mini-graph: new node + 10 nearest neighbors + edges between them
+    new_node_idx = train_features.shape[0]
+    edge_list = []
     
-    new_node_idx = graph.num_nodes
-    new_edges = [[new_node_idx, idx] for idx in indices[0]] + [[idx, new_node_idx] for idx in indices[0]]
+    # Connect new node to 10 neighbors
+    for neighbor_idx in indices[0]:
+        edge_list.append([new_node_idx, neighbor_idx])
+        edge_list.append([neighbor_idx, new_node_idx])
     
-    print(f"\nCreated new node at index: {new_node_idx}")
-    print(f"Added {len(new_edges)} edges (bidirectional connections to {len(indices[0])} neighbors)")
+    # Also connect neighbors to each other (for better message passing)
+    for i, idx1 in enumerate(indices[0]):
+        for idx2 in indices[0][i+1:]:
+            edge_list.append([idx1, idx2])
+            edge_list.append([idx2, idx1])
     
-    new_x = torch.cat([graph.x, torch.FloatTensor([features_scaled])], dim=0)
-    new_edge_index = torch.cat([graph.edge_index, torch.LongTensor(new_edges).t()], dim=1)
+    # Feature matrix: train + new
+    x_all = np.vstack([train_features, features_scaled])
+    x_tensor = torch.FloatTensor(x_all)
+    edge_index = torch.LongTensor(edge_list).t()
     
-    print(f"New graph nodes: {new_x.shape[0]}")
-    print(f"New graph edges: {new_edge_index.shape[1]}")
-    
-    print("\n" + "="*80)
-    print("STEP 5: RAW MODEL OUTPUT")
-    print("="*80)
-    
+    # Run GNN inference
     with torch.no_grad():
-        out = model(new_x, new_edge_index)
-        raw_logits = out[new_node_idx]
-        raw_probs = torch.exp(raw_logits)
-        fraud_prob = raw_probs[1].item()
-        benign_prob = raw_probs[0].item()
-    
-    print(f"Raw logits: {raw_logits.numpy()}")
-    print(f"Raw probabilities (after exp):")
-    print(f"  - Class 0 (benign): {benign_prob:.6f}")
-    print(f"  - Class 1 (fraud):  {fraud_prob:.6f}")
-    print(f"  - Sum (should be ~1.0): {benign_prob + fraud_prob:.6f}")
+        out = model(x_tensor, edge_index)
+        probs = torch.exp(out)[new_node_idx]
+        fraud_prob = probs[1].item()
     
     risk_score = int(fraud_prob * 100)
     
-    print(f"\nFinal risk score: {risk_score}/100")
-    print("="*80 + "\n")
-    
-    # Generate Explainable AI reasoning
+    # Generate reasons
     reasons = []
     
     if is_ethereum:
@@ -157,7 +136,6 @@ def predict_risk(model, graph, scaler, features, is_ethereum=True):
         unique_sent = features.get('Unique Sent To Addresses', 0)
         total_eth = features.get('total Ether sent', 0) + features.get('total ether received', 0)
         
-        # Reason 1: Activity pattern
         if sent > 100:
             reasons.append(f"📊 High activity: {int(sent)} outgoing transactions")
         elif sent < 10:
@@ -165,24 +143,21 @@ def predict_risk(model, graph, scaler, features, is_ethereum=True):
         else:
             reasons.append(f"📊 Moderate activity: {int(sent)} sent, {int(received)} received")
         
-        # Reason 2: Distribution pattern
         if unique_sent > 50:
-            reasons.append(f"🔗 Interacts with {int(unique_sent)} different addresses (distribution pattern)")
+            reasons.append(f"🔗 Interacts with {int(unique_sent)} different addresses")
         elif unique_sent > 20:
             reasons.append(f"🔗 Connected to {int(unique_sent)} addresses")
         
-        # Reason 3: Volume
         if total_eth > 1000:
             reasons.append(f"💰 High volume: {int(total_eth)} ETH total")
         elif total_eth < 1:
             reasons.append(f"💰 Low volume: {total_eth:.2f} ETH total")
-        
+    
     else:  # Solana
         remove_ratio = features.get('REMOVE_RATIO', 0)
         num_adds = features.get('NUM_LIQUIDITY_ADDS', 0)
         lifetime = features.get('POOL_LIFETIME_HOURS', 0)
         
-        # Reason 1: Liquidity removal
         if remove_ratio > 0.8:
             reasons.append(f"🚨 {int(remove_ratio*100)}% liquidity removed (major red flag)")
         elif remove_ratio > 0.5:
@@ -190,11 +165,9 @@ def predict_risk(model, graph, scaler, features, is_ethereum=True):
         else:
             reasons.append(f"✓ Only {int(remove_ratio*100)}% liquidity removed (normal)")
         
-        # Reason 2: Community trust
         if num_adds < 5:
             reasons.append(f"👥 Very few participants ({int(num_adds)} liquidity adds)")
         
-        # Reason 3: Pool age
         if lifetime < 24:
             reasons.append(f"🕐 Very new pool ({lifetime:.1f} hours old)")
         elif lifetime > 720:
@@ -223,11 +196,11 @@ st.markdown("""
 
 # Title
 st.markdown("<h1 style='text-align: center;'>🔍 Fraud Detector</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: gray;'>Check if a blockchain address is suspicious</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: gray;'>Research Prototype - Ethereum Wallet Risk Assessment</p>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 
 # Load models
-eth_model, eth_graph, eth_scaler, sol_model, sol_graph, sol_scaler = load_models()
+eth_model, train_features, eth_scaler, threshold, feature_list, sol_model, sol_graph, sol_scaler = load_models()
 
 # Input
 address = st.text_input(
@@ -247,7 +220,10 @@ if st.button("🚀 Check Address", type="primary", use_container_width=True):
                 if address.startswith('0x'):
                     features, _, _, data_source = fetch_ethereum_wallet(address)
                     if features:
-                        risk_score, reasons = predict_risk(eth_model, eth_graph, eth_scaler, features, is_ethereum=True)
+                        risk_score, reasons = predict_risk(
+                            eth_model, train_features, eth_scaler, features, 
+                            threshold, feature_list, is_ethereum=True
+                        )
                     else:
                         st.error("❌ Could not fetch data for this address")
                         st.stop()
