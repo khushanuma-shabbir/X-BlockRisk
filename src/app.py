@@ -17,6 +17,7 @@ sys.path.insert(0, parent_dir)
 
 from src.live.fetch_ethereum import fetch_ethereum_wallet
 from src.live.fetch_solana import fetch_solana_pool
+from src.detection.hybrid_detector import HybridDetector
 
 
 class GraphSAGE(torch.nn.Module):
@@ -77,17 +78,13 @@ def load_models():
     return eth_model, train_features, eth_scaler, threshold, feature_list, sol_model, sol_graph, sol_scaler
 
 
-def predict_risk(model, train_features, scaler, features, threshold, feature_list, is_ethereum=True):
+def predict_risk(model, train_features, scaler, features, threshold, feature_list, address, is_ethereum=True):
     """
-    Predict fraud risk using GNN-22
+    Predict fraud risk using Hybrid Detection (GNN + Rules + Blacklist)
     """
-    # Extract 22 features in correct order
+    # Step 1: Get GNN prediction
     feature_vector = np.array([features.get(f, 0.0) for f in feature_list])
-    
-    # Apply signed log1p transformation
     feature_vector_log = np.sign(feature_vector) * np.log1p(np.abs(feature_vector))
-    
-    # Scale using trained scaler
     features_scaled = scaler.transform(feature_vector_log.reshape(1, -1))[0]
     
     # Find 10 nearest neighbors in training data
@@ -95,22 +92,19 @@ def predict_risk(model, train_features, scaler, features, threshold, feature_lis
     knn.fit(train_features)
     distances, indices = knn.kneighbors([features_scaled])
     
-    # Build mini-graph: new node + 10 neighbors + neighbor connections
+    # Build mini-graph
     new_node_idx = train_features.shape[0]
     edge_list = []
     
-    # Connect new node to 10 neighbors
     for neighbor_idx in indices[0]:
         edge_list.append([new_node_idx, neighbor_idx])
         edge_list.append([neighbor_idx, new_node_idx])
     
-    # Connect neighbors to each other
     for i, idx1 in enumerate(indices[0]):
         for idx2 in indices[0][i+1:]:
             edge_list.append([idx1, idx2])
             edge_list.append([idx2, idx1])
     
-    # Feature matrix: train + new
     x_all = np.vstack([train_features, features_scaled])
     x_tensor = torch.FloatTensor(x_all)
     edge_index = torch.LongTensor(edge_list).t()
@@ -121,33 +115,23 @@ def predict_risk(model, train_features, scaler, features, threshold, feature_lis
         probs = torch.exp(out)[new_node_idx]
         fraud_prob = probs[1].item()
     
-    risk_score = int(fraud_prob * 100)
+    gnn_score = fraud_prob * 100
     
-    # Generate reasons
+    # Step 2: Apply Hybrid Detection
+    hybrid_detector = HybridDetector()
+    final_score, category, explanations = hybrid_detector.detect(
+        address=address,
+        features=features,
+        gnn_score=gnn_score
+    )
+    
+    risk_score = int(final_score)
+    
+    # Format explanations for UI
     reasons = []
-    
-    if is_ethereum:
-        sent = features.get('Sent tnx', 0)
-        received = features.get('Received Tnx', 0)
-        unique_sent = features.get('Unique Sent To Addresses', 0)
-        total_eth = features.get('total Ether sent', 0) + features.get('total ether received', 0)
-        
-        if sent > 100:
-            reasons.append(f"📊 High activity: {int(sent)} outgoing transactions")
-        elif sent < 10:
-            reasons.append(f"📊 Low activity: Only {int(sent)} transactions")
-        else:
-            reasons.append(f"📊 Moderate activity: {int(sent)} sent, {int(received)} received")
-        
-        if unique_sent > 50:
-            reasons.append(f"🔗 Interacts with {int(unique_sent)} different addresses")
-        elif unique_sent > 20:
-            reasons.append(f"🔗 Connected to {int(unique_sent)} addresses")
-        
-        if total_eth > 1000:
-            reasons.append(f"💰 High volume: {int(total_eth)} ETH total")
-        elif total_eth < 1:
-            reasons.append(f"💰 Low volume: {total_eth:.2f} ETH total")
+    for exp in explanations:
+        if exp.strip():  # Skip empty lines
+            reasons.append(exp)
     
     return risk_score, reasons
 
@@ -172,7 +156,7 @@ st.markdown("""
 
 # Title
 st.markdown("<h1 style='text-align: center;'>🔍 Fraud Detector</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: gray;'>Research Prototype - Ethereum Wallet Risk Assessment</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: gray;'>Hybrid AI System - GNN + Rules + Blacklist Detection</p>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 
 # Load models
@@ -203,7 +187,7 @@ if st.button("🚀 Check Address", type="primary", use_container_width=True):
                     if features:
                         risk_score, reasons = predict_risk(
                             eth_model, train_features, eth_scaler, features, 
-                            threshold, feature_list, is_ethereum=True
+                            threshold, feature_list, address, is_ethereum=True
                         )
                     else:
                         st.error("❌ Could not fetch data for this address")

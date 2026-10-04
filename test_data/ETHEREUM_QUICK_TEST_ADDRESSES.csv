@@ -1,0 +1,21 @@
+address,name,expected_risk,category,notes
+0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045,Vitalik Buterin,Low (0-30),Legitimate - VIP,Well-known Ethereum founder wallet
+0x3f5CE5FBFe3E9af3971dD833D26bA9b5C936f0bE,Binance Cold Wallet,Low (0-30),Legitimate - Exchange,Major exchange cold storage
+0x28C6c06298d514Db089934071355E5743bf21d60,Binance Hot Wallet,Low (0-30),Legitimate - Exchange,Active trading wallet
+0x00000000219ab540356cBB839Cbe05303d7705Fa,ETH2 Deposit Contract,Low (0-30),Legitimate - Protocol,Official Ethereum 2.0 staking
+0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48,USDC Contract,Low (0-30),Legitimate - Token,Circle USDC stablecoin
+0xdAC17F958D2ee523a2206206994597C13D831ec7,USDT Contract,Low (0-30),Legitimate - Token,Tether USDT stablecoin
+0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984,UNI Contract,Low (0-30),Legitimate - Token,Uniswap governance token
+0xC8a65Fadf0e0dDAf421F28FEAb69Bf6E2E589963,Fake_Phishing,High (70-100),Fraud - Phishing,Known phishing address on Etherscan
+0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8,Fake_Phishing,High (70-100),Fraud - Phishing,Etherscan blacklisted
+0x098B716B8Aaf21512996dC57EB0615e2383E2f96,Fake_Phishing96,High (70-100),Fraud - Phishing,Community reported scam
+0xA69babEF1cA67A37Ffaf7a485DfFF3382056e78C,Fake_Phishing9212,High (70-100),Fraud - Phishing,Verified scam address
+0x7F19720A857F834887FC9A7bC0a0fBe7Fc7f8102,Reported Phishing,High (70-100),Fraud - Phishing,Community flagged
+0x9696f59E4d72E237BE84fFD425DCaD154Bf96976,Chainabuse Scam,High (70-100),Fraud - Scam,Reported on Chainabuse
+0x70b9194F480497A9a8A0b4B6e3e4Ff6Fa92B5f2f,Scam Token Deployer,High (70-100),Fraud - Rug Pull,Known scam token creator
+0x742d35Cc6634C0532925a3b844Bc454e4438f44e,Bitfinex Cold,Low (0-30),Legitimate - Exchange,Bitfinex cold storage
+0x0D0707963952f2fBA59dD06f2b425ace40b492Fe,Gate.io Hot,Low (0-30),Legitimate - Exchange,Gate.io hot wallet
+0xDFd5293D8e347dFe59E90eFd55b2956a1343963d,Kraken Exchange,Low (0-30),Legitimate - Exchange,Kraken main wallet
+0x21a31Ee1afC51d94C2eFcCAa2092aD1028285549,Binance Wallet,Low (0-30),Legitimate - Exchange,Binance operational wallet
+0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B,Vitalik Donation,Low (0-30),Legitimate - Charity,Publicly known donation address
+0x9FB7f546E60281e348f4485f3BC17D68887F1cCb,Reentrancy Exploit,High (70-100),Fraud - Exploit,Known exploiter address
