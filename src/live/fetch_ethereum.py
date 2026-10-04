@@ -140,34 +140,48 @@ def check_contract_source(address):
     return False, []
 
 
-def compute_features(address, txs, erc20_txs):
+def compute_features(address, txs, erc20_txs, truncate_time=None):
     """
-    Compute the SAME 38 features used in ethereum_clean.csv
+    Compute the SAME 22 non-ERC20 features used in ethereum_clean.csv
+    
+    Args:
+        address: Wallet address
+        txs: DataFrame of transactions
+        erc20_txs: DataFrame of ERC20 transactions (unused for 22 features)
+        truncate_time: Optional timestamp limit (exclude txs after first_tx + this duration in seconds)
     """
     features = {}
     
     if txs.empty:
-        # Return zero features if no data
-        return {f'feature_{i}': 0.0 for i in range(38)}
+        # Return zero features
+        return {f'feature_{i}': 0.0 for i in range(22)}
     
     # Convert to numeric
     txs['value'] = pd.to_numeric(txs['value'], errors='coerce') / 1e18  # Wei to ETH
     txs['timeStamp'] = pd.to_numeric(txs['timeStamp'], errors='coerce')
     
-    # Separate sent vs received
-    sent_txs = txs[txs['from'].str.lower() == address.lower()]
-    received_txs = txs[txs['to'].str.lower() == address.lower()]
+    # Apply truncation if specified (for parity testing on wallets with new activity)
+    if truncate_time is not None:
+        first_tx_time = txs['timeStamp'].min()
+        txs = txs[txs['timeStamp'] <= first_tx_time + truncate_time].copy()
     
-    # Time-based features
+    # Separate sent vs received (exclude self-transfers)
+    addr_lower = address.lower()
+    sent_txs = txs[txs['from'].str.lower() == addr_lower].copy()
+    received_txs = txs[(txs['to'].str.lower() == addr_lower) & (txs['from'].str.lower() != addr_lower)].copy()
+    
+    # FIXED: Time-based features - average of the time differences between consecutive transactions
     if len(sent_txs) > 1:
-        sent_times = sent_txs['timeStamp'].diff().dropna() / 60  # minutes
-        features['Avg min between sent tnx'] = sent_times.mean() if len(sent_times) > 0 else 0
+        sent_sorted = sent_txs.sort_values('timeStamp')
+        sent_diffs = sent_sorted['timeStamp'].diff().dropna() / 60  # minutes
+        features['Avg min between sent tnx'] = sent_diffs.mean()
     else:
         features['Avg min between sent tnx'] = 0
     
     if len(received_txs) > 1:
-        received_times = received_txs['timeStamp'].diff().dropna() / 60
-        features['Avg min between received tnx'] = received_times.mean() if len(received_times) > 0 else 0
+        recv_sorted = received_txs.sort_values('timeStamp')
+        recv_diffs = recv_sorted['timeStamp'].diff().dropna() / 60
+        features['Avg min between received tnx'] = recv_diffs.mean()
     else:
         features['Avg min between received tnx'] = 0
     
@@ -180,7 +194,17 @@ def compute_features(address, txs, erc20_txs):
     # Transaction counts
     features['Sent tnx'] = len(sent_txs)
     features['Received Tnx'] = len(received_txs)
-    features['Number of Created Contracts'] = len(txs[txs['isError'] == '0'])
+    
+    # FIXED: Number of Created Contracts - count only txs with non-empty contractAddress
+    created_contracts = 0
+    if 'contractAddress' in txs.columns:
+        # Contract is created when contractAddress is not empty/null
+        created_contracts = txs['contractAddress'].notna().sum()
+        # Also filter out empty strings
+        if created_contracts > 0:
+            created_contracts = (txs['contractAddress'].fillna('') != '').sum()
+    features['Number of Created Contracts'] = created_contracts
+    
     features['Unique Received From Addresses'] = received_txs['from'].nunique()
     features['Unique Sent To Addresses'] = sent_txs['to'].nunique()
     
@@ -204,8 +228,11 @@ def compute_features(address, txs, erc20_txs):
         features['max val sent'] = 0
         features['avg val sent'] = 0
     
-    # Contract-related
-    contract_txs = sent_txs[sent_txs['isError'] == '0']
+    # FIXED: Contract-related features
+    # Definition: transactions TO contracts (recipient is a contract, indicated by non-empty input field)
+    # In Etherscan API: input != '0x' means the recipient is a contract
+    contract_txs = sent_txs[(sent_txs['input'] != '0x') & (sent_txs['input'].notna())].copy() if 'input' in sent_txs.columns else pd.DataFrame()
+    
     if not contract_txs.empty:
         features['min value sent to contract'] = contract_txs['value'].min()
         features['max val sent to contract'] = contract_txs['value'].max()
@@ -231,25 +258,22 @@ def compute_features(address, txs, erc20_txs):
     features['total transactions (including tnx to create contract'] = len(txs)
     features['total Ether sent'] = sent_txs['value'].sum()
     features['total ether received'] = received_txs['value'].sum()
-    features['total ether sent contracts'] = contract_txs['value'].sum()
+    # FIXED: Total ether sent to contracts (sum of contract_txs values)
+    features['total ether sent contracts'] = contract_txs['value'].sum() if not contract_txs.empty else 0
     features['total ether balance'] = features['total ether received'] - features['total Ether sent']
     
-    # CRITICAL FIX: Cap extreme values to prevent scaling explosion
-    # These caps match the training data value ranges to ensure compatibility with the scaler
-    caps = {
-        'max val sent': 1000,  # Cap at 1000 ETH
-        'avg val sent': 100,
-        'total Ether sent': 10000,
-        'total ether received': 10000,
-        'total ether sent contracts': 0.05,  # CRITICAL: Training scaler expects tiny values
-    }
+    # Return only the 22 non-ERC20 features (no ERC20 features needed for GNN-22)
+    return features
+
+
+def compute_features_38(address, txs, erc20_txs, truncate_time=None):
+    """
+    Legacy 38-feature version (includes ERC20) - not used in production
+    """
+    # Start with 22 features
+    features = compute_features(address, txs, erc20_txs, truncate_time)
     
-    for key, cap_value in caps.items():
-        if key in features and features[key] > cap_value:
-            print(f"[INFO] Capping {key}: {features[key]:.2f} -> {cap_value}")
-            features[key] = cap_value
-    
-    # ERC20 features
+    # Add ERC20 features
     if not erc20_txs.empty:
         # CRITICAL FIX: Convert ERC20 token values from raw units to normalized decimals
         # ERC20 tokens have varying decimals (most common is 18, but can be 6, 8, etc.)
@@ -305,30 +329,26 @@ def compute_features(address, txs, erc20_txs):
                     'ERC20 avg val sent', 'ERC20 uniq sent token name', 'ERC20 uniq rec token name']:
             features[key] = 0
     
-    # Validate feature dict matches training data columns
-    try:
-        validation_result = validate_feature_dict(features)
-        # Handle 2-value return: (is_valid, missing)
-        if len(validation_result) == 2:
-            is_valid, missing = validation_result
-            if not is_valid:
-                print(f"[WARNING] Feature validation failed!")
-                print(f"  Missing columns: {missing}")
-        else:
-            print(f"[WARNING] Unexpected validation result: {validation_result}")
-    except Exception as e:
-        print(f"[WARNING] Feature validation error: {e}")
-    
-    # CRITICAL FIX: Clip all features to be within 5σ of training data scaler
-    # This prevents scaling explosion from extreme outliers
-    features = clip_features_for_scaler(features)
+    else:
+        # Zero out ERC20 features
+        for key in ['Total ERC20 tnxs', 'ERC20 total Ether received', 'ERC20 total ether sent',
+                    'ERC20 total Ether sent contract', 'ERC20 uniq sent addr', 'ERC20 uniq rec addr',
+                    'ERC20 uniq sent addr.1', 'ERC20 uniq rec contract addr', 'ERC20 min val rec',
+                    'ERC20 max val rec', 'ERC20 avg val rec', 'ERC20 min val sent', 'ERC20 max val sent',
+                    'ERC20 avg val sent', 'ERC20 uniq sent token name', 'ERC20 uniq rec token name']:
+            features[key] = 0
     
     return features
 
 
-def fetch_ethereum_wallet(address_or_tx_id):
+def fetch_ethereum_wallet(address_or_tx_id, truncate_time=None):
     """
-    Main function: fetch wallet data and compute features
+    Main function: fetch wallet data and compute 22 non-ERC20 features
+    
+    Args:
+        address_or_tx_id: Ethereum address or transaction hash
+        truncate_time: Optional time limit in seconds (for parity testing)
+    
     Returns: (features_dict, is_contract, red_flags, data_source)
     """
     # Check if input is a transaction hash
@@ -353,11 +373,11 @@ def fetch_ethereum_wallet(address_or_tx_id):
     
     print(f"API Key (first 8 chars): {ETHERSCAN_API_KEY[:8]}...")
     
-    # Real API calls
+    # Real API calls (no ERC20 needed for GNN-22)
     txs = fetch_wallet_transactions(address)
-    erc20_txs = fetch_erc20_transactions(address)
+    erc20_txs = pd.DataFrame()  # Not used for GNN-22
     
-    if txs.empty and erc20_txs.empty:
+    if txs.empty:
         print(f"\n❌ CRITICAL: No transaction data returned!")
         print(f"This could mean:")
         print(f"  1. The address has never been used")
@@ -372,13 +392,12 @@ def fetch_ethereum_wallet(address_or_tx_id):
     
     print(f"\n✅ Successfully fetched real data:")
     print(f"  - Normal transactions: {len(txs)}")
-    print(f"  - ERC20 transactions: {len(erc20_txs)}")
     
     if not txs.empty:
         print(f"\nSample transaction data (first 3 rows):")
         print(txs[['from', 'to', 'value', 'timeStamp']].head(3).to_string())
     
-    features = compute_features(address, txs, erc20_txs)
+    features = compute_features(address, txs, erc20_txs, truncate_time)
     
     print(f"\n✅ Computed {len(features)} features from real transaction data")
     

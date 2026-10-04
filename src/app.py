@@ -1,5 +1,5 @@
 """
-Ultra Simple Blockchain Fraud Detector
+Ultra Simple Blockchain Fraud Detector - Research Prototype
 """
 
 import streamlit as st
@@ -9,6 +9,7 @@ from torch_geometric.nn import SAGEConv
 import pickle
 import sys
 import os
+import numpy as np
 from sklearn.neighbors import NearestNeighbors
 
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,7 +40,7 @@ class GraphSAGE(torch.nn.Module):
 
 @st.cache_resource
 def load_models():
-    """Load GNN-22 model (non-ERC20 features only) - Research Prototype"""
+    """Load GNN-22 model (non-ERC20 features only)"""
     base_path = os.path.join(os.path.dirname(__file__), '..')
     
     # Load GNN-22 checkpoint
@@ -53,7 +54,6 @@ def load_models():
         eth_scaler = pickle.load(f)
     
     # Load training features for k-NN
-    import numpy as np
     train_features = np.load(os.path.join(base_path, 'models/ethereum_clean/train_features_22.npy'))
     
     # Initialize model
@@ -64,8 +64,6 @@ def load_models():
     # Extract metadata
     threshold = checkpoint['threshold']
     feature_list = checkpoint['feature_list']
-    
-    print(f"[MODEL] Loaded GNN-22: {len(feature_list)} features, threshold={threshold:.4f}")
     
     # Solana (unchanged)
     sol_graph = torch.load(os.path.join(base_path, 'data/processed/solana_graph.pt'), weights_only=False)
@@ -81,11 +79,9 @@ def load_models():
 
 def predict_risk(model, train_features, scaler, features, threshold, feature_list, is_ethereum=True):
     """
-    Predict fraud risk using GNN-22 (research prototype)
+    Predict fraud risk using GNN-22
     """
-    import numpy as np
-    
-    # Extract 22 non-ERC20 features in correct order
+    # Extract 22 features in correct order
     feature_vector = np.array([features.get(f, 0.0) for f in feature_list])
     
     # Apply signed log1p transformation
@@ -99,7 +95,7 @@ def predict_risk(model, train_features, scaler, features, threshold, feature_lis
     knn.fit(train_features)
     distances, indices = knn.kneighbors([features_scaled])
     
-    # Build mini-graph: new node + 10 nearest neighbors + edges between them
+    # Build mini-graph: new node + 10 neighbors + neighbor connections
     new_node_idx = train_features.shape[0]
     edge_list = []
     
@@ -108,7 +104,7 @@ def predict_risk(model, train_features, scaler, features, threshold, feature_lis
         edge_list.append([new_node_idx, neighbor_idx])
         edge_list.append([neighbor_idx, new_node_idx])
     
-    # Also connect neighbors to each other (for better message passing)
+    # Connect neighbors to each other
     for i, idx1 in enumerate(indices[0]):
         for idx2 in indices[0][i+1:]:
             edge_list.append([idx1, idx2])
@@ -153,26 +149,6 @@ def predict_risk(model, train_features, scaler, features, threshold, feature_lis
         elif total_eth < 1:
             reasons.append(f"💰 Low volume: {total_eth:.2f} ETH total")
     
-    else:  # Solana
-        remove_ratio = features.get('REMOVE_RATIO', 0)
-        num_adds = features.get('NUM_LIQUIDITY_ADDS', 0)
-        lifetime = features.get('POOL_LIFETIME_HOURS', 0)
-        
-        if remove_ratio > 0.8:
-            reasons.append(f"🚨 {int(remove_ratio*100)}% liquidity removed (major red flag)")
-        elif remove_ratio > 0.5:
-            reasons.append(f"⚠️ {int(remove_ratio*100)}% liquidity removed")
-        else:
-            reasons.append(f"✓ Only {int(remove_ratio*100)}% liquidity removed (normal)")
-        
-        if num_adds < 5:
-            reasons.append(f"👥 Very few participants ({int(num_adds)} liquidity adds)")
-        
-        if lifetime < 24:
-            reasons.append(f"🕐 Very new pool ({lifetime:.1f} hours old)")
-        elif lifetime > 720:
-            reasons.append(f"🕐 Established pool ({int(lifetime/24)} days old)")
-    
     return risk_score, reasons
 
 
@@ -181,7 +157,7 @@ st.set_page_config(
     page_title="Fraud Detector",
     page_icon="🔍",
     layout="centered",
-    initial_sidebar_state="collapsed"  # Hide sidebar
+    initial_sidebar_state="collapsed"
 )
 
 # Hide streamlit elements
@@ -204,7 +180,7 @@ eth_model, train_features, eth_scaler, threshold, feature_list, sol_model, sol_g
 
 # Input
 address = st.text_input(
-    "Enter wallet or pool address:",
+    "Enter wallet address:",
     placeholder="0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
     label_visibility="collapsed"
 )
@@ -216,9 +192,14 @@ if st.button("🚀 Check Address", type="primary", use_container_width=True):
     else:
         with st.spinner("Analyzing..."):
             try:
-                # Detect blockchain and fetch data
+                # Ethereum only (GNN-22)
                 if address.startswith('0x'):
-                    features, _, _, data_source = fetch_ethereum_wallet(address)
+                    try:
+                        features, _, _, data_source = fetch_ethereum_wallet(address)
+                    except RuntimeError as e:
+                        st.error(f"❌ API Error: {str(e)}")
+                        st.stop()
+                    
                     if features:
                         risk_score, reasons = predict_risk(
                             eth_model, train_features, eth_scaler, features, 
@@ -228,14 +209,10 @@ if st.button("🚀 Check Address", type="primary", use_container_width=True):
                         st.error("❌ Could not fetch data for this address")
                         st.stop()
                 else:
-                    features, _, data_source = fetch_solana_pool(address)
-                    if features:
-                        risk_score, reasons = predict_risk(sol_model, sol_graph, sol_scaler, features, is_ethereum=False)
-                    else:
-                        st.error("❌ Could not fetch data for this address")
-                        st.stop()
+                    st.error("❌ Only Ethereum addresses (0x...) are supported")
+                    st.stop()
                 
-                # Show result with Explainable AI
+                # Show result
                 st.markdown("<br>", unsafe_allow_html=True)
                 
                 # Risk score display
@@ -249,7 +226,7 @@ if st.button("🚀 Check Address", type="primary", use_container_width=True):
                     st.error(f"### 🚨 High Risk")
                     st.metric("Risk Score", f"{risk_score}/100", delta="Danger", delta_color="inverse")
                 
-                # Explainable AI - WHY this risk score?
+                # Explainable AI
                 st.markdown("---")
                 st.markdown("### 🧠 Why This Risk Score?")
                 st.markdown("**AI detected these patterns:**")
@@ -257,18 +234,23 @@ if st.button("🚀 Check Address", type="primary", use_container_width=True):
                 for reason in reasons:
                     st.markdown(f"- {reason}")
                 
-                # Simple recommendation
+                # Recommendation
                 st.markdown("---")
                 if risk_score < 33:
-                    st.info("💡 **Recommendation:** This address shows normal activity patterns. Appears safe.")
+                    st.info("💡 **Recommendation:** This address shows normal activity patterns.")
                 elif risk_score < 66:
-                    st.warning("💡 **Recommendation:** Exercise caution. Verify before any large transactions.")
+                    st.warning("💡 **Recommendation:** Exercise caution. Verify before large transactions.")
                 else:
-                    st.error("💡 **Recommendation:** High risk detected. Avoid interaction unless you're certain.")
+                    st.error("💡 **Recommendation:** High risk detected. Avoid interaction.")
                 
             except Exception as e:
                 st.error(f"❌ Error: {str(e)}")
 
 # Footer
 st.markdown("<br><br>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: gray; font-size: 12px;'>AI-powered fraud detection</p>", unsafe_allow_html=True)
+st.markdown(
+    "<p style='text-align: center; color: gray; font-size: 12px;'>"
+    "Research Prototype | Powered by <a href='https://etherscan.io' target='_blank'>Etherscan.io APIs</a>"
+    "</p>", 
+    unsafe_allow_html=True
+)
