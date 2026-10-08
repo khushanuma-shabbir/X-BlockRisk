@@ -5,19 +5,19 @@
   "cv_std": 0.1224744871391589,
   "roc_auc": 1.0,
   "feature_importance": {
-    "total_txs": 0.052878396835938736,
-    "total_value_eth": 0.03872775417314691,
-    "avg_tx_value": 0.04605908161197412,
-    "unique_senders": 0.0592831308401242,
-    "unique_receivers": 0.010932400932400933,
-    "is_contract": 0.03235811069399721,
-    "first_tx_age_days": 0.23280597953986645,
-    "last_tx_age_days": 0.10358011814342294,
-    "tx_frequency": 0.23894335770346012,
-    "incoming_tx_count": 0.0411143295332208,
-    "outgoing_tx_count": 0.054599203644661504,
-    "avg_gas_price": 0.08644967997194718,
-    "failed_tx_ratio": 0.0022684563758389262
+    "total_txs": 0.06826505907512076,
+    "total_value_eth": 0.012989178253749076,
+    "avg_tx_value": 0.022840375512995927,
+    "unique_senders": 0.05988608344307681,
+    "unique_receivers": 0.022656200771637013,
+    "is_contract": 0.03861068882473554,
+    "first_tx_age_days": 0.24299228221618283,
+    "last_tx_age_days": 0.10629993756223786,
+    "tx_frequency": 0.22613536221506148,
+    "incoming_tx_count": 0.050324918818596916,
+    "outgoing_tx_count": 0.05353082945410687,
+    "avg_gas_price": 0.08721025354108061,
+    "failed_tx_ratio": 0.008258830311418342
   },
   "confusion_matrix": [
     [

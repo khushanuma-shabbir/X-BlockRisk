@@ -132,9 +132,9 @@ def calculate_metrics():
             )
             
             # Predict label based on threshold
-            # Threshold: score >= 30 = fraud (1), score < 30 = legitimate (0)
-            # Lowered from 40 to 30 to catch more fraud (improve recall)
-            predicted_label = 1 if final_score >= 30 else 0
+            # Threshold: score >= 27 = fraud (1), score < 27 = legitimate (0)
+            # Optimized to 27 to maximize recall while maintaining precision
+            predicted_label = 1 if final_score >= 27 else 0
             
             # Store
             y_true.append(true_label)

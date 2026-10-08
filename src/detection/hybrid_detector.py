@@ -42,7 +42,7 @@ class RuleBasedDetector:
     @staticmethod
     def detect_fraud_patterns(features: Dict[str, float]) -> Tuple[float, List[str]]:
         """
-        Detect fraud patterns using rules
+        Detect fraud patterns using rules (ENHANCED with 10 advanced patterns)
         
         Returns:
             (rule_risk_score, detected_patterns)
@@ -59,8 +59,11 @@ class RuleBasedDetector:
         balance = features.get('total ether balance', 0)
         avg_sent = features.get('avg val sent', 0)
         avg_received = features.get('avg val received', 0)
+        time_mins = features.get('Time Diff between first and last (Mins)', 0)
         
-        # RULE 1: High send/receive ratio (典型 phishing/scam)
+        # ===== ORIGINAL RULES =====
+        
+        # RULE 1: High send/receive ratio (typical phishing/scam)
         if received > 0:
             send_receive_ratio = sent / received
             if send_receive_ratio > 8:
@@ -102,7 +105,6 @@ class RuleBasedDetector:
             patterns.append(f"🚨 MICRO-SENDS: {int(sent)} sends averaging {avg_sent:.6f} ETH (distribution pattern)")
         
         # RULE 6: Quick flip (high volume, short lifetime, drained)
-        time_mins = features.get('Time Diff between first and last (Mins)', 0)
         if time_mins < 1440 and total_received > 10 and balance < 0.1:  # < 24 hours
             risk_score += 30
             patterns.append(f"🚨 QUICK FLIP: {time_mins/60:.1f}hrs lifetime, {total_received:.2f} ETH received, drained")
@@ -125,6 +127,72 @@ class RuleBasedDetector:
             if value_ratio > 10 and sent > received:
                 risk_score += 25
                 patterns.append(f"🚨 PHISHING INDICATOR: Receives avg {avg_received:.4f} ETH, sends avg {avg_sent:.4f} ETH (x{value_ratio:.1f})")
+        
+        # ===== NEW ADVANCED RULES (10 MORE) =====
+        
+        # RULE 10: Flash loan / MEV attack pattern (very short-lived, high value)
+        if time_mins < 60 and total_sent > 100 and total_received > 100:  # < 1 hour, >100 ETH
+            risk_score += 40
+            patterns.append(f"🚨 FLASH LOAN ATTACK: {time_mins:.0f}min lifetime, {total_sent:.0f} ETH volume")
+        
+        # RULE 11: Honeypot pattern (receives but can't send)
+        if received > 10 and sent == 0 and total_received > 1:
+            risk_score += 35
+            patterns.append(f"🚨 HONEYPOT: Received {int(received)} transactions but sent 0 (can't withdraw)")
+        
+        # RULE 12: Sybil network (many small uniform transactions)
+        if sent > 50 and unique_sent > 40:
+            tx_uniformity = abs(avg_sent - (total_sent / sent)) / avg_sent if avg_sent > 0 else 0
+            if tx_uniformity < 0.1:  # Very uniform transaction sizes
+                risk_score += 25
+                patterns.append(f"🚨 SYBIL NETWORK: {int(sent)} uniform transactions to {int(unique_sent)} addresses")
+        
+        # RULE 13: Address poisoning (very low value spam)
+        if sent > 100 and avg_sent < 0.00001:  # Dust transactions
+            risk_score += 20
+            patterns.append(f"⚠ ADDRESS POISONING: {int(sent)} dust transactions ({avg_sent:.8f} ETH avg)")
+        
+        # RULE 14: Wash trading (high volume, low net change)
+        if sent > 20 and received > 20:
+            net_change = abs(total_sent - total_received)
+            total_volume = total_sent + total_received
+            if total_volume > 10 and net_change < total_volume * 0.1:  # <10% net change
+                risk_score += 25
+                patterns.append(f"🚨 WASH TRADING: {total_volume:.1f} ETH volume, only {net_change:.2f} ETH net")
+        
+        # RULE 15: Pump coordinator (receives from many, sends to few exchanges)
+        if unique_received > 100 and unique_sent < 5 and total_sent > 50:
+            risk_score += 30
+            patterns.append(f"🚨 PUMP COORDINATOR: Collects from {int(unique_received)}, dumps to {int(unique_sent)} addresses")
+        
+        # RULE 16: Ice phishing (many approvals without transfers)
+        # Note: Would need ERC20 approval data, using proxy: high incoming, low balance
+        if received > 50 and total_received > 5 and balance < 0.01:
+            approval_proxy = received / total_received if total_received > 0 else 0
+            if approval_proxy > 10:  # Many small incoming (like approvals)
+                risk_score += 30
+                patterns.append(f"🚨 ICE PHISHING: {int(received)} transactions but balance drained")
+        
+        # RULE 17: Rug pull preparation (sudden large outflow)
+        if sent > 0 and received > 0:
+            avg_out_last = total_sent / sent if sent > 0 else 0
+            avg_in_overall = total_received / received if received > 0 else 0
+            if avg_out_last > avg_in_overall * 5:  # Sending much larger than receiving
+                risk_score += 25
+                patterns.append(f"⚠ RUG PULL SIGNAL: Outgoing avg {avg_out_last:.2f} >> incoming avg {avg_in_overall:.2f}")
+        
+        # RULE 18: Fake airdrop (many small sends after collecting)
+        if sent > 100 and received > 10 and avg_sent < 0.01 and avg_received > 0.1:
+            risk_score += 25
+            patterns.append(f"🚨 FAKE AIRDROP: Collected {avg_received:.2f} ETH avg, sending {avg_sent:.4f} ETH dust")
+        
+        # RULE 19: Tornado Cash mixer pattern (uniform amounts in/out)
+        if sent > 10 and received > 10:
+            # Check if most transactions are in common amounts (0.1, 1, 10, 100 ETH)
+            common_amounts = [0.1, 1.0, 10.0, 100.0]
+            if any(abs(avg_sent - amount) < 0.01 or abs(avg_received - amount) < 0.01 for amount in common_amounts):
+                risk_score += 15
+                patterns.append(f"⚠ MIXER PATTERN: Uniform amounts ~{avg_sent:.2f} ETH (privacy risk)")
         
         # Cap at 100
         risk_score = min(risk_score, 100)

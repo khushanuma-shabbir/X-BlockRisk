@@ -9,7 +9,7 @@ import os
 from dotenv import load_dotenv
 from src.live.fetch_ethereum import fetch_ethereum_wallet, compute_features
 from src.detection.hybrid_detector import HybridDetector
-from src.analysis.professional_insights import ProfessionalAnalyzer
+from src.analysis.context_aware_analyzer import ContextAwareAnalyzer
 import torch
 
 load_dotenv()
@@ -19,12 +19,18 @@ CORS(app)
 
 # Initialize detector and analyzer
 detector = HybridDetector()
-analyzer = ProfessionalAnalyzer()
+analyzer = ContextAwareAnalyzer()
 
 @app.route('/')
 def index():
     """Serve the main page"""
     return render_template('index.html')
+
+@app.route('/test')
+def test_page():
+    """Serve the test page"""
+    with open('test_api_response.html', 'r') as f:
+        return f.read()
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
@@ -44,8 +50,13 @@ def analyze():
             ...
         }
     """
+    print(f"\n[DEBUG] ========== NEW ANALYZE REQUEST ==========")
+    print(f"[DEBUG] Request method: {request.method}")
+    print(f"[DEBUG] Request headers: {dict(request.headers)}")
+    
     try:
         data = request.get_json()
+        print(f"[DEBUG] Request data: {data}")
         
         if not data or 'address' not in data:
             return jsonify({
@@ -106,15 +117,29 @@ def analyze():
             gnn_score
         )
         
-        # Generate professional insights
-        professional_report = analyzer.generate_professional_report(
-            address=address,
-            features=features_dict,
-            final_score=final_score,
-            category=category,
-            explanations=explanations,
-            is_contract=is_contract
-        )
+        # Generate context-aware professional analysis
+        try:
+            context_analysis = analyzer.analyze_with_context(
+                address=address,
+                final_score=final_score,
+                features=features_dict,
+                is_contract=is_contract,
+                explanations=explanations
+            )
+            print(f"\n[DEBUG] Context Analysis Generated Successfully!")
+            print(f"[DEBUG] Risk Level: {context_analysis.get('risk_level', 'MISSING')}")
+            print(f"[DEBUG] Summary length: {len(context_analysis.get('summary', ''))}")
+            print(f"[DEBUG] Summary preview: {context_analysis.get('summary', '')[:100]}...")
+        except Exception as e:
+            print(f"\n[ERROR] Context analysis failed: {e}")
+            import traceback
+            traceback.print_exc()
+            context_analysis = {
+                'risk_level': 'ERROR',
+                'summary': f'Error generating analysis: {e}',
+                'recommendations': [],
+                'verdict': 'Unable to generate analysis'
+            }
         
         # Prepare response
         response = {
@@ -134,17 +159,8 @@ def analyze():
             'admin_control_adjusted': float(summary.get('admin_control_adjusted', 0)),
             'is_contract': is_contract,
             
-            # Professional insights
-            'professional_analysis': {
-                'address_type': professional_report['summary']['type'],
-                'establishment': professional_report['summary']['establishment'],
-                'establishment_info': professional_report['summary']['establishment_info'],
-                'age_days': professional_report['summary']['age_days'],
-                'behavioral_insights': professional_report['behavioral_insights'],
-                'risk_factors': professional_report['risk_factors'],
-                'recommendations': professional_report['recommendations'],
-                'financial_profile': professional_report['financial_profile'],
-            }
+            # Context-aware professional analysis
+            'context_analysis': context_analysis,
         }
         
         # Try to get ML score if detector has it
@@ -160,6 +176,12 @@ def analyze():
         
         print(f"\nResult: {final_score:.1f}/100 ({category})")
         print(f"{'='*80}\n")
+        
+        print(f"[DEBUG] Response keys before return: {list(response.keys())}")
+        print(f"[DEBUG] context_analysis in response: {'context_analysis' in response}")
+        if 'context_analysis' in response:
+            print(f"[DEBUG] context_analysis type: {type(response['context_analysis'])}")
+            print(f"[DEBUG] context_analysis keys: {list(response['context_analysis'].keys()) if isinstance(response['context_analysis'], dict) else 'NOT A DICT'}")
         
         return jsonify(response)
     

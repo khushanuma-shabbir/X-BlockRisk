@@ -112,13 +112,80 @@ const app = {
         // Display layers
         this.displayLayers(data);
 
-        // Display explanations
-        this.displayExplanations(data.explanations || []);
+        // Display explanations with context-aware analysis
+        this.displayContextAnalysis(data);
 
         // Smooth scroll
         setTimeout(() => {
             resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 100);
+    },
+
+    displayContextAnalysis(data) {
+        const container = document.getElementById('explanations');
+        
+        // Check if we have context analysis
+        if (data.context_analysis) {
+            const analysis = data.context_analysis;
+            
+            let html = '';
+            
+            // Summary
+            html += `<div class="explanation-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-weight: 600; padding: 16px; border-radius: 8px;">
+                ${analysis.summary.replace(/\n/g, '<br>')}
+            </div>`;
+            
+            // Token info if available
+            if (analysis.token_info) {
+                html += `<div class="explanation-item" style="background: #e3f2fd; border-left: 4px solid #2196f3;">
+                    <strong>📋 ${analysis.token_info.name}</strong><br>
+                    Type: ${analysis.token_info.type}<br>
+                    Rank: ${analysis.token_info.rank}<br>
+                    Market Cap: ${analysis.token_info.market_cap}
+                </div>`;
+            }
+            
+            // Context explanation
+            if (analysis.context_explanation) {
+                html += `<div class="explanation-item">
+                    ${analysis.context_explanation.replace(/\n/g, '<br>')}
+                </div>`;
+            }
+            
+            // Activity explanation
+            if (analysis.activity_explanation) {
+                html += `<div class="explanation-item">
+                    ${analysis.activity_explanation.replace(/\n/g, '<br>')}
+                </div>`;
+            }
+            
+            // Admin controls
+            if (analysis.admin_controls_explanation && analysis.admin_controls_explanation.length > 0) {
+                html += `<div class="explanation-item" style="background: #fff3cd; border-left: 4px solid #ffc107;">
+                    ${analysis.admin_controls_explanation.join('<br>')}
+                </div>`;
+            }
+            
+            // Recommendations
+            if (analysis.recommendations && analysis.recommendations.length > 0) {
+                html += `<div class="explanation-item" style="background: #d1ecf1; border-left: 4px solid #17a2b8;">
+                    <strong>💡 Recommendations:</strong><br><br>
+                    ${analysis.recommendations.map(r => `• ${r}`).join('<br>')}
+                </div>`;
+            }
+            
+            // Final verdict
+            if (analysis.verdict) {
+                html += `<div class="explanation-item" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; font-weight: 600; padding: 16px; border-radius: 8px;">
+                    ${analysis.verdict.replace(/\n/g, '<br>')}
+                </div>`;
+            }
+            
+            container.innerHTML = html;
+        } else {
+            // Fallback to old explanations
+            this.displayExplanations(data.explanations || []);
+        }
     },
 
     displayLayers(data) {

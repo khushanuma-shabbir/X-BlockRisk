@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test API Response</title>
+</head>
+<body>
+    <h1>Testing USDT Analysis API Response</h1>
+    <button onclick="testAPI()">Test USDT Address</button>
+    <pre id="output"></pre>
+
+    <script>
+    async function testAPI() {
+        const output = document.getElementById('output');
+        output.textContent = 'Loading...';
+        
+        try {
+            const response = await fetch('/analyze', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({address: '0xdAC17F958D2ee523a2206206994597C13d831ec7'})
+            });
+            
+            const data = await response.json();
+            
+            output.textContent = 'RESPONSE:\n\n';
+            output.textContent += 'Score: ' + data.final_score + '\n';
+            output.textContent += 'Category: ' + data.category + '\n\n';
+            output.textContent += 'Has context_analysis: ' + (data.context_analysis ? 'YES' : 'NO') + '\n\n';
+            
+            if (data.context_analysis) {
+                output.textContent += '=== CONTEXT ANALYSIS ===\n\n';
+                output.textContent += 'Risk Level: ' + data.context_analysis.risk_level + '\n\n';
+                output.textContent += 'Summary:\n' + data.context_analysis.summary + '\n\n';
+                output.textContent += 'Verdict:\n' + data.context_analysis.verdict + '\n\n';
+                output.textContent += 'Recommendations:\n' + data.context_analysis.recommendations.join('\n') + '\n';
+            }
+            
+            output.textContent += '\n\n=== FULL JSON ===\n' + JSON.stringify(data, null, 2);
+        } catch (error) {
+            output.textContent = 'Error: ' + error.message;
+        }
+    }
+    </script>
+</body>
+</html>
