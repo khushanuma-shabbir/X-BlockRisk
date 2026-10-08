@@ -80,7 +80,7 @@ def load_models():
 
 def predict_risk(model, train_features, scaler, features, threshold, feature_list, address, is_ethereum=True):
     """
-    Predict fraud risk using Hybrid Detection (GNN + Rules + Blacklist)
+    Predict fraud risk using Hybrid Detection (GNN + Rules + Blacklist + Admin-Control)
     """
     # Step 1: Get GNN prediction
     feature_vector = np.array([features.get(f, 0.0) for f in feature_list])
@@ -92,19 +92,22 @@ def predict_risk(model, train_features, scaler, features, threshold, feature_lis
     knn.fit(train_features)
     distances, indices = knn.kneighbors([features_scaled])
     
-    # Build mini-graph
+    # Build mini-graph: new node + 10 neighbors + neighbor connections
     new_node_idx = train_features.shape[0]
     edge_list = []
     
+    # Connect new node to 10 neighbors
     for neighbor_idx in indices[0]:
         edge_list.append([new_node_idx, neighbor_idx])
         edge_list.append([neighbor_idx, new_node_idx])
     
+    # Connect neighbors to each other
     for i, idx1 in enumerate(indices[0]):
         for idx2 in indices[0][i+1:]:
             edge_list.append([idx1, idx2])
             edge_list.append([idx2, idx1])
     
+    # Feature matrix: train + new
     x_all = np.vstack([train_features, features_scaled])
     x_tensor = torch.FloatTensor(x_all)
     edge_index = torch.LongTensor(edge_list).t()
@@ -130,7 +133,7 @@ def predict_risk(model, train_features, scaler, features, threshold, feature_lis
     # Format explanations for UI
     reasons = []
     for exp in explanations:
-        if exp.strip():  # Skip empty lines
+        if exp.strip():
             reasons.append(exp)
     
     return risk_score, reasons
@@ -156,7 +159,7 @@ st.markdown("""
 
 # Title
 st.markdown("<h1 style='text-align: center;'>🔍 Fraud Detector</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: gray;'>Hybrid AI System - GNN + Rules + Blacklist Detection</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: gray;'>Hybrid AI - GNN + Rules + Blacklist + Admin-Control Detection</p>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 
 # Load models

@@ -21,6 +21,10 @@ from config.feature_columns import ETHEREUM_FEATURE_COLUMNS, validate_feature_di
 # Import accuracy module
 from src.accuracy.feature_calculator import FeatureCalculator
 
+# Import contract and DEX analyzers
+from src.live.contract_analyzer import ContractAnalyzer
+from src.live.dex_analyzer import DexAnalyzer
+
 # Import security modules
 try:
     from src.security.rate_limiter import global_rate_limiter, rate_limit
@@ -549,6 +553,53 @@ def fetch_ethereum_wallet(address_or_tx_id: str, truncate_time: Optional[int] = 
             print(f"  - {error}")
     
     print(f"\n✅ Computed {len(features)} features from real transaction data")
+    
+    # PHASE 1: Add contract analysis
+    try:
+        contract_analyzer = ContractAnalyzer(ETHERSCAN_API_KEY)
+        if contract_analyzer.is_contract(address):
+            contract_features = contract_analyzer.analyze_contract(address)
+            features.update(contract_features)
+            print(f"✅ Added contract admin features: {sum(contract_features.values())} powers detected")
+        else:
+            # Not a contract - add zeros
+            features.update({
+                'can_mint': 0,
+                'has_blacklist': 0,
+                'can_pause': 0,
+                'fee_too_high': 0,
+                'has_trading_limits': 0,
+                'has_trading_cooldown': 0,
+                'owner_can_withdraw': 0,
+                'owner_change_balance': 0,
+            })
+    except Exception as e:
+        print(f"⚠️  Contract analysis failed: {e}")
+        # Add zeros as fallback
+        features.update({
+            'can_mint': 0,
+            'has_blacklist': 0,
+            'can_pause': 0,
+            'fee_too_high': 0,
+            'has_trading_limits': 0,
+            'has_trading_cooldown': 0,
+            'owner_can_withdraw': 0,
+            'owner_change_balance': 0,
+        })
+    
+    # PHASE 1: Add DEX analysis
+    try:
+        dex_analyzer = DexAnalyzer(etherscan_api_key=ETHERSCAN_API_KEY)
+        dex_data = dex_analyzer.analyze_token(address)
+        features.update(dex_data)
+        print(f"✅ Added DEX data: ${dex_data['total_liquidity_usd']:,.0f} liquidity, {dex_data['pair_created_days']} days old")
+    except Exception as e:
+        print(f"⚠️  DEX analysis failed: {e}")
+        # Add zeros as fallback
+        features.update({
+            'total_liquidity_usd': 0.0,
+            'pair_created_days': 0,
+        })
     
     # Check if contract
     is_contract, red_flags = check_contract_source(address)

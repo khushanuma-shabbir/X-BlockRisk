@@ -1,0 +1,12 @@
+{
+  "endpoint": "etherscan_getabi",
+  "params": {
+    "address": "0xfeeeeee44046c3f61a8cc081e0918ef0de0a7ffc"
+  },
+  "response": {
+    "status": "0",
+    "message": "NOTOK",
+    "result": "Contract source code not verified"
+  },
+  "timestamp": 1791464562.2300174
+}

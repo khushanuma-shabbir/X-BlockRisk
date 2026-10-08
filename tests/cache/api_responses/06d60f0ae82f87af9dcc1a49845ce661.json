@@ -1,0 +1,12 @@
+{
+  "endpoint": "etherscan_getabi",
+  "params": {
+    "address": "0xc61b9bb3a7a0767e3179713f3a5c7a9aedce193c"
+  },
+  "response": {
+    "status": "1",
+    "message": "OK",
+    "result": "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_masterCopy\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"}]"
+  },
+  "timestamp": 1791476725.439714
+}

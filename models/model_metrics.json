@@ -1,0 +1,34 @@
+{
+  "train_accuracy": 1.0,
+  "test_accuracy": 1.0,
+  "cv_mean": 0.9,
+  "cv_std": 0.1224744871391589,
+  "roc_auc": 1.0,
+  "feature_importance": {
+    "total_txs": 0.052878396835938736,
+    "total_value_eth": 0.03872775417314691,
+    "avg_tx_value": 0.04605908161197412,
+    "unique_senders": 0.0592831308401242,
+    "unique_receivers": 0.010932400932400933,
+    "is_contract": 0.03235811069399721,
+    "first_tx_age_days": 0.23280597953986645,
+    "last_tx_age_days": 0.10358011814342294,
+    "tx_frequency": 0.23894335770346012,
+    "incoming_tx_count": 0.0411143295332208,
+    "outgoing_tx_count": 0.054599203644661504,
+    "avg_gas_price": 0.08644967997194718,
+    "failed_tx_ratio": 0.0022684563758389262
+  },
+  "confusion_matrix": [
+    [
+      2,
+      0
+    ],
+    [
+      0,
+      2
+    ]
+  ],
+  "training_size": 16,
+  "test_size": 4
+}

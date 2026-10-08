@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Fraud Detector</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Compact Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-icon">🛡️</div>
+                <div>
+                    <h1>Blockchain Fraud Detector</h1>
+                    <p class="subtitle">AI-Powered 5-Layer Detection System</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Input Section -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔍</div>
+                    <h2 class="card-title">Check an Address</h2>
+                </div>
+                
+                <form id="checkForm">
+                    <div class="input-group">
+                        <label for="addressInput">
+                            Paste the Ethereum address you want to check
+                            <span class="tooltip" data-tooltip="Should start with 0x and be 42 characters long">ℹ️</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="addressInput" 
+                            placeholder="Example: 0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8"
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+                    </div>
+                    
+                    <button type="submit" class="btn" id="checkBtn">
+                        🔍 Check If It's Safe
+                    </button>
+                </form>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="results">
+                <!-- Risk Score Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <h2 class="card-title">Risk Analysis</h2>
+                    </div>
+
+                    <div class="risk-score">
+                        <!-- Circular Progress -->
+                        <div class="score-circle">
+                            <svg width="120" height="120">
+                                <defs>
+                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#4A90E2" />
+                                        <stop offset="100%" stop-color="#5BA3F5" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="60" cy="60" r="50" fill="none" stroke="#E8F4F8" stroke-width="8"/>
+                                <circle 
+                                    id="progressCircle"
+                                    cx="60" 
+                                    cy="60" 
+                                    r="50" 
+                                    fill="none" 
+                                    stroke="url(#gradient)" 
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                    style="transition: stroke-dashoffset 1s ease;"
+                                />
+                            </svg>
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                <div class="score-value" id="scoreValue">0</div>
+                            </div>
+                        </div>
+
+                        <!-- Score Info -->
+                        <div class="score-info">
+                            <div class="score-label">Safety Score</div>
+                            <div id="riskBadge" class="risk-badge risk-low">Checking...</div>
+                            
+                            <!-- Address Display -->
+                            <div class="address-info">
+                                <label>Address Checked:</label>
+                                <div class="address-display" id="addressDisplay">0x...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detection Layers -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔬</div>
+                        <h2 class="card-title">Our Security Checks</h2>
+                    </div>
+
+                    <div id="detectionLayers" class="detection-layers">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Detailed Analysis -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💬</div>
+                        <h2 class="card-title">What We Found</h2>
+                    </div>
+
+                    <div class="explanations" id="explanations">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>🛡️ What We Check</h3>
+                    <p>We analyze transaction patterns, check against fraud databases, and use smart AI to protect you from scams.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎯 How It Works</h3>
+                    <p>Our system uses 5 different methods to check if an address is safe. Think of it like getting 5 different expert opinions.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>💡 What The Score Means</h3>
+                    <p>0-30 is safe, 30-70 be careful, 70-100 is dangerous. The higher the score, the more red flags we found.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Blockchain Fraud Detection System • Powered by Hybrid AI</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
