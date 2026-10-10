@@ -1,0 +1,21 @@
+{
+  "model_type": "GraphSAGE + GAT",
+  "test_accuracy": 0.25,
+  "test_precision": 0.25,
+  "test_recall": 1.0,
+  "test_f1_score": 0.4,
+  "false_positive_rate": 1.0,
+  "confusion_matrix": [
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "num_nodes": 20,
+  "num_edges": 135,
+  "num_features": 13
+}

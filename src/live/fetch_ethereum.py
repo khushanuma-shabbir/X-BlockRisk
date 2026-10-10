@@ -103,7 +103,7 @@ def resolve_tx_to_address(tx_hash):
         'apikey': ETHERSCAN_API_KEY
     }
     
-    response = requests.get(ETHERSCAN_BASE_URL, params=params, timeout=10)
+    response = requests.get(ETHERSCAN_BASE_URL, params=params, timeout=30)  # Increased from 10 to 30 seconds
     data = response.json()
     
     if data.get('result'):
@@ -224,7 +224,7 @@ def fetch_erc20_transactions(address):
         'apikey': ETHERSCAN_API_KEY
     }
     
-    response = requests.get(ETHERSCAN_BASE_URL, params=params, timeout=10)
+    response = requests.get(ETHERSCAN_BASE_URL, params=params, timeout=30)  # Increased from 10 to 30 seconds
     data = response.json()
     
     # Raise if API returns error (unless it's "No transactions found")
@@ -250,7 +250,7 @@ def check_contract_source(address):
         'apikey': ETHERSCAN_API_KEY
     }
     
-    response = requests.get(ETHERSCAN_BASE_URL, params=params, timeout=10)
+    response = requests.get(ETHERSCAN_BASE_URL, params=params, timeout=30)  # Increased from 10 to 30 seconds
     data = response.json()
     
     # Raise if API returns error

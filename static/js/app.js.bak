@@ -123,53 +123,12 @@ const app = {
 
     displayContextAnalysis(data) {
         const container = document.getElementById('explanations');
-        let html = '';
         
-        // Check if we have rug pull indicators from GNN - SHOW THIS FIRST
-        if (data.rug_pull_indicators && Object.keys(data.rug_pull_indicators).length > 0) {
-            const indicators = data.rug_pull_indicators;
-            
-            // Show GNN-based Rug Pull Detection
-            if (indicators.risk_score > 0) {
-                html += `<div class="explanation-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; font-weight: 600; padding: 16px; border-radius: 8px;">
-                    🧠 <strong>GNN RUG PULL ANALYSIS</strong><br><br>
-                    Graph Neural Network detected potential rug pull patterns:<br>
-                    <span style="font-size: 1.2em;">Risk Score: ${indicators.risk_score}/100</span>
-                </div>`;
-                
-                // Show specific indicators
-                html += '<div class="explanation-item" style="background: #fff3cd; border-left: 4px solid #ffc107;"><strong>🔍 Detected Patterns:</strong><br><br>';
-                
-                if (indicators.sybil_network) {
-                    html += '🚩 <strong>Sybil Network</strong>: Multiple wallets controlled by same entity<br>';
-                }
-                if (indicators.liquidity_drain) {
-                    html += '🚩 <strong>Liquidity Drain</strong>: Money flowing in but not out (exit scam pattern)<br>';
-                }
-                if (indicators.coordinated_dump) {
-                    html += '🚩 <strong>Coordinated Dump</strong>: Multiple addresses selling simultaneously<br>';
-                }
-                if (indicators.money_laundering) {
-                    html += '🚩 <strong>Money Laundering</strong>: Funds being distributed across many addresses<br>';
-                }
-                
-                if (!indicators.sybil_network && !indicators.liquidity_drain && !indicators.coordinated_dump && !indicators.money_laundering) {
-                    html += '✅ No major rug pull patterns detected by GNN<br>';
-                }
-                
-                html += '</div>';
-            } else {
-                // Even if risk_score is 0, show that GNN checked it
-                html += `<div class="explanation-item" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; font-weight: 600; padding: 16px; border-radius: 8px;">
-                    🧠 <strong>GNN RUG PULL ANALYSIS</strong><br><br>
-                    ✅ Graph Neural Network found no rug pull patterns
-                </div>`;
-            }
-        }
-        
-        // Check if we have context analysis - APPEND TO HTML
+        // Check if we have context analysis
         if (data.context_analysis) {
             const analysis = data.context_analysis;
+            
+            let html = '';
             
             // Summary
             html += `<div class="explanation-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-weight: 600; padding: 16px; border-radius: 8px;">
@@ -221,10 +180,7 @@ const app = {
                     ${analysis.verdict.replace(/\n/g, '<br>')}
                 </div>`;
             }
-        }
-        
-        // Set the final HTML once
-        if (html) {
+            
             container.innerHTML = html;
         } else {
             // Fallback to old explanations

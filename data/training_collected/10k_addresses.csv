@@ -1,0 +1,2026 @@
+address,label,source,confidence,name
+0x87230146e138d3f296a9a77e497a2a83012e9bc5,1,known_rugpull,1.0,Squid Game Token
+0xdac17f958d2ee523a2206206994597c13d831ec7,0,etherscan_top_tokens,1.0,"Tether USD
+(USDT)"
+0xb8c77482e45f1f44de1745f52c74426c631bdd52,0,etherscan_top_tokens,1.0,"BNB
+(BNB)"
+0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48,0,etherscan_top_tokens,1.0,"USDC
+(USDC)"
+0xae7ab96520de3a18e5e111b5eaab095312d7fe84,0,etherscan_top_tokens,1.0,"stETH
+(stETH)"
+0x4a64515e5e1d1073e83f30cb97bed20400b66e10,0,etherscan_top_tokens,1.0,"Wrapped ZEC
+(WZEC)"
+0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0,0,etherscan_top_tokens,1.0,"Wrapped liquid staked Ether 2.0
+(wstETH)"
+0xdc035d45d973e3ec169d2276ddab16f1e407384f,0,etherscan_top_tokens,1.0,"USDS Stablecoin
+(USDS)"
+0x514910771af9ca656af840dff83e8264ecf986ca,0,etherscan_top_tokens,1.0,"ChainLink Token
+(LINK)"
+0x66eff5221ca926636224650fd3b9c497ff828f7d,0,etherscan_top_tokens,1.0,"Multichain BTC
+(multiBTC)"
+0x2260fac5e5542a773aa44fbcfedf7c193bc2c599,0,etherscan_top_tokens,1.0,"Wrapped BTC
+(WBTC)"
+0xa2e3356610840701bdf5611a53974510ae27e2e1,0,etherscan_top_tokens,1.0,"Wrapped Binance Beacon ETH
+(wBETH)"
+0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2,0,etherscan_top_tokens,1.0,"Wrapped Ether
+(WETH)"
+0x2af5d2ad76741191d15dfe7bf6ac92d4bd912ca3,0,etherscan_top_tokens,1.0,"Bitfinex LEO Token
+(LEO)"
+0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf,0,etherscan_top_tokens,1.0,"Coinbase Wrapped BTC
+(cbBTC)"
+0x85f17cf997934a597031b2e18a9ab6ebd4b9f6a4,0,etherscan_top_tokens,1.0,"NEAR
+(NEAR)"
+0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8,0,etherscan_top_tokens,1.0,"Aave Ethereum WETH
+(aEthWETH)"
+0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee,0,etherscan_top_tokens,1.0,"Wrapped eETH
+(weETH)"
+0xa3931d71877c0e7a3148cb7eb4463524fec27fbd,0,etherscan_top_tokens,1.0,"Savings USDS
+(sUSDS)"
+0xbc65ad17c5c0a2a4d159fa5a503f4992c7b545fe,0,etherscan_top_tokens,1.0,"Spark USDC Vault
+(sUSDC)"
+0x4c9edd5852cd905f086c759e8383e09bff1e68b3,0,etherscan_top_tokens,1.0,"USDe
+(USDe)"
+0x1f9840a85d5af5bf1d1762f925bdaddc4201f984,0,etherscan_top_tokens,1.0,"Uniswap
+(UNI)"
+0x6b175474e89094c44da98b954eedeac495271d0f,0,etherscan_top_tokens,1.0,"Dai Stablecoin
+(DAI)"
+0x8d0d000ee44948fc98c9b98a4fa4921476f08b0d,0,etherscan_top_tokens,1.0,"World Liberty Financial USD
+(USD1)"
+0x3a63de3572c69a1307ff08394f3ee7702c16d25d,0,etherscan_top_tokens,1.0,"Bitway Token
+(BTW)"
+0x582d872a1b094fc48f5de31d3b73f2d9be47def1,0,etherscan_top_tokens,1.0,"Wrapped TON Coin
+(TONCOIN)"
+0x4a220e6096b25eadb88358cb44068a3248254675,0,etherscan_top_tokens,1.0,"Quant
+(QNT)"
+0x68749665ff8d2d112fa859aa293f07a622782f38,0,etherscan_top_tokens,1.0,"Tether Gold
+(XAUt)"
+0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce,0,etherscan_top_tokens,1.0,"SHIBA INU
+(SHIB)"
+0xe343167631d89b6ffc58b88d6b7fb0228795491d,0,etherscan_top_tokens,1.0,"Global Dollar
+(USDG)"
+0xa0b73e1ff0b80914ab6fe0444e65848c4c34450b,0,etherscan_top_tokens,1.0,"Cronos Coin
+(CRO)"
+0x6c3ea9036406852006290770bedfcaba0e23a0e8,0,etherscan_top_tokens,1.0,"PayPal USD
+(PYUSD)"
+0x57e114b691db790c35207b2e685d4a43181e6061,0,etherscan_top_tokens,1.0,"Ethena
+(ENA)"
+0x75231f58b43240c9718dd58b4967c5114342a86c,0,etherscan_top_tokens,1.0,"OKB
+(OKB)"
+0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9,0,etherscan_top_tokens,1.0,"Aave Token
+(AAVE)"
+0x4da27a545c0c5b758a6ba100e3a049001de870f5,0,etherscan_top_tokens,1.0,"Staked Aave
+(stkAAVE)"
+0x8292bb45bf1ee4d140127049757c2e0ff06317ed,0,etherscan_top_tokens,1.0,"RLUSD
+(RLUSD)"
+0x136471a34f6ef19fe571effc1ca711fdb8e49f2b,0,etherscan_top_tokens,1.0,"US Yield Coin
+(USYC)"
+0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3,0,etherscan_top_tokens,1.0,"Ondo
+(ONDO)"
+0x96f6ef951840721adbf46ac996b59e0235cb985c,0,etherscan_top_tokens,1.0,"Ondo U.S. Dollar Yield
+(USDY)"
+0x7712c34205737192402172409a8f7ccef8aa2aec,0,etherscan_top_tokens,1.0,"BlackRock USD Institutional Digital Liquidity Fund
+(BUIDL)"
+0x6a9da2d710bb9b700acde7cb81f10f1ff8c89041,0,etherscan_top_tokens,1.0,"BlackRock USD Institutional Digital Liquidity Fund - I Class
+(BUIDL-I)"
+0x21c2c96dbfa137e23946143c71ac8330f9b44001,0,etherscan_top_tokens,1.0,"Polkadot (IBC)
+(DOT)"
+0x163f8c2467924be0ae7b5347228cabf260318753,0,etherscan_top_tokens,1.0,"Worldcoin
+(WLD)"
+0x45804880de22913dafe09f4980848ece6ecbaf78,0,etherscan_top_tokens,1.0,"Paxos Gold
+(PAXG)"
+0x56072c95faa701256059aa122697b133aded9279,0,etherscan_top_tokens,1.0,"SKY Governance Token
+(SKY)"
+0x3c3a81e81dc49a522a592e7622a7e711c06bf354,0,etherscan_top_tokens,1.0,"Mantle
+(MNT)"
+0xda5e1988097297dcdc1f90d4dfe7909e847cbef6,0,etherscan_top_tokens,1.0,"World Liberty Financial
+(WLFI)"
+0x58d97b57bb95320f9a05dc918aef65434969c2b2,0,etherscan_top_tokens,1.0,"Morpho Token
+(MORPHO)"
+0x00f3c42833c3170159af4e92dbb451fb3f708917,0,etherscan_top_tokens,1.0,"ICP
+(ICP)"
+0x6982508145454ce325ddbe47a25d4ec3d2311933,0,etherscan_top_tokens,1.0,"Pepe
+(PEPE)"
+0xfa2b947eec368f42195f24f36d2af29f7c24cec2,0,etherscan_top_tokens,1.0,"Falcon USD
+(USDf)"
+0x0990b149e915cb08e2143a5c6f669c907eddc8b0,0,etherscan_top_tokens,1.0,"Spiko Amundi Overnight Swap Fund (EUR)
+(eurSAFO)"
+0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b,0,etherscan_top_tokens,1.0,"Syrup USDC
+(syrupUSDC)"
+0x4f8e5de400de08b164e7421b3ee387f461becd1a,0,etherscan_top_tokens,1.0,"Usdd Stablecoin
+(USDD)"
+0xce24439f2d9c6a2289f741120fe202248b666666,0,etherscan_top_tokens,1.0,"United Stables
+(U)"
+0x61ec85ab89377db65762e234c946b5c25a56e99e,0,etherscan_top_tokens,1.0,"HTX
+(HTX)"
+0x50327c6c5a14dcade707abad2e27eb517df87ab5,0,etherscan_top_tokens,1.0,"TRON
+(TRX)"
+0xd1d82d3ab815e0b47e38ec2d666c5b8aa05ae501,0,etherscan_top_tokens,1.0,"Wrapped Solana (IBC)
+(SOL)"
+0x54d2252757e1672eead234d27b1270728ff90581,0,etherscan_top_tokens,1.0,"BitgetToken
+(BGB)"
+0x9d39a5de30e57443bff2a8307a4256c8797a3497,0,etherscan_top_tokens,1.0,"Staked USDe
+(sUSDe)"
+0xb50721bcf8d664c30412cfbc6cf7a15145234ad1,0,etherscan_top_tokens,1.0,"Arbitrum
+(ARB)"
+0xe7ae30c03395d66f30a26c49c91edae151747911,0,etherscan_top_tokens,1.0,"clBTC
+(clBTC)"
+0xe66747a101bff2dba3697199dcce5b743b454759,0,etherscan_top_tokens,1.0,"GateChainToken
+(GT)"
+0xf34960d9d60be18cc1d5afc1a6f012a723a28811,0,etherscan_top_tokens,1.0,"KuCoin Token
+(KCS)"
+0x455e53cbb86018ac2b8092fdcd39d8444affc3f6,0,etherscan_top_tokens,1.0,"Polygon Ecosystem Token
+(POL)"
+0xa1290d69c65a6fe4df752f95823fae25cb99e5a7,0,etherscan_top_tokens,1.0,"rsETH
+(rsETH)"
+0x8d983cb9388eac77af0474fa441c4815500cb7bb,0,etherscan_top_tokens,1.0,"Cosmos
+(ATOM)"
+0x519ddeff5d142fc177d95f24952ef3d2ede530bc,0,etherscan_top_tokens,1.0,"Cosmos Hub (IBC)
+(ATOM)"
+0x6de037ef9ad2725eb40118bb1702ebb27e4aeb24,0,etherscan_top_tokens,1.0,"Render Token
+(RNDR)"
+0x8236a87084f8b84306f72007f36f2618a5634494,0,etherscan_top_tokens,1.0,"Lombard BTC
+(LBTC)"
+0x8347fffb3abeb2fae5c21b09e983bdefa1a047dc,0,etherscan_top_tokens,1.0,"Blockchain Capital Token
+(BCAP)"
+0x232ce3bd40fcd6f80f3d55a522d03f25df784ee2,0,etherscan_top_tokens,1.0,"Lighter
+(LIT)"
+0xae78736cd615f374d3085123a210448e74fc6393,0,etherscan_top_tokens,1.0,"Rocket Pool ETH
+(rETH)"
+0x6e1a19f235be7ed8e3369ef73b196c07257494de,0,etherscan_top_tokens,1.0,"Wrapped Filecoin
+(WFIL)"
+0x6985884c4392d348587b19cb9eaaf157f13271cd,0,etherscan_top_tokens,1.0,"LayerZero
+(ZRO)"
+0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206,0,etherscan_top_tokens,1.0,"Nexo
+(NEXO)"
+0x43415eb6ff9db7e26a15b704e7a3edce97d31c4e,0,etherscan_top_tokens,1.0,"Invesco Short Duration US Government Securities Fund
+(USTB)"
+0x9f6f3991d525015a6f8caf062c83b62fd3ac4436,0,etherscan_top_tokens,1.0,"OpenUSD
+(OUSD)"
+0x73e0c0d45e048d25fc26fa3159b0aa04bfa4db98,0,etherscan_top_tokens,1.0,"Kraken Wrapped Bitcoin
+(kBTC)"
+0xe28b3b32b6c345a34ff64674606124dd5aceca30,0,etherscan_top_tokens,1.0,"Injective Token
+(INJ)"
+0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f,0,etherscan_top_tokens,1.0,"GHO Token
+(GHO)"
+0x1a88df1cfe15af22b3c4c783d4e6f7f9e0c1885d,0,etherscan_top_tokens,1.0,"stk GHO
+(stkGHO)"
+0x152649ea73beab28c5b49b26eb48f7ead6d4c898,0,etherscan_top_tokens,1.0,"PancakeSwap Token
+(Cake)"
+0xfe0c30065b384f05761f15d0cc899d4f9f9cc0eb,0,etherscan_top_tokens,1.0,"ether.fi governance token
+(ETHFI)"
+0xc96de26018a54d51c097160568752c4e3bd6c364,0,etherscan_top_tokens,1.0,"FunctionBTC
+(FBTC)"
+0xd850942ef8811f2a866692a623011bde52a462c1,0,etherscan_top_tokens,1.0,"VeChain
+(VEN)"
+0xa0769f7a8fc65e47de93797b4e21c073c117fc80,0,etherscan_top_tokens,1.0,"Spiko EU T-Bills Money Market Fund
+(EUTBL)"
+0x6ad12e761b438bea3ea09f6c6266556bb24c2181,0,etherscan_top_tokens,1.0,"BELDEX
+(BDX)"
+0x2f913c820ed3beb3a67391a6eff64e70c4b20b19,0,etherscan_top_tokens,1.0,"Merlin BTC
+(M-BTC)"
+0xd5f7838f5c461feff7fe49ea5ebaf7728bb0adfa,0,etherscan_top_tokens,1.0,"mETH
+(mETH)"
+0x356b8d89c1e1239cbbb9de4815c39a1474d5ba7d,0,etherscan_top_tokens,1.0,"Syrup USDT
+(syrupUSDT)"
+0x19ebb35279a16207ec4ba82799cc64715065f7f6,0,etherscan_top_tokens,1.0,"Hastra PRIME
+(PRIME)"
+0x73a15fed60bf67631dc6cd7bc5b6e8da8190acf5,0,etherscan_top_tokens,1.0,"Usual USD
+(USD0)"
+0xd533a949740bb3306d119cc777fa900ba034cd52,0,etherscan_top_tokens,1.0,"Curve DAO Token
+(CRV)"
+0xca14007eff0db1f8135f4c25b34de49ab0d42766,0,etherscan_top_tokens,1.0,"Starknet Token
+(STRK)"
+0xaea46a60368a7bd060eec7df8cba43b7ef41ad85,0,etherscan_top_tokens,1.0,"Fetch
+(FET)"
+0x6418c0dd099a9fda397c766304cdd918233e8847,0,etherscan_top_tokens,1.0,"Pudgy Penguins
+(PENGU)"
+0x72dfb2e44f59c5ad2bafe84314e5b99a7cd5075e,0,etherscan_top_tokens,1.0,"Circle Wrapped Bitcoin
+(cirBTC)"
+0x0000000000085d4780b73119b644ae5ecd22b376,0,etherscan_top_tokens,1.0,"TrueUSD
+(TUSD)"
+0x1abaea1f7c830bd89acc67ec4af516284b1bc33c,0,etherscan_top_tokens,1.0,"EURC
+(EURC)"
+0xbe9895146f7af43049ca1c1ae358b0541ea49704,0,etherscan_top_tokens,1.0,"Coinbase Wrapped Staked ETH
+(cbETH)"
+0x44ff8620b8ca30902395a7bd3f2407e1a091bf73,0,etherscan_top_tokens,1.0,"Virtual Protocol
+(VIRTUAL)"
+0x6fa0be17e4bea2fcfa22ef89bf8ac9aab0ab0fc9,0,etherscan_top_tokens,1.0,"A7A5
+(A7A5)"
+0xb1d1eae60eea9525032a6dcb4c1ce336a1de71be,0,etherscan_top_tokens,1.0,"Derive
+(DRV)"
+0xbdf43ecadc5cef51b7d1772f722e40596bc1788b,0,etherscan_top_tokens,1.0,"SEI
+(SEI)"
+0x013addc6512432304c055cec20bbb0f6aa5ed7d5,0,etherscan_top_tokens,1.0,"Sei (IBC)
+(SEI)"
+0xc139190f447e929f090edeb554d95abb8b18ac1c,0,etherscan_top_tokens,1.0,"USDtb
+(USDtb)"
+0xf1c9acdc66974dfb6decb12aa385b9cd01190e38,0,etherscan_top_tokens,1.0,"Staked ETH
+(osETH)"
+0x808507121b80c02388fad14726482e061b8da827,0,etherscan_top_tokens,1.0,"Pendle
+(PENDLE)"
+0x0e63b9c287e32a05e6b9ab8ee8df88a2760225a9,0,etherscan_top_tokens,1.0,"Pieverse Token
+(PIEVERSE)"
+0x5a98fcbea516cf06857215779fd812ca3bef1b32,0,etherscan_top_tokens,1.0,"Lido DAO Token
+(LDO)"
+0xc669928185dbce49d2230cc9b0979be6dc797957,0,etherscan_top_tokens,1.0,"BitTorrent
+(BTT)"
+0xfa1c09fc8b491b6a4d3ff53a10cad29381b3f949,0,etherscan_top_tokens,1.0,"Falcon Finance
+(FF)"
+0x6944e1df6bf5972305f9ab25df47ef10de01bcc8,0,etherscan_top_tokens,1.0,"Unibase
+(UB)"
+0xe0f63a424a4439cbe457d80e4f4b51ad25b2c56c,0,etherscan_top_tokens,1.0,"SPX6900
+(SPX)"
+0xf0bb20865277abd641a307ece5ee04e79073416c,0,etherscan_top_tokens,1.0,"Ether.Fi Liquid ETH
+(liquidETH)"
+0x8daebade922df735c38c80c7ebd708af50815faa,0,etherscan_top_tokens,1.0,"tBTC
+(TBTC)"
+0x18084fba666a33d37592fa2633fd49a74dd93a88,0,etherscan_top_tokens,1.0,"tBTC v2
+(tBTC)"
+0x0cb6d03b0ac88a463f67b7ad99f9f3ec4678092e,0,etherscan_top_tokens,1.0,"SoFiUSD
+(SOFID)"
+0x8c213ee79581ff4984583c6a801e5263418c4b86,0,etherscan_top_tokens,1.0,"Janus Henderson Anemoy Treasury Fund
+(JTRSY)"
+0xc5f0f7b66764f6ec8c8dff7ba683102295e16409,0,etherscan_top_tokens,1.0,"First Digital USD
+(FDUSD)"
+0x118b70df4f06fa5678e7d543e6066e028c8ea0c0,0,etherscan_top_tokens,1.0,"Kite
+(KITE)"
+0x1b19c19393e2d034d8ff31ff34c81252fcbbee92,0,etherscan_top_tokens,1.0,"Ondo Short-Term U.S. Government Bond Fund
+(OUSG)"
+0x6810e776880c02933d47db1b9fc05908e5386b96,0,etherscan_top_tokens,1.0,"Gnosis
+(GNO)"
+0x5086bf358635b81d8c47c66d1c8b9e567db70c72,0,etherscan_top_tokens,1.0,"Re Protocol Deposit Token
+(reUSD)"
+0x64aa3364f17a4d01c6f1751fd97c2bd3d7e7f1d5,0,etherscan_top_tokens,1.0,"Olympus
+(OHM)"
+0x4aef9bd3fbb09d8f374436d9ec25711a1be9bacb,0,etherscan_top_tokens,1.0,"Bonk (IBC)
+(BONK)"
+0xc944e90c64b2c07662a292be6244bdf05cda44a7,0,etherscan_top_tokens,1.0,"Graph Token
+(GRT)"
+0x643c4e15d7d62ad0abec4a9bd4b001aa3ef52d66,0,etherscan_top_tokens,1.0,"Syrup Token
+(SYRUP)"
+0xc18360217d8f7ab5e7c516566761ea12ce7f9d72,0,etherscan_top_tokens,1.0,"Ethereum Name Service
+(ENS)"
+0xcf0c122c6b73ff809c693db761e7baebe62b6a2e,0,etherscan_top_tokens,1.0,"FLOKI
+(FLOKI)"
+0x004e9c3ef86bc1ca1f0bb5c7662861ee93350568,0,etherscan_top_tokens,1.0,"uniBTC
+(uniBTC)"
+0x9be89d2a4cd102d8fecc6bf9da793be995c22541,0,etherscan_top_tokens,1.0,"Binance Wrapped BTC
+(BBTC)"
+0xc00e94cb662c3520282e6f5717214004a7f26888,0,etherscan_top_tokens,1.0,"Compound
+(COMP)"
+0x7420b4b9a0110cdc71fb720908340c03f9bc03ec,0,etherscan_top_tokens,1.0,"JasmyCoin
+(JASMY)"
+0x198d14f2ad9ce69e76ea330b374de4957c3f850a,0,etherscan_top_tokens,1.0,"AINFT
+(NFT)"
+0xec53bf9167f50cdeb3ae105f56099aaab9061f83,0,etherscan_top_tokens,1.0,"Eigen
+(EIGEN)"
+0xcbade7d9bdee88411cb6cbcbb29952b742036992,0,etherscan_top_tokens,1.0,"Spiko Amundi Overnight Swap Fund
+(SAFO)"
+0x3883f5e181fccaf8410fa61e12b59bad963fb645,0,etherscan_top_tokens,1.0,"Theta Token
+(THETA)"
+0x853d955acef822db058eb8505911ed77f175b99e,0,etherscan_top_tokens,1.0,"Frax
+(FRAX)"
+0xcf7e6742266ad5a76ee042e26d3f766c34195e5f,0,etherscan_top_tokens,1.0,"dogwifhat (IBC)
+(WIF)"
+0xf939e0a03fb07f59a73314e73794be0e57ac1b4e,0,etherscan_top_tokens,1.0,"Curve.Fi USD Stablecoin
+(crvUSD)"
+0x8be3460a480c80728a8c4d7a5d5303c85ba7b3b9,0,etherscan_top_tokens,1.0,"Staked ENA
+(sENA)"
+0x3845badade8e6dff049820680d1f14bd3903a5d0,0,etherscan_top_tokens,1.0,"SAND
+(SAND)"
+0xc5d6a7b61d18afa11435a889557b068bb9f29930,0,etherscan_top_tokens,1.0,"Savings Usdd
+(sUSDDsavings-usdd)"
+0xa35b1b31ce002fbf2058d22f30f95d405200a15b,0,etherscan_top_tokens,1.0,"ETHx
+(ETHx)"
+0xbb0e17ef65f82ab018d8edd776e8dd940327b28b,0,etherscan_top_tokens,1.0,"Axie Infinity Shard
+(AXS)"
+0x87b65c4aaffa76881f9e96f3e7ed945ddfc3cd7a,0,etherscan_top_tokens,1.0,"syrupUSDG
+(syrupUSDG)"
+0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b,0,etherscan_top_tokens,1.0,"Convex Token
+(CVX)"
+0xbbfc8683c8fe8cf73777fede7ab9574935fea0a4,0,etherscan_top_tokens,1.0,"Lido Earn ETH
+(earnETH)"
+0x8881562783028f5c1bcb985d2283d5e170d88888,0,etherscan_top_tokens,1.0,"Shuffle
+(SHFL)"
+0x00000000efe302beaa2b3e6e1b18d08d69a9012a,0,etherscan_top_tokens,1.0,"AUSD
+(AUSD)"
+0xa12cc123ba206d4031d1c7f6223d1c2ec249f4f3,0,etherscan_top_tokens,1.0,"Zama
+(ZAMA)"
+0x5f7827fdeb7c20b443265fc2f40845b715385ff2,0,etherscan_top_tokens,1.0,"EUR CoinVertible
+(EURCV)"
+0x0f5d2fb29fb7d3cfee444a200298f468908cc942,0,etherscan_top_tokens,1.0,"Decentraland
+(MANA)"
+0xfd09cf7cfffa9932e33668311c4777cb9db3c9be,0,etherscan_top_tokens,1.0,"Wrapped Decentraland MANA
+(wMANA)"
+0x07041776f5007aca2a54844f50503a18a72a8b68,0,etherscan_top_tokens,1.0,"Tether America USD
+(USAT)"
+0x35fa164735182de50811e8e2e824cfb9b6118ac2,0,etherscan_top_tokens,1.0,"ether.fi ETH
+(eETH)"
+0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f,0,etherscan_top_tokens,1.0,"Trace
+(TRAC)"
+0x56a3ba04e95d34268a19b2a4474dc979babdaf76,0,etherscan_top_tokens,1.0,"Sentient
+(SENT)"
+0x73bd5dc5f4aa468c021f9c2ce21a7cfa606a6a06,0,etherscan_top_tokens,1.0,"Macy's xStock
+(Mx)"
+0x11eef04c884e24d9b7b4760e7476d06ddf797f36,0,etherscan_top_tokens,1.0,"MX Token
+(MX)"
+0x6f40d4a6237c257fff2db00fa0510deeecd303eb,0,etherscan_top_tokens,1.0,"Fluid
+(FLUID)"
+0x0d8775f648430679a709e98d2b0cb6250d2887ef,0,etherscan_top_tokens,1.0,"BAT
+(BAT)"
+0xf57e7e7c23978c3caec3c3548e3d615c346e79ff,0,etherscan_top_tokens,1.0,"Immutable X
+(IMX)"
+0xe4880249745eac5f1ed9d8f7df844792d560e750,0,etherscan_top_tokens,1.0,"Spiko US T-Bills Money Market Fund
+(USTBL)"
+0xba9d4199fab4f26efe3551d490e3821486f135ba,0,etherscan_top_tokens,1.0,"SwissBorg
+(CHSB)"
+0x64d0f55cd8c7133a9d7102b13987235f486f2224,0,etherscan_top_tokens,1.0,"SwissBorg Token
+(BORG)"
+0xa2cd3d43c775978a96bdbf12d733d5a1ed94fb18,0,etherscan_top_tokens,1.0,"Onyxcoin
+(XCN)"
+0x8ed97a637a790be1feff5e888d43629dc05408f6,0,etherscan_top_tokens,1.0,"Non-Playable Coin
+(NPC)"
+0x83f20f44975d03b1b09e64809b757c47f942beea,0,etherscan_top_tokens,1.0,"Savings Dai
+(sDAI)"
+0xb0f70c0bd6fd87dbeb7c10dc692a2a6106817072,0,etherscan_top_tokens,1.0,"Bitcoin
+(BTC.b)"
+0x699ccf919c1dfdfa4c374292f42cadc9899bf753,0,etherscan_top_tokens,1.0,"Vision
+(VSN)"
+0x3506424f91fd33084466f402d5d97f05f8e3b4af,0,etherscan_top_tokens,1.0,"chiliZ
+(CHZ)"
+0x666d875c600aa06ac1cf15641361dec3b00432ef,0,etherscan_top_tokens,1.0,"BTSE Token
+(BTSE)"
+0x977b6fc5de62598b08c85ac8cf2b745874e8b78c,0,etherscan_top_tokens,1.0,"Aave Ethereum cbETH
+(aEthcbETH)"
+0x1aad217b8f78dba5e6693460e8470f8b1a3977f3,0,etherscan_top_tokens,1.0,"Strategy PP Variable xStock
+(STRCx)"
+0xe53ec727dbdeb9e2d5456c3be40cff031ab40a55,0,etherscan_top_tokens,1.0,"SuperVerse
+(SUPER)"
+0x7ddc52c4de30e94be3a6a0a2b259b2850f421989,0,etherscan_top_tokens,1.0,"GoMining Token
+(GMT)"
+0xe76c6c83af64e4c60245d8c7de953df673a7a33d,0,etherscan_top_tokens,1.0,"Rail
+(RAIL)"
+0xde4ee8057785a7e8e800db58f9784845a5c2cbd6,0,etherscan_top_tokens,1.0,"Dexe
+(DEXE)"
+0x9b61879e91a0b1322f3d61c23aaf936231882096,0,etherscan_top_tokens,1.0,"Bedrock
+(BR)"
+0x626e8036deb333b408be468f951bdb42433cbf18,0,etherscan_top_tokens,1.0,"AIOZ Network
+(AIOZ)"
+0x04c618cdbc1d59142dfeb4b9864835a06983ec2d,0,etherscan_top_tokens,1.0,"Joseon Mun
+(JSM)"
+0xc07e1300dc138601fa6b0b59f8d0fa477e690589,0,etherscan_top_tokens,1.0,"Quack AI Token
+(Q)"
+0x12e2b8033420270db2f3b328e32370cb5b2ca134,0,etherscan_top_tokens,1.0,"SafePalToken
+(SFP)"
+0x177d39ac676ed1c67a2b268ad7f1e58826e5b0af,0,etherscan_top_tokens,1.0,"CoinDash Token
+(CDT)"
+0x62d0a8458ed7719fdaf978fe5929c6d342b0bfce,0,etherscan_top_tokens,1.0,"Beam
+(BEAM)"
+0xccaf57dda945a03813ecb8542df4f2fb3b13e480,0,etherscan_top_tokens,1.0,"SharkNinja xStock
+(SNx)"
+0xd0da9cbea9c3852c5d63a95f9abcc4f6ea0f9032,0,etherscan_top_tokens,1.0,"Synthetix Network Token
+(SNX)"
+0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f,0,etherscan_top_tokens,1.0,"Synthetix Network Token
+(SNX)"
+0x111111111117dc0aa78b770fa6a738034120c302,0,etherscan_top_tokens,1.0,"1INCH Token
+(1INCH)"
+0x0d09d36644a4eb39a72636253fb02e7487caeef9,0,etherscan_top_tokens,1.0,"Ultima
+(ULTIMA)"
+0xde7d85157d9714eadf595045cc12ca4a5f3e2adb,0,etherscan_top_tokens,1.0,"STPT
+(STPT)"
+0xe7c3d8c9a439fede00d2600032d5db0be71c3c29,0,etherscan_top_tokens,1.0,"JPY Coin
+(JPYC)"
+0xbe0ed4138121ecfc5c0e56b40517da27e6c5226b,0,etherscan_top_tokens,1.0,"Aethir Token
+(ATH)"
+0xcf5104d094e3864cfcbda43b82e1cefd26a016eb,0,etherscan_top_tokens,1.0,"Humanity
+(H)"
+0xe76c5b78f93909d34404e9eb4c1f19e7582a5de1,0,etherscan_top_tokens,1.0,"Humanity
+(H)"
+0x66a5cfb2e9c529f14fe6364ad1075df3a649c0a5,0,etherscan_top_tokens,1.0,"ZKsync
+(ZK)"
+0x7dd9c5cba05e151c895fde1cf355c9a1d5da6429,0,etherscan_top_tokens,1.0,"Golem Network Token
+(GLM)"
+0x8b353021189375591723e7384262f45709a3c3dc,0,etherscan_top_tokens,1.0,"Tomocoin
+(TOMO)"
+0x76a0e27618462bdac7a29104bdcfff4e6bfcea2d,0,etherscan_top_tokens,1.0,"SoSoValue
+(SOSO)"
+0xb0076de78dc50581770bba1d211ddc0ad4f2a241,0,etherscan_top_tokens,1.0,"Edge
+(EDGE)"
+0x6781d5631bfe47432b089e64e3eab3b6edd26177,0,etherscan_top_tokens,1.0,"JPYSC
+(JPYSC)"
+0x4c1746a800d224393fe2470c70a35717ed4ea5f1,0,etherscan_top_tokens,1.0,"Plume
+(PLUME)"
+0x1dd91a111606382b77a917633ed90feaf25e0f76,0,etherscan_top_tokens,1.0,"Midas Fasanara Global Open
+(mGLO)"
+0x516d31321928700c6b4fb0db0c8c6bc5d6799787,0,etherscan_top_tokens,1.0,"SHX
+(SHX)"
+0x5fa487bca6158c64046b2813623e20755091da0b,0,etherscan_top_tokens,1.0,"Theo Short Duration US Treasury Fund
+(thBILL)"
+0x119dd7daff816f29d7ee47596ae5e4bdc4299165,0,etherscan_top_tokens,1.0,"Nest BlackOpal LiquidStone II Vault
+(nOPAL)"
+0xb0ffa8000886e57f86dd5264b9582b2ad87b2b91,0,etherscan_top_tokens,1.0,"Wormhole Token
+(W)"
+0xae2f842ef90c0d5213259ab82639d5bbf649b08e,0,etherscan_top_tokens,1.0,"MicroStrategy xStock
+(MSTRx)"
+0x99991c6aabba5a096f24f250b73580f5179b9999,0,etherscan_top_tokens,1.0,"Cap
+(CAP)"
+0xd1d2eb1b1e90b638588728b4130137d262c87cae,0,etherscan_top_tokens,1.0,"Gala
+(GALA)"
+0x046eee2cc3188071c02bfc1745a6b17c656e3f3d,0,etherscan_top_tokens,1.0,"Rollbit Coin
+(RLB)"
+0xd3fd63209fa2d55b07a0f6db36c2f43900be3094,0,etherscan_top_tokens,1.0,"Wrapped Savings rUSD
+(wsrUSD)"
+0xbeef088055857739c12cd3765f20b7679def0f51,0,etherscan_top_tokens,1.0,"Steakhouse Prime Instant
+(steakUSDC)"
+0x8c106eedad96553e64287a5a6839c3cc78afa3d0,0,etherscan_top_tokens,1.0,"Gauntlet USDC Prime
+(gtUSDCp)"
+0xbf5495efe5db9ce00f80364c8b423567e58d2110,0,etherscan_top_tokens,1.0,"ezETH
+(Renzo Restaked ETH)"
+0xa227cc36938f0c9e09ce0e64dfab226cad739447,0,etherscan_top_tokens,1.0,"Open
+(OPEN)"
+0xac3e018457b222d93114458476f3e3416abbe38f,0,etherscan_top_tokens,1.0,"Staked Frax Ether
+(sfrxETH)"
+0x607f4c5bb672230e8672085532f7e901544a7375,0,etherscan_top_tokens,1.0,"RLC
+(RLC)"
+0xd7c49cee7e9188cca6ad8ff264c1da2e69d4cf3b,0,etherscan_top_tokens,1.0,"NXM
+(NXM)"
+0xcacd6fd266af91b8aed52accc382b4e165586e29,0,etherscan_top_tokens,1.0,"Frax USD
+(frxUSD)"
+0x51c2d74017390cbbd30550179a16a1c28f7210fc,0,etherscan_top_tokens,1.0,"Securitize Tokenized AAA CLO Fund
+(STAC)"
+0x1776e1f26f98b1a5df9cd347953a26dd3cb46671,0,etherscan_top_tokens,1.0,"Numeraire
+(NMR)"
+0xaeeaa594e7dc112d67b8547fe9767a02c15b5597,0,etherscan_top_tokens,1.0,"Anvil
+(ANVL)"
+0x697beac28b09e122c4332d163985e8a73121b97f,0,etherscan_top_tokens,1.0,"QRL
+(QRL)"
+0xe41d2489571d322189246dafa5ebde1f4699f498,0,etherscan_top_tokens,1.0,"ZRX
+(ZRX)"
+0x3103df8f05c4d8af16fd22ae63e406b97fec6938,0,etherscan_top_tokens,1.0,"WQtum
+(WQTUM)"
+0x3632dea96a953c11dac2f00b4a05a32cd1063fae,0,etherscan_top_tokens,1.0,"Circle Internet Group (Ondo Tokenized)
+(CRCLon)"
+0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e,0,etherscan_top_tokens,1.0,"USD.AI
+(CHIP)"
+0x320623b8e4ff03373931769a31fc52a4e78b5d70,0,etherscan_top_tokens,1.0,"Reserve Rights
+(RSR)"
+0xfe18ae03741a5b84e39c295ac9c856ed7991c38e,0,etherscan_top_tokens,1.0,"Crypto.com Wrapped Staked ETH
+(CDCETH)"
+0x0520930f21b14cafac7a27b102487bee7138a017,0,etherscan_top_tokens,1.0,"Bitget Wrapped BTC
+(BGBTC)"
+0xfc82bb4ba86045af6f327323a46e80412b91b27d,0,etherscan_top_tokens,1.0,"Token Prometeus Network
+(PROM)"
+0x419d0d8bdd9af5e606ae2232ed285aff190e711b,0,etherscan_top_tokens,1.0,"FunFair
+(FUN)"
+0x23238f20b894f29041f48d88ee91131c395aaa71,0,etherscan_top_tokens,1.0,"USDat
+(USDat)"
+0x17418038ecf73ba4026c4f428547bf099706f27b,0,etherscan_top_tokens,1.0,"Apollo Diversified Credit Securitize Fund
+(ACRED)"
+0xb44d6c324a6c15127f1451465f1e1dbc39142a60,0,etherscan_top_tokens,1.0,"Kusama (IBC)
+(KSM)"
+0x7bc3485026ac48b6cf9baf0a377477fff5703af8,0,etherscan_top_tokens,1.0,"Wrapped Aave Ethereum USDT
+(waEthUSDT)"
+0xfebded1b0986a8ee107f5ab1a1c5a813491deceb,0,etherscan_top_tokens,1.0,"Circle xStock
+(CRCLx)"
+0xb197e02499e6502733c6bce2eb39013c39a03147,0,etherscan_top_tokens,1.0,"Pharos
+(PROS)"
+0x856c4efb76c1d1ae02e20ceb03a2a6a08b0b8dc3,0,etherscan_top_tokens,1.0,"Origin Ether
+(OETH)"
+0x58b6a8a3302369daec383334672404ee733ab239,0,etherscan_top_tokens,1.0,"Livepeer Token
+(LPT)"
+0x085780639cc2cacd35e474e71f4d000e2405d8f6,0,etherscan_top_tokens,1.0,"f(x) USD
+(fxUSD)"
+0x5afe3855358e112b5647b952709e6165e1c1eeee,0,etherscan_top_tokens,1.0,"Safe Token
+(SAFE)"
+0x7e2ac793f3e692f388e66c7dc28f739d13b0b71a,0,etherscan_top_tokens,1.0,"Goldfish
+(GGBR)"
+0xb2617246d0c6c0087f18703d576831899ca94f01,0,etherscan_top_tokens,1.0,"ZigCoin
+(ZIG)"
+0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e,0,etherscan_top_tokens,1.0,"yearn.finance
+(YFI)"
+0xdef1ca1fb7fbcdc777520aa7f396b4e015f497ab,0,etherscan_top_tokens,1.0,"CoW Protocol Token
+(COW)"
+0x7796f4e23a62ef3653829c21032a9e24beaf4cf5,0,etherscan_top_tokens,1.0,"Bending Spoons xStock
+(BSPx)"
+0x437cc33344a0b27a429f795ff6b469c72698b291,0,etherscan_top_tokens,1.0,"WrappedM by M^0
+(wM)"
+0xd9d920aa40f578ab794426f5c90f6c731d159def,0,etherscan_top_tokens,1.0,"xSolvBTC
+(xSolvBTC)"
+0x7743e50f534a7f9f1791dde7dcd89f7783eefc39,0,etherscan_top_tokens,1.0,"f(x) USD Saving
+(fxSAVE)"
+0xc43c6bfeda065fe2c4c11765bf838789bd0bb5de,0,etherscan_top_tokens,1.0,"Redstone
+(RED)"
+0x8b1484d57abbe239bb280661377363b03c89caea,0,etherscan_top_tokens,1.0,"ADI
+(ADI)"
+0xf091867ec603a6628ed83d274e835539d82e9cc8,0,etherscan_top_tokens,1.0,"Zeta
+(ZETA)"
+0xdd629e5241cbc5919847783e6c96b2de4754e438,0,etherscan_top_tokens,1.0,"mTBILL
+(mTBILL)"
+0x031de51f3e8016514bd0963d0b2ab825a591db9a,0,etherscan_top_tokens,1.0,"Espresso
+(ESP)"
+0xed35af169af46a02ee13b9d79eb57d6d68c1749e,0,etherscan_top_tokens,1.0,"OMI Token
+(OMI)"
+0xecabe1ff8a9e1dc55899cf58dac8497ece5ae84c,0,etherscan_top_tokens,1.0,"Strategy Stretch Preferred (Ondo Tokenized)
+(STRCon)"
+0x6c6ee5e31d828de241282b9606c8e98ea48526e2,0,etherscan_top_tokens,1.0,"HoloToken
+(HOT)"
+0xd7ca0e2c36d647446b782d1b72308e598373e2f5,0,etherscan_top_tokens,1.0,"Crown BRLV
+(BRLV)"
+0xc20059e0317de91738d13af027dfc4a50781b066,0,etherscan_top_tokens,1.0,"Spark
+(SPK)"
+0x8ad3c73f833d3f9a523ab01476625f269aeb7cf0,0,etherscan_top_tokens,1.0,"Tesla xStock
+(TSLAx)"
+0xb73ee5488647a6302ebf5fee8af3152f6960ae4c,0,etherscan_top_tokens,1.0,"Hex Trust Wrapped XRP
+(wXRP)"
+0x526526528f35ac738177003b8773b402b8df8143,0,etherscan_top_tokens,1.0,"Re Protocol
+(RE)"
+0x62ca254a363dc3c748e7e955c20447ab5bf06ff7,0,etherscan_top_tokens,1.0,"iShares Core S&P 500 ETF (Ondo Tokenized)
+(IVVon)"
+0x5dd1a7a369e8273371d2dbf9d83356057088082c,0,etherscan_top_tokens,1.0,"Flying Tulip
+(FT)"
+0x470ebf5f030ed85fc1ed4c2d36b9dd02e77cf1b7,0,etherscan_top_tokens,1.0,"Temple
+(TEMPLE)"
+0x05f4a42e251f2d52b8ed15e9fedaacfcef1fad27,0,etherscan_top_tokens,1.0,"Zilliqa
+(ZIL)"
+0x2103e845c5e135493bb6c2a4f0b8651956ea8682,0,etherscan_top_tokens,1.0,"Matrixdock Gold
+(XAUM)"
+0xcccc62962d17b8914c62d74ffb843d73b2a3cccc,0,etherscan_top_tokens,1.0,"cap USD
+(cUSD)"
+0x5faa989af96af85384b8a938c2ede4a7378d9875,0,etherscan_top_tokens,1.0,"Galxe
+(GAL)"
+0x2b66aade1e9c062ff411bd47c44e0ad696d43bd9,0,etherscan_top_tokens,1.0,"USDa saving token
+(sUSDa)"
+0x88887be419578051ff9f4eb6c858a951921d8888,0,etherscan_top_tokens,1.0,"Staked cap USD
+(stcUSD)"
+0xd7efb00d12c2c13131fd319336fdf952525da2af,0,etherscan_top_tokens,1.0,"Proton
+(XPR)"
+0xa0c56a8c0692bd10b3fa8f8ba79cf5332b7107f9,0,etherscan_top_tokens,1.0,"MERL
+(MERL)"
+0x0f3a12b78fee11ee088e454a0547bdbc5a253a6d,0,etherscan_top_tokens,1.0,"MERL
+(MERL)"
+0x6b3595068778dd592e39a122f4f5a5cf09c90fe2,0,etherscan_top_tokens,1.0,"SushiToken
+(SUSHI)"
+0x1789e0043623282d5dcc7f213d703c6d8bafbb04,0,etherscan_top_tokens,1.0,"Linea
+(LINEA)"
+0xa35923162c49cf95e6bf26623385eb431ad920d3,0,etherscan_top_tokens,1.0,"Turbo
+(TURBO)"
+0x238a700ed6165261cf8b2e544ba797bc11e466ba,0,etherscan_top_tokens,1.0,"Midas Fasanara ONE
+(mF-ONE)"
+0x90a2a4c76b5d8c0bc892a69ea28aa775a8f2dd48,0,etherscan_top_tokens,1.0,"SP500 xStock
+(SPYx)"
+0x23d7ff057c696fee679c60cef61fee6614218f04,0,etherscan_top_tokens,1.0,"Unipoly Coin
+(UNP)"
+0xbeef01735c132ada46aa9aa4c54623caa92a64cb,0,etherscan_top_tokens,1.0,"Steakhouse USDC
+(steakUSDC)"
+0xd166337499e176bbc38a1fbd113ab144e5bd2df7,0,etherscan_top_tokens,1.0,"Staked USDat
+(sUSDat)"
+0x467719ad09025fcc6cf6f8311755809d45a5e5f3,0,etherscan_top_tokens,1.0,"Axelar
+(AXL)"
+0xace8e719899f6e91831b18ae746c9a965c2119f1,0,etherscan_top_tokens,1.0,"Ondo U.S. Dollar Token
+(USDon)"
+0xa1fa7777974312f7d801a8880714a218f76233f8,0,etherscan_top_tokens,1.0,"USDx
+(USDx)"
+0xcb21311d3b91b5324f6c11b4f5a656fcacbff122,0,etherscan_top_tokens,1.0,"QuantixAI
+(QAI)"
+0x26b80fbfc01b71495f477d5237071242e0d959d7,0,etherscan_top_tokens,1.0,"Wrapped ROSE (Wormhole)
+(wROSE)"
+0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c,0,etherscan_top_tokens,1.0,"EnjinCoin
+(ENJ)"
+0x3ed0b3c4c0168a560d34e361b8130dcca4677736,0,etherscan_top_tokens,1.0,"Royal Euro
+(REUR)"
+0x4b948d64de1f71fcd12fb586f4c776421a35b3ee,0,etherscan_top_tokens,1.0,"0G
+(0G)"
+0xff20817765cb7f73d4bde2e66e067e58d11095c2,0,etherscan_top_tokens,1.0,"Amp
+(AMP)"
+0xd084b83c305dafd76ae3e1b4e1f1fe2ecccb3988,0,etherscan_top_tokens,1.0,"Terra Virtua Kolect
+(TVK)"
+0xcb1592591996765ec0efc1f92599a19767ee5ffa,0,etherscan_top_tokens,1.0,"BIO
+(BIO)"
+0xbeef003c68896c7d2c3c60d363e8d71a49ab2bf9,0,etherscan_top_tokens,1.0,"Steakhouse Prime Instant
+(steakUSDT)"
+0xd11c452fc99cf405034ee446803b6f6c1f6d5ed8,0,etherscan_top_tokens,1.0,"Treehouse ETH
+(tETH)"
+0xf27441230eadeac85b764610325cc9a0d7859689,0,etherscan_top_tokens,1.0,"Astar
+(ASTR)"
+0x12652c6d93fdb6f4f37d48a8687783c782bb0d10,0,etherscan_top_tokens,1.0,"Entangle
+(NTGL)"
+0x2255718832bc9fd3be1caf75084f4803da14ff01,0,etherscan_top_tokens,1.0,"VanEck Treasury Fund
+(VBILL)"
+0xa3ee21c306a700e682abcdfe9baa6a08f3820419,0,etherscan_top_tokens,1.0,"Gluwa Creditcoin Vesting Token
+(G-CRE)"
+0xa1aa371e450c5aee7fff259cbf5cca9384227272,0,etherscan_top_tokens,1.0,"PentagonChain
+(PC)"
+0xcdf7028ceab81fa0c6971208e83fa7872994bee5,0,etherscan_top_tokens,1.0,"Threshold Network Token
+(T)"
+0x057898f3c43f129a17517b9056d23851f124b19f,0,etherscan_top_tokens,1.0,"Celo native asset
+(CELO)"
+0xe452e6ea2ddeb012e20db73bf5d3863a3ac8d77a,0,etherscan_top_tokens,1.0,"Wrapped Celo
+(wCELO)"
+0x8cd41041505885ef0ad3858181d66f17be8aae7e,0,etherscan_top_tokens,1.0,"LCX
+(LCX)"
+0x2dff88a56767223a5529ea5960da7a3f5f766406,0,etherscan_top_tokens,1.0,"SPACE ID
+(ID)"
+0xf8173a39c56a554837c4c7f104153a005d284d11,0,etherscan_top_tokens,1.0,"EDU Coin
+(EDU)"
+0x48f9e38f3070ad8945dfeae3fa70987722e3d89c,0,etherscan_top_tokens,1.0,"infiniFi USD
+(iUSD)"
+0x0501b9188436e35bb10f35998c40adc079003866,0,etherscan_top_tokens,1.0,"AI Analysis Token
+(AIAT)"
+0x25ec98773d7b4ced4cafab96a2a1c0945f145e10,0,etherscan_top_tokens,1.0,"Staked USDT
+(stUSDT)"
+0xc0c17dd08263c16f6b64e772fb9b723bf1344ddf,0,etherscan_top_tokens,1.0,"Precious Metals USD
+(pmUSD)"
+0x5283d291dbcf85356a21ba090e6db59121208b44,0,etherscan_top_tokens,1.0,"Blur
+(BLUR)"
+0x8457ca5040ad67fdebbcc8edce889a335bc0fbfb,0,etherscan_top_tokens,1.0,"AltLayer Token
+(ALT)"
+0x4cff203005b24aa1083b35063d684a76b1080f22,0,etherscan_top_tokens,1.0,"FONQ Token
+(FONQ)"
+0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5,0,etherscan_top_tokens,1.0,"Compound Ether
+(cETH)"
+0x01d33fd36ec67c6ada32cf36b31e88ee190b1839,0,etherscan_top_tokens,1.0,"BRZ Token
+(BRZ)"
+0xe556aba6fe6036275ec1f87eda296be72c811bce,0,etherscan_top_tokens,1.0,"Neutrl USD
+(NUSD)"
+0x88df592f8eb5d7bd38bfef7deb0fbc02cf3778a0,0,etherscan_top_tokens,1.0,"Tellor Tributes
+(TRB)"
+0x4ce1ac8f43e0e5bd7a346a98af777bf8fbea1981,0,etherscan_top_tokens,1.0,"Lido Earn USD
+(earnUSD)"
+0x1db1591540d7a6062be0837ca3c808add28844f6,0,etherscan_top_tokens,1.0,"Origami hOHM
+(hOHM)"
+0xbf2179859fc6d5bee9bf9158632dc51678a4100e,0,etherscan_top_tokens,1.0,"ELF
+(ELF)"
+0xcccccccccc33d538dbc2ee4feab0a7a1ff4e8a94,0,etherscan_top_tokens,1.0,"Centrifuge
+(CFG)"
+0x6c5ba91642f10282b576d91922ae6448c9d52f4e,0,etherscan_top_tokens,1.0,"Phala
+(PHA)"
+0x6033f7f88332b8db6ad452b7c6d5bb643990ae3f,0,etherscan_top_tokens,1.0,"Lisk
+(LSK)"
+0x5c147e74d63b1d31aa3fd78eb229b65161983b2b,0,etherscan_top_tokens,1.0,"Wrapped Flow
+(WFLOW)"
+0x9477724bb54ad5417de8baff29e59df3fb4da74f,0,etherscan_top_tokens,1.0,"Anemoy Tokenized Apollo Diversified Credit Fund
+(ACRDX)"
+0xbafdabadcf19d0cfbbe0ab9c69cf050d86ff888c,0,etherscan_top_tokens,1.0,"Zedxion
+(Zedxion)"
+0x7c135549504245b5eae64fc0e99fa5ebabb8e35d,0,etherscan_top_tokens,1.0,"Fidelity Digital Dollar
+(FIDD)"
+0xc273986a91e4bfc543610a5cb5860b7cfefb6cc0,0,etherscan_top_tokens,1.0,"Spiko Amundi Overnight Swap Fund (GBP)
+(gbpSAFO)"
+0x3078bcf707e457d3af2f938a2a478bbeea50a942,0,etherscan_top_tokens,1.0,"BlackRock Daily Reinvestment Stablecoin Reserve Vehicle
+(BRSRV)"
+0x9eead9ce15383caeed975427340b3a369410cfbf,0,etherscan_top_tokens,1.0,"aUSD₮
+(aUSD₮)"
+0x55296f69f40ea6d20e478533c15a6b08b654e758,0,etherscan_top_tokens,1.0,"XY Oracle
+(XYO)"
+0xe820c06321e60d36257c666643fa5436643445e3,0,etherscan_top_tokens,1.0,"USDKG
+(USDKG)"
+0x2ec37d45fcae65d9787ecf71dc85a444968f6646,0,etherscan_top_tokens,1.0,"brBTC
+(brBTC)"
+0x57ab1e0003f623289cd798b1824be09a793e4bec,0,etherscan_top_tokens,1.0,"Resupply USD
+(reUSD)"
+0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28,0,etherscan_top_tokens,1.0,"SpaceX xStock
+(SPCXx)"
+0x940a2db1b7008b6c776d4faaca729d6d4a4aa551,0,etherscan_top_tokens,1.0,"Dusk Network
+(DUSK)"
+0x9c7beba8f6ef6643abd725e45a4e8387ef260649,0,etherscan_top_tokens,1.0,"Gravity
+(G)"
+0x64351fc9810adad17a690e4e1717df5e7e085160,0,etherscan_top_tokens,1.0,"Metronome Synth ETH
+(msETH)"
+0xc8495eaff71d3a563b906295fcf2f685b1783085,0,etherscan_top_tokens,1.0,"Midas Hyperithm BTC
+(mHyperBTC)"
+0x17205fab260a7a6383a81452ce6315a39370db97,0,etherscan_top_tokens,1.0,"RaveDAO
+(RAVE)"
+0xf57d49646621f563b0b905afc8336923ac569ec5,0,etherscan_top_tokens,1.0,"Nexus
+(NEX)"
+0xfedc5f4a6c38211c1338aa411018dfaf26612c08,0,etherscan_top_tokens,1.0,"SPDR S&P 500 ETF (Ondo Tokenized)
+(SPYon)"
+0x8290333cef9e6d528dd5618fb97a76f268f3edd4,0,etherscan_top_tokens,1.0,"Ankr Network
+(ANKR)"
+0x0b38210ea11411557c13457d4da7dc6ea731b88a,0,etherscan_top_tokens,1.0,"API3
+(API3)"
+0xc08e7e23c235073c6807c2efe7021304cb7c2815,0,etherscan_top_tokens,1.0,"XUSD
+(XUSD)"
+0x216b3643ff8b7bb30d8a48e9f1bd550126202add,0,etherscan_top_tokens,1.0,"ACU
+(ACU)"
+0x69af81e73a73b40adf4f3d4223cd9b1ece623074,0,etherscan_top_tokens,1.0,"Mask Network
+(MASK)"
+0xab5eb14c09d416f0ac63661e57edb7aecdb9befa,0,etherscan_top_tokens,1.0,"Metronome Synth USD
+(msUSD)"
+0x2411802d8bea09be0af8fd8d08314a63e706b29c,0,etherscan_top_tokens,1.0,"Fluid Wrapped liquid staked Ether 2.0
+(fwstETH)"
+0xf0db65d17e30a966c2ae6a21f6bba71cea6e9754,0,etherscan_top_tokens,1.0,"Lombard
+(BARD)"
+0xc845b2894dbddd03858fd2d643b4ef725fe0849d,0,etherscan_top_tokens,1.0,"NVIDIA xStock
+(NVDAx)"
+0x7cf9a80db3b29ee8efe3710aadb7b95270572d47,0,etherscan_top_tokens,1.0,"Nillion
+(NIL)"
+0xaaaaaa20d9e0e2461697782ef11675f668207961,0,etherscan_top_tokens,1.0,"Aurora
+(AURORA)"
+0xa27ec0006e59f245217ff08cd52a7e8b169e62d2,0,etherscan_top_tokens,1.0,"AZTEC
+(AZTEC)"
+0xa2085073878152ac3090ea13d1e41bd69e60dc99,0,etherscan_top_tokens,1.0,"EscoinToken
+(ELG)"
+0xda987c655ebc38c801db64a8608bc1aa56cd9a31,0,etherscan_top_tokens,1.0,"Synternet Token
+(SYNT)"
+0x6c28f8cab28121ed757edb36201511aa18cdd187,0,etherscan_top_tokens,1.0,"Wrapped FB
+(WFB)"
+0x050362ab1072cb2ce74d74770e22a3203ad04ee5,0,etherscan_top_tokens,1.0,"Micron Technology (Ondo Tokenized)
+(MUon)"
+0x839e71613f9aa06e5701cf6de63e303616b0dde3,0,etherscan_top_tokens,1.0,"VVS
+(VVS)"
+0xaaee1a9723aadb7afa2810263653a34ba2c21c7a,0,etherscan_top_tokens,1.0,"Mog Coin
+(Mog)"
+0xba11d00c5f74255f56a5e366f4f77f5a186d7f55,0,etherscan_top_tokens,1.0,"BandToken
+(BAND)"
+0x8f8221afbb33998d8584a2b05749ba73c37a938a,0,etherscan_top_tokens,1.0,"Request
+(REQ)"
+0xe6bfd33f52d82ccb5b37e16d3dd81f9ffdabb195,0,etherscan_top_tokens,1.0,"Space and Time
+(SXT)"
+0xe5f130253ff137f9917c0107659a4c5262abf6b0,0,etherscan_top_tokens,1.0,"SavingsVault ZCHF
+(svZCHF)"
+0x9d65ff81a3c488d585bbfb0bfe3c7707c7917f54,0,etherscan_top_tokens,1.0,"SSV Token
+(SSV)"
+0x4d0528598f916fd1d8dc80e5f54a8feedcfd4b18,0,etherscan_top_tokens,1.0,"Atoshi
+(ATOS)"
+0x3073f7aaa4db83f95e9fff17424f71d4751a3073,0,etherscan_top_tokens,1.0,"Movement
+(MOVE)"
+0x4ba01f22827018b4772cd326c7627fb4956a7c00,0,etherscan_top_tokens,1.0,"msUSD
+(msUSD)"
+0xa753a7395cae905cd615da0b82a53e0560f250af,0,etherscan_top_tokens,1.0,"Nasdaq xStock
+(QQQx)"
+0xff7f8f301f7a706e3cfd3d2275f5dc0b9ee8009b,0,etherscan_top_tokens,1.0,"Folks Finance
+(FOLKS)"
+0x0f2d719407fdbeff09d87557abb7232601fd9f29,0,etherscan_top_tokens,1.0,"Synapse
+(SYN)"
+0xd33526068d116ce69f19a9ee46f0bd304f21a51f,0,etherscan_top_tokens,1.0,"Rocket Pool
+(RPL)"
+0x9fdbde76236998dc2836fe67a9954ede456a1d63,0,etherscan_top_tokens,1.0,"Baseline
+(B)"
+0x7a58c0be72be218b41c608b7fe7c5bb630736c71,0,etherscan_top_tokens,1.0,"ConstitutionDAO
+(PEOPLE)"
+0x0649cef6d11ed6f88535462e147304d3fe5ae14d,0,etherscan_top_tokens,1.0,"Bitkub Token
+(KUB)"
+0x00007ac313f4f4c1ad809e8a4ca42bc613aa0000,0,etherscan_top_tokens,1.0,"Unitas
+(UP)"
+0xf944e35f95e819e752f3ccb5faf40957d311e8c5,0,etherscan_top_tokens,1.0,"Moca
+(MOCA)"
+0xe92f673ca36c5e2efd2de7628f815f84807e803f,0,etherscan_top_tokens,1.0,"Alphabet xStock
+(GOOGLx)"
+0xddb3422497e61e13543bea06989c0789117555c5,0,etherscan_top_tokens,1.0,"COTI Token
+(COTI)"
+0x230f1e241c621d5af670dad83ebcdd18971e2995,0,etherscan_top_tokens,1.0,"Nesa
+(NES)"
+0x0c7d5ae016f806603cb1782bea29ac69471cab9c,0,etherscan_top_tokens,1.0,"Bifrost
+(BFC)"
+0x6bef15d938d4e72056ac92ea4bdd0d76b1c4ad29,0,etherscan_top_tokens,1.0,"Succinct
+(PROVE)"
+0xe6829d9a7ee3040e1276fa75293bde931859e8fa,0,etherscan_top_tokens,1.0,"cmETH
+(cmETH)"
+0x744d70fdbe2ba4cf95131626614a1763df805b9e,0,etherscan_top_tokens,1.0,"Status Network Token
+(SNT)"
+0xcf62f905562626cfcdd2261162a51fd02fc9c5b6,0,etherscan_top_tokens,1.0,"Staked Frax USD
+(sfrxUSD)"
+0x04fa0d235c4abf4bcf4787af4cf447de572ef828,0,etherscan_top_tokens,1.0,"UMA Voting Token v1
+(UMA)"
+0x890a5122aa1da30fec4286de7904ff808f0bd74a,0,etherscan_top_tokens,1.0,"msY
+(msY)"
+0x6440f144b7e50d6a8439336510312d2f54beb01d,0,etherscan_top_tokens,1.0,"BOLD Stablecoin
+(BOLD)"
+0xf469fbd2abcd6b9de8e169d128226c0fc90a012e,0,etherscan_top_tokens,1.0,"pumpBTC
+(pumpBTC)"
+0x9d1a7a3191102e9f900faa10540837ba84dcbae7,0,etherscan_top_tokens,1.0,"EURITE
+(EURI)"
+0x056fd409e1d7a124bd7017459dfea2f387b6d5cd,0,etherscan_top_tokens,1.0,"Gemini dollar
+(GUSD)"
+0xeef9f339514298c6a857efcfc1a762af84438dee,0,etherscan_top_tokens,1.0,"Hermez Network Token
+(HEZ)"
+0x7296eaa225804451a91616b29d040cab05435f0d,0,etherscan_top_tokens,1.0,"Waves
+(WAVES)"
+0x6fb3e0a217407efff7ca062d46c26e5d60a14d69,0,etherscan_top_tokens,1.0,"IoTeX Network
+(IOTX)"
+0xaca92e438df0b2401ff60da7e4337b687a2435da,0,etherscan_top_tokens,1.0,"MetaMask USD
+(mUSD)"
+0x868fced65edbf0056c4163515dd840e9f287a4c3,0,etherscan_top_tokens,1.0,"Sign
+(SIGN)"
+0xfdffb411c4a70aa7c95d5c981a6fb4da867e1111,0,etherscan_top_tokens,1.0,"Sahara AI
+(SAHARA)"
+0xda67b4284609d2d48e5d10cfac411572727dc1ed,0,etherscan_top_tokens,1.0,"Noon USN
+(USN)"
+0xdd3b11ef34cd511a2da159034a05fcb94d806686,0,etherscan_top_tokens,1.0,"Rekt
+(REKT)"
+0x000c0dee51a14997adc2c7491e4aef428d56d672,0,etherscan_top_tokens,1.0,"Opcode
+(OPCODE)"
+0xb131f4a55907b10d1f0a50d8ab8fa09ec342cd74,0,etherscan_top_tokens,1.0,"Memecoin
+(MEME)"
+0xc059a531b4234d05e9ef4ac51028f7e6156e2cce,0,etherscan_top_tokens,1.0,"Staked Memecoin
+(sMEME)"
+0x018dd3a0dd7f213cc822076b3800816d3ce1ed86,0,etherscan_top_tokens,1.0,"HotKeySwap
+(HOTKEY)"
+0x2d1f7226bd1f780af6b9a49dcc0ae00e8df4bdee,0,etherscan_top_tokens,1.0,"NVIDIA (Ondo Tokenized)
+(NVDAon)"
+0x52a8845df664d76c69d2eea607cd793565af42b8,0,etherscan_top_tokens,1.0,"ApeX Token
+(APEX)"
+0xff56cc6b1e6ded347aa0b7676c85ab0b3d08b0fa,0,etherscan_top_tokens,1.0,"Orbs
+(ORBS)"
+0xd9fcd98c322942075a5c3860693e9f4f03aae07b,0,etherscan_top_tokens,1.0,"Euler
+(EUL)"
+0xf3e621395fc714b90da337aa9108771597b4e696,0,etherscan_top_tokens,1.0,"Reward EUL
+(rEUL)"
+0xc22956c3cfec3ee9a9925abee044f05bc47f6632,0,etherscan_top_tokens,1.0,"Celo Dollar (Wormhole)
+(cUSD)"
+0xad3e3fc59dff318beceaab7d00eb4f68b1ecf195,0,etherscan_top_tokens,1.0,"Wrapped Celo USD
+(wCUSD)"
+0xfee293840d23b0b2de8c55e1cf7a9f01c157767c,0,etherscan_top_tokens,1.0,"DEGEN
+(DEGEN)"
+0xbeef00a59b577423653a1526c7009bde103f542b,0,etherscan_top_tokens,1.0,"Steakhouse Confidential Prime USDC
+(steakcUSDC)"
+0x595832f8fc6bf59c85c527fec3740a1b7a361269,0,etherscan_top_tokens,1.0,"PowerLedger
+(POWR)"
+0x812ba41e071c7b7fa4ebcfb62df5f45f6fa853ee,0,etherscan_top_tokens,1.0,"Neiro
+(Neiro)"
+0x967da4048cd07ab37855c090aaf366e4ce1b9f48,0,etherscan_top_tokens,1.0,"Ocean Token
+(OCEAN)"
+0x0e397938c1aa0680954093495b70a9f5e2249aba,0,etherscan_top_tokens,1.0,"Invesco QQQ (Ondo Tokenized)
+(QQQon)"
+0x3b50805453023a91a8bf641e279401a0b23fa6f9,0,etherscan_top_tokens,1.0,"Renzo
+(REZ)"
+0x226bb599a12c826476e3a771454697ea52e9e220,0,etherscan_top_tokens,1.0,"Propy
+(PRO)"
+0x4274cd7277c7bb0806bd5fe84b9adae466a8da0a,0,etherscan_top_tokens,1.0,"YUSD
+(YUSD)"
+0x396382f6048ceb0407e5b8f0b6fefeebd244c6f7,0,etherscan_top_tokens,1.0,"PalladiumV3
+(PLLDv3)"
+0x720cd16b011b987da3518fbf38c3071d4f0d1495,0,etherscan_top_tokens,1.0,"Flux
+(FLUX)"
+0x4fabb145d64652a948d72533023f6e7a623c7c53,0,etherscan_top_tokens,1.0,"BUSD
+(BUSD)"
+0x99e980265bf36516c442be982df1772a6ccb3233,0,etherscan_top_tokens,1.0,"REAL
+(ASSET)"
+0x45e02bc2875a2914c4f585bbf92a6f28bc07cb70,0,etherscan_top_tokens,1.0,"$MBG Token
+($MBG)"
+0x77777feddddffc19ff86db637967013e6c6a116c,0,etherscan_top_tokens,1.0,"TORN Token
+(TORN)"
+0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359,0,etherscan_top_tokens,1.0,"Sai Stablecoin v1.0
+(SAI)"
+0x491604c0fdf08347dd1fa4ee062a822a5dd06b5d,0,etherscan_top_tokens,1.0,"Cartesi Token
+(CTSI)"
+0xe24a3dc889621612422a64e6388927901608b91d,0,etherscan_top_tokens,1.0,"Staked USN
+(sUSN)"
+0x0581ccdf2d9bca21baeff8b32b2551fd49cf70aa,0,etherscan_top_tokens,1.0,"APRO oracle Token
+(AT)"
+0xe7c6bf469e97eeb0bfb74c8dbff5bd47d4c1c98a,0,etherscan_top_tokens,1.0,"HashKey Platform Token
+(HSK)"
+0xb6ee9668771a79be7967ee29a63d4184f8097143,0,etherscan_top_tokens,1.0,"CargoX
+(CXO)"
+0x66661c7229901f568f16bd1551b3ba826f83ce49,0,etherscan_top_tokens,1.0,"Teller
+(DEBIT)"
+0x8207c1ffc5b6804f6024322ccf34f29c3541ae26,0,etherscan_top_tokens,1.0,"OriginToken
+(OGN)"
+0xe9a95d175a5f4c9369f3b74222402eb1b837693b,0,etherscan_top_tokens,1.0,"ChangeNOW
+(NOW)"
+0x767fe9edc9e0df98e07454847909b5e959d7ca0e,0,etherscan_top_tokens,1.0,"Illuvium
+(ILV)"
+0xd5cd84d6f044abe314ee7e414d37cae8773ef9d3,0,etherscan_top_tokens,1.0,"Harmony ONE
+(1ONE)"
+0x799a4202c12ca952cb311598a024c80ed371a41e,0,etherscan_top_tokens,1.0,"HarmonyOne
+(ONE)"
+0x77e06c9eccf2e797fd462a92b6d7642ef85b0a44,0,etherscan_top_tokens,1.0,"Wrapped TAO
+(wTAO)"
+0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c,0,etherscan_top_tokens,1.0,"Bancor
+(BNT)"
+0x7ff7fa94b8b66ef313f7970d4eebd2cb3103a2c0,0,etherscan_top_tokens,1.0,"Vana
+(VANA)"
+0x00c83aecc790e8a4453e5dd3b0b4b3680501a7a7,0,etherscan_top_tokens,1.0,"SKALE
+(SKL)"
+0x9b5528528656dbc094765e2abb79f293c21191b9,0,etherscan_top_tokens,1.0,"Midas Hyperithm
+(mHYPER)"
+0x3868d4e336d14d38031cf680329d31e4712e11cc,0,etherscan_top_tokens,1.0,"Spiko Digital Assets Cash and Carry Fund (EUR hedged)
+(eurSPKCC)"
+0x44108f0223a3c3028f5fe7aec7f9bb2e66bef82f,0,etherscan_top_tokens,1.0,"Across Protocol Token
+(ACX)"
+0x26fb86579e371c7aedc461b2ddef0a8628c93d3b,0,etherscan_top_tokens,1.0,"BORA
+(BORA)"
+0x94efe52d17983e6545180fa46d14f344372e180f,0,etherscan_top_tokens,1.0,"eBORA
+(eBORA)"
+0xe4ca6596d2c28014c6f89964f57838e0be9f369b,0,etherscan_top_tokens,1.0,"USD Universal
+(USDU)"
+0x4161725d019690a3e0de50f6be67b07a86a9fae1,0,etherscan_top_tokens,1.0,"TokenPocket Token
+(TPT)"
+0xfa1a856cfa3409cfa145fa4e20eb270df3eb21ab,0,etherscan_top_tokens,1.0,"IOSToken
+(IOST)"
+0x761d38e5ddf6ccf6cf7c55759d5210750b5d60f3,0,etherscan_top_tokens,1.0,"Dogelon
+(ELON)"
+0xb98d4c97425d9908e66e53a6fdf673acca0be986,0,etherscan_top_tokens,1.0,"ArcBlock
+(ABT)"
+0xca468554e5c0423ee858fe3942c9568c51fcaa79,0,etherscan_top_tokens,1.0,"Hims & Hers Health (Ondo Tokenized)
+(HIMSon)"
+0x6b6b78672795d079a3697a987e1da5cb3d8eae38,0,etherscan_top_tokens,1.0,"Hive Token
+(HIVE)"
+0x6c060ba738af39a09f3b45ac6487dfc9ebb885f6,0,etherscan_top_tokens,1.0,"rsERG
+(rsERG)"
+0xdd468a1ddc392dcdbef6db6e34e89aa338f9f186,0,etherscan_top_tokens,1.0,"Mezo USD
+(MUSD)"
+0xcabd955322dfbf94c084929ac5e9eca3feb5556f,0,etherscan_top_tokens,1.0,"MicroStrategy (Ondo Tokenized)
+(MSTRon)"
+0xf951e335afb289353dc249e82926178eac7ded78,0,etherscan_top_tokens,1.0,"swETH
+(swETH)"
+0xa849eaae994fb86afa73382e9bd88c2b6b18dc71,0,etherscan_top_tokens,1.0,"Mass Vehicle Ledger Token
+(MVL)"
+0x66761fa41377003622aee3c7675fc7b5c1c2fac5,0,etherscan_top_tokens,1.0,"Clearpool
+(CPOOL)"
+0x0bb217e40f8a5cb79adf04e1aab60e5abd0dfc1e,0,etherscan_top_tokens,1.0,"SwftCoin
+(SWFTC)"
+0xf433089366899d83a9f26a773d59ec7ecf30355e,0,etherscan_top_tokens,1.0,"Metal
+(MTL)"
+0xc08cd26474722ce93f4d0c34d16201461c10aa8c,0,etherscan_top_tokens,1.0,"CARV
+(CARV)"
+0x1a3496c18d558bd9c6c8f609e1b129f67ab08163,0,etherscan_top_tokens,1.0,"DEAPCOIN
+(DEP)"
+0x0fd10b9899882a6f2fcb5c371e17e70fdee00c38,0,etherscan_top_tokens,1.0,"Pundi X Token
+(PUNDIX)"
+0x1e2c4fb7ede391d116e6b41cd0608260e8801d59,0,etherscan_top_tokens,1.0,"Backed CSPX Core S&P 500
+(bCSPX)"
+0x4ef53d2caa51c447fdfeeedee8f07fd1962c9ee6,0,etherscan_top_tokens,1.0,"kpk USDC
+(kpk_USDC_v2)"
+0x1c48f86ae57291f7686349f12601910bd8d470bb,0,etherscan_top_tokens,1.0,"USDK
+(USDK)"
+0x35e78b3982e87ecfd5b3f3265b601c046cdbe232,0,etherscan_top_tokens,1.0,"SideShift Token
+(XAI)"
+0xfae103dc9cf190ed75350761e95403b7b8afa6c0,0,etherscan_top_tokens,1.0,"rswETH
+(rswETH)"
+0x6e2a43be0b1d33b726f0ca3b8de60b3482b8b050,0,etherscan_top_tokens,1.0,"Arkham
+(ARKM)"
+0x24a3d725c37a8d1a66eb87f0e5d07fe67c120035,0,etherscan_top_tokens,1.0,"Eden Token
+(EDEN)"
+0x12b004719fb632f1e7c010c6f5d6009fb4258442,0,etherscan_top_tokens,1.0,"Locked iUSD - 1 weeks
+(liUSD-1w)"
+0x87acfa3fd7a6e0d48677d070644d76905c2bdc00,0,etherscan_top_tokens,1.0,"Spacecoin
+(SPACE)"
+0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0,0,etherscan_top_tokens,1.0,"Frax Share
+(FXS)"
+0x122940c4c5f9ccfae7fa86455a42d3ec140855ce,0,etherscan_top_tokens,1.0,"iShares Bitcoin Trust (Ondo Tokenized)
+(IBITon)"
+0xdefa4e8a7bcba345f687a2f1456f5edd9ce97202,0,etherscan_top_tokens,1.0,"Kyber Network Crystal v2
+(KNC)"
+0x4cda244c7e93045c88f86e6ec571c223bec2fc70,0,etherscan_top_tokens,1.0,"Vatreni Token
+(VATRENI)"
+0x8806926ab68eb5a7b909dcaf6fdbe5d93271d6e2,0,etherscan_top_tokens,1.0,"Uquid Coin
+(UQC)"
+0xa9b1eb5908cfc3cdf91f9b8b3a74108598009096,0,etherscan_top_tokens,1.0,"Bounce Token
+(Auction)"
+0x9e32b13ce7f2e80a01932b42553652e053d6ed8e,0,etherscan_top_tokens,1.0,"Metis Token
+(Metis)"
+0xa0d69e286b938e21cbf7e51d71f6a4c8918f482f,0,etherscan_top_tokens,1.0,"Electronic Dollar
+(eUSD)"
+0xb33d999469a7e6b9ebc25a3a05248287b855ed46,0,etherscan_top_tokens,1.0,"Flockerz
+(FLOCK)"
+0x5ab3d4c385b400f3abb49e80de2faf6a88a7b691,0,etherscan_top_tokens,1.0,"FLock.io
+(FLOCK)"
+0xc477b6dfd26ec2460b3b92de18837fd476ea7549,0,etherscan_top_tokens,1.0,"JANCTION
+(JCT)"
+0x826180541412d574cf1336d22c0c0a287822678a,0,etherscan_top_tokens,1.0,"Chainflip
+(FLIP)"
+0x39bb259f66e1c59d5abef88375979b4d20d98022,0,etherscan_top_tokens,1.0,"WAX Token
+(WAX)"
+0x27f6c8289550fce67f6b50bed1f519966afe5287,0,etherscan_top_tokens,1.0,"tGBP
+(tGBP)"
+0x5f98805a4e8be255a32880fdec7f6728c6568ba0,0,etherscan_top_tokens,1.0,"LUSD Stablecoin
+(LUSD)"
+0xe7e7e741c23a4767831a56a8c99f522c5ac1e7e7,0,etherscan_top_tokens,1.0,"Everything
+(EV)"
+0xfab99fcf605fd8f4593edb70a43ba56542777777,0,etherscan_top_tokens,1.0,"ZEROBASE
+(ZBT)"
+0xad29f2723fcdbcf665f210f25e06f97477e417cf,0,etherscan_top_tokens,1.0,"GRVT
+(GRVT)"
+0xb0c7a3ba49c7a6eaba6cd4a96c55a1391070ac9a,0,etherscan_top_tokens,1.0,"MAGIC
+(MAGIC)"
+0x54a4fc78431f9201824643e99bec891bb7462a1d,0,etherscan_top_tokens,1.0,"Fidelity USD Digital Liquidity Fund-Acc
+(FILQ-A)"
+0x2e3cfe45e3ee7c017277f22e35d2f29edc99d570,0,etherscan_top_tokens,1.0,"Wrapped DAG
+(wDAG)"
+0xf3e4872e6a4cf365888d93b6146a2baa7348f1a4,0,etherscan_top_tokens,1.0,"iShares Silver Trust (Ondo Tokenized)
+(SLVon)"
+0x18aaa7115705e8be94bffebde57af9bfc265b998,0,etherscan_top_tokens,1.0,"Audius
+(AUDIO)"
+0xf1376bcef0f78459c0ed0ba5ddce976f1ddf51f4,0,etherscan_top_tokens,1.0,"Universal ETH
+(uniETH)"
+0xbeef0046fcab1de47e41fb75bb3dc4dfc94108e3,0,etherscan_top_tokens,1.0,"Steakhouse Prime Instant
+(steakETH)"
+0x4ed257678fc4e76df9642a416b223729fdedbefd,0,etherscan_top_tokens,1.0,"StrikeX
+(STRX)"
+0xe3c408bd53c31c085a1746af401a4042954ff740,0,etherscan_top_tokens,1.0,"GreenMetaverseToken
+(GMT)"
+0x0d438f3b5175bebc262bf23753c1e53d03432bde,0,etherscan_top_tokens,1.0,"Wrapped NXM
+(wNXM)"
+0x39fbbabf11738317a448031930706cd3e612e1b9,0,etherscan_top_tokens,1.0,"Wrapped XRP
+(WXRP)"
+0x8e870d67f660d95d5be530380d0ec0bd388289e1,0,etherscan_top_tokens,1.0,"Pax Dollar
+(USDP)"
+0xeb964a1a6fab73b8c72a0d15c7337fa4804f484d,0,etherscan_top_tokens,1.0,"Hemi
+(HEMI)"
+0x7d5121505149065b562c789a0145ed750e6e8cdd,0,etherscan_top_tokens,1.0,"Victoria VR
+(VR)"
+0xf6718b2701d4a6498ef77d7c152b2137ab28b8a3,0,etherscan_top_tokens,1.0,"Lorenzo stBTC
+(stBTC)"
+0xbe1936a67f503e0eaf2434b0cf9f4e3d7100008a,0,etherscan_top_tokens,1.0,"Prospective
+(PROS)"
+0xb528edbef013aff855ac3c50b381f253af13b997,0,etherscan_top_tokens,1.0,"Aevo
+(AEVO)"
+0x48ab4e39ac59f4e88974804b04a991b3a402717f,0,etherscan_top_tokens,1.0,"Fidelity Digital Interest Token
+(FDIT)"
+0x41e5560054824ea6b0732e656e3ad64e20e94e45,0,etherscan_top_tokens,1.0,"Civic
+(CVC)"
+0xbeef050ecd6a16c4e7bffbb52ebba7846c4b8cd4,0,etherscan_top_tokens,1.0,"Steakhouse ETH
+(steakETH)"
+0x85eee30c52b0b379b046fb0f85f4f3dc3009afec,0,etherscan_top_tokens,1.0,"KEEP Token
+(KEEP)"
+0xbf59dbc154421a7b37f4f2841e11f4ed2a1dee7c,0,etherscan_top_tokens,1.0,"Edel
+(EDEL)"
+0x738865301a9b7dd80dc3666dd48cf034ec42bdda,0,etherscan_top_tokens,1.0,"Agoras Token
+(AGRS)"
+0x5f0e628b693018f639d10e4a4f59bd4d8b2b6b44,0,etherscan_top_tokens,1.0,"Whiteheart Token
+(WHITE)"
+0xc4441c2be5d8fa8126822b9929ca0b81ea0de38e,0,etherscan_top_tokens,1.0,"USUAL
+(USUAL)"
+0x0000000000095413afc295d19edeb1ad7b71c952,0,etherscan_top_tokens,1.0,"LON Token
+(LON)"
+0x93a2db22b7c736b341c32ff666307f4a9ed910f5,0,etherscan_top_tokens,1.0,"Hyperlane
+(HYPER)"
+0x64bc2ca1be492be7185faa2c8835d9b824c8a194,0,etherscan_top_tokens,1.0,"Big Time
+(BIGTIME)"
+0x4f9254c83eb525f9fcf346490bbb3ed28a81c667,0,etherscan_top_tokens,1.0,"CelerToken
+(CELR)"
+0xda7ad9dea9397cffddae2f8a052b82f1484252b3,0,etherscan_top_tokens,1.0,"River
+(RIVER)"
+0x25f8087ead173b73d6e8b84329989a8eea16cf73,0,etherscan_top_tokens,1.0,"Yield Guild Games Token
+(YGG)"
+0x4691937a7508860f876c9c0a2a617e7d9e945d4b,0,etherscan_top_tokens,1.0,"WOO
+(WOO)"
+0xe5e0b73380181273abcfd88695f52c4d0c825661,0,etherscan_top_tokens,1.0,"Impossible Cloud Network Token
+(ICNT)"
+0xb1110919016846972056ab995054d65560d5f05e,0,etherscan_top_tokens,1.0,"Billions Network Token
+(BILL)"
+0x2be5e8c109e2197d077d13a82daead6a9b3433c5,0,etherscan_top_tokens,1.0,"Tokamak Network Token
+(TON)"
+0x43fcd85e8d9d003d515f886891b7c742ac9f92da,0,etherscan_top_tokens,1.0,"WETH PRIME
+(gtwethp)"
+0x579cea1889991f68acc35ff5c3dd0621ff29b0c9,0,etherscan_top_tokens,1.0,"Everipedia IQ
+(IQ)"
+0xcc8fa225d80b9c7d42f96e9570156c65d6caaa25,0,etherscan_top_tokens,1.0,"Smooth Love Potion
+(SLP)"
+0xf8750b54d86be7ae9e32b4a0c826811198d63313,0,etherscan_top_tokens,1.0,"Hex Trust USD
+(USDX)"
+0x7a486f809c952a6f8dec8cb0ff68173f2b8ed56c,0,etherscan_top_tokens,1.0,"Hex Trust USD
+(USDX)"
+0x4dc3643dbc642b72c158e7f3d2ff232df61cb6ce,0,etherscan_top_tokens,1.0,"Amber
+(AMB)"
+0xccf4429db6322d5c611ee964527d42e5d685dd6a,0,etherscan_top_tokens,1.0,"Compound Wrapped BTC
+(cWBTC)"
+0xdcee70654261af21c44c093c300ed3bb97b78192,0,etherscan_top_tokens,1.0,"Wrapped OETH
+(WOETH)"
+0x824a50df33ac1b41afc52f4194e2e8356c17c3ac,0,etherscan_top_tokens,1.0,"KickToken
+(KICK)"
+0x6dea81c8171d0ba574754ef6f8b412f2ed88c54d,0,etherscan_top_tokens,1.0,"LQTY
+(LQTY)"
+0x431d5dff03120afa4bdf332c61a6e1766ef37bdb,0,etherscan_top_tokens,1.0,"JPY Coin
+(JPYC)"
+0xdd0f28e19c1780eb6396170735d45153d261490d,0,etherscan_top_tokens,1.0,"Gauntlet USDC Prime
+(gtUSDC)"
+0xe5caef4af8780e59df925470b050fb23c43ca68c,0,etherscan_top_tokens,1.0,"Ferrum Network Token
+(FRM)"
+0x84ca8bc7997272c7cfb4d0cd3d55cd942b3c9419,0,etherscan_top_tokens,1.0,"DIAToken
+(DIA)"
+0x8a2279d4a90b6fe1c4b30fa660cc9f926797baa2,0,etherscan_top_tokens,1.0,"Chroma
+(CHR)"
+0xaaa9214f675316182eaa21c85f0ca99160cc3aaa,0,etherscan_top_tokens,1.0,"QANX Token
+(QANX)"
+0x917cee801a67f933f2e6b33fc0cd1ed2d5909d88,0,etherscan_top_tokens,1.0,"Super Symbiotic LRT
+(weETHs)"
+0x657e8c867d8b37dcc18fa4caead9c45eb088c642,0,etherscan_top_tokens,1.0,"ether.fi BTC
+(eBTC)"
+0x169e36f327caa83d004f5c2668ac25a1424c940d,0,etherscan_top_tokens,1.0,"Solv
+(SOLV)"
+0x73d7c860998ca3c01ce8c808f5577d94d545d1b4,0,etherscan_top_tokens,1.0,"Ixs Token
+(IXS)"
+0xe172e9b6cfbeeb5593bdce3f077356fdb33af904,0,etherscan_top_tokens,1.0,"Interfold
+(FOLD)"
+0x95697cb93cdd65a29ca2613beeafa18e39fa5b76,0,etherscan_top_tokens,1.0,"SCANDIC COIN
+(SNC)"
+0xddc0f880ff6e4e22e4b74632fbb43ce4df6ccc5a,0,etherscan_top_tokens,1.0,"Re Protocol reUSDe
+(reUSDe)"
+0x0d37af9d8ae74f35f3a38bd2a08fcb29890ca6d2,0,etherscan_top_tokens,1.0,"AIXBT
+(AIXBT)"
+0x2370f9d504c7a6e775bf6e14b3f12846b594cd53,0,etherscan_top_tokens,1.0,"JPY Coin
+(JPYC)"
+0x01791f726b4103694969820be083196cc7c045ff,0,etherscan_top_tokens,1.0,"Yield Basis
+(YB)"
+0xba47214edd2bb43099611b208f75e4b42fdcfedc,0,etherscan_top_tokens,1.0,"Alphabet Class A (Ondo Tokenized)
+(GOOGLon)"
+0x0100546f2cd4c9d97f798ffc9755e47865ff7ee6,0,etherscan_top_tokens,1.0,"Alchemix ETH
+(alETH)"
+0xfeac2eae96899709a43e252b6b92971d32f9c0f9,0,etherscan_top_tokens,1.0,"ANyONe Protocol
+(ANYONE)"
+0xdbb5cf12408a3ac17d668037ce289f9ea75439d7,0,etherscan_top_tokens,1.0,"WorldMobileToken
+(WMTX)"
+0x6af487beb661ccecd1d045e9561a0dac9aa5c7db,0,etherscan_top_tokens,1.0,"DUAL
+(DUAL)"
+0xf17e65822b568b3903685a7c9f496cf7656cc6c2,0,etherscan_top_tokens,1.0,"Biconomy Token
+(BICO)"
+0x14778860e937f509e651192a90589de711fb88a9,0,etherscan_top_tokens,1.0,"CyberConnect
+(CYBER)"
+0xb683d83a532e2cb7dfa5275eed3698436371cc9f,0,etherscan_top_tokens,1.0,"BTU Protocol
+(BTU)"
+0x94a8b4ee5cd64c79d0ee816f467ea73009f51aa0,0,etherscan_top_tokens,1.0,"Realio Network
+(RIO)"
+0xe95a203b1a91a908f9b9ce46459d101078c2c3cb,0,etherscan_top_tokens,1.0,"Ankr Staked ETH
+(ankrETH)"
+0x986ee2b944c42d017f52af21c4c69b84dbea35d8,0,etherscan_top_tokens,1.0,"BitMartToken
+(BMC)"
+0xa8258abc8f2811dd48eccd209db68f25e3e34667,0,etherscan_top_tokens,1.0,"Constellation
+(DAG)"
+0x9aab071b4129b083b01cb5a0cb513ce7eca26fa5,0,etherscan_top_tokens,1.0,"HUNT Token
+(HUNT)"
+0x699f088b5dddcafb7c4824db5b10b57b37cb0c66,0,etherscan_top_tokens,1.0,"Enso
+(ENSO)"
+0x764a726d9ced0433a8d7643335919deb03a9a935,0,etherscan_top_tokens,1.0,"Pocket Network
+(POKT)"
+0xaf5191b0de278c7286d6c7cc6ab6bb8a73ba2cd6,0,etherscan_top_tokens,1.0,"StargateToken
+(STG)"
+0x53c8395465a84955c95159814461466053dedede,0,etherscan_top_tokens,1.0,"DeGate Token
+(DG)"
+0xd9343a049d5dbd89cd19dc6bca8c48fb3a0a42a7,0,etherscan_top_tokens,1.0,"Lumia Token
+(LUMIA)"
+0xea26c4ac16d4a5a106820bc8aee85fd0b7b2b664,0,etherscan_top_tokens,1.0,"QuarkChain Token
+(QKC)"
+0x2744ea5ac9b11cb5e3cd63d3a88e858336aeddc2,0,etherscan_top_tokens,1.0,"rsFIRO
+(rsFIRO)"
+0x5e362eb2c0706bd1d134689ec75176018385430b,0,etherscan_top_tokens,1.0,"Decentralized Validator Token
+(DVstETH)"
+0xef4461891dfb3ac8572ccf7c794664a8dd927945,0,etherscan_top_tokens,1.0,"WalletConnect
+(WCT)"
+0x88fdb07a5bc6e2536587acc0a9d5d180da48752f,0,etherscan_top_tokens,1.0,"BP xStock
+(BPx)"
+0x5dc60c4d5e75d22588fa17ffeb90a63e535efce0,0,etherscan_top_tokens,1.0,"dKargo
+(DKA)"
+0x10dea67478c5f8c5e2d90e5e9b26dbe60c54d800,0,etherscan_top_tokens,1.0,"Taiko Token
+(TAIKO)"
+0x4647e1fe715c9e23959022c2416c71867f5a6e80,0,etherscan_top_tokens,1.0,"Wrapped OCT
+(wOCT)"
+0x9e46a38f5daabe8683e10793b06749eef7d733d1,0,etherscan_top_tokens,1.0,"Nectar
+(NCT)"
+0x992651bfeb9a0dcc4457610e284ba66d86489d4d,0,etherscan_top_tokens,1.0,"iShares 20+ Year Treasury Bond ETF (Ondo Tokenized)
+(TLTon)"
+0xde30da39c46104798bb5aa3fe8b9e0e1f348163f,0,etherscan_top_tokens,1.0,"Gitcoin
+(GTC)"
+0x6b7774cb12ed7573a7586e7d0e62a2a563ddd3f0,0,etherscan_top_tokens,1.0,"Sophon
+(SOPH)"
+0x1b379a79c91a540b2bcd612b4d713f31de1b80cc,0,etherscan_top_tokens,1.0,"Naoris Protocol
+(NAORIS)"
+0xcfcecfe2bd2fed07a9145222e8a7ad9cf1ccd22a,0,etherscan_top_tokens,1.0,"Adshares
+(ADS)"
+0x31c8eacbffdd875c74b94b077895bd78cf1e64a3,0,etherscan_top_tokens,1.0,"Radicle
+(RAD)"
+0x43dfc4159d86f3a37a5a4b3d4580b888ad7d4ddd,0,etherscan_top_tokens,1.0,"DODO bird
+(DODO)"
+0xfda09936dbd717368de0835ba441d9e62069d36f,0,etherscan_top_tokens,1.0,"Intel (Ondo Tokenized)
+(INTCon)"
+0x3b790d651e950497c7723d47b24e6f61534f7969,0,etherscan_top_tokens,1.0,"Staked POL
+(sPOL)"
+0x3d7d6fdf07ee548b939a80edbc9b2256d0cdc003,0,etherscan_top_tokens,1.0,"Strata Senior USDe
+(srUSDe)"
+0xb63efbc28860c8097e341de1fcf59456161e9d98,0,etherscan_top_tokens,1.0,"Sandisk Corporation xStock
+(SNDKx)"
+0xa21af1050f7b26e0cff45ee51548254c41ed6b5c,0,etherscan_top_tokens,1.0,"Osaka Protocol
+(OSAK)"
+0x78a0a62fba6fb21a83fe8a3433d44c73a4017a6f,0,etherscan_top_tokens,1.0,"Open Exchange Token
+(OX)"
+0x4dc26fc5854e7648a064a4abd590bbe71724c277,0,etherscan_top_tokens,1.0,"Animecoin
+(ANIME)"
+0xba50933c268f567bdc86e1ac131be072c6b0b71a,0,etherscan_top_tokens,1.0,"ARPA Token
+(ARPA)"
+0xac51066d7bec65dc4589368da368b212745d63e8,0,etherscan_top_tokens,1.0,"ALICE
+(ALICE)"
+0x888883b5f5d21fb10dfeb70e8f9722b9fb0e5e51,0,etherscan_top_tokens,1.0,"EURØP
+(EUROP)"
+0xf6b1117ec07684d3958cad8beb1b302bfd21103f,0,etherscan_top_tokens,1.0,"Tesla (Ondo Tokenized)
+(TSLAon)"
+0x80122c6a83c8202ea365233363d3f4837d13e888,0,etherscan_top_tokens,1.0,"Messier
+(M87)"
+0x18f52b3fb465118731d9e0d276d4eb3599d57596,0,etherscan_top_tokens,1.0,"AI Dollar
+(AID)"
+0xac8d365ecc9074a679f75b3e6b2bbf303e466728,0,etherscan_top_tokens,1.0,"Wrapped QIE
+(WQIE)"
+0xec2af1c8b110a61fd9c3fa6a554a031ca9943926,0,etherscan_top_tokens,1.0,"MegaUSD
+(USDm)"
+0xfeff7a377a86462f5a2a872009722c154707f09e,0,etherscan_top_tokens,1.0,"iShares Core MSCI EAFE ETF (Ondo Tokenized)
+(IEFAon)"
+0xab93df617f51e1e415b5b4f8111f122d6b48e55c,0,etherscan_top_tokens,1.0,"Delta Exchange Token
+(DETO)"
+0xa4842662637e7c8a0210247d89244b0e45d3f777,0,etherscan_top_tokens,1.0,"x-DOL-x
+(XDOL)"
+0x33f6be84becff45ea6aa2952d7ef890b44bfb59d,0,etherscan_top_tokens,1.0,"Orochi Network Token
+(ON)"
+0xf404e5f887dbd5508e16a1198fcdd5de1a4296b8,0,etherscan_top_tokens,1.0,"Marvell Technology (Ondo Tokenized)
+(MRVLon)"
+0x1d926bbe67425c9f507b9a0e8030eedc7880bf33,0,etherscan_top_tokens,1.0,"Superform
+(UP)"
+0x8de39b057cc6522230ab19c0205080a8663331ef,0,etherscan_top_tokens,1.0,"wojak
+(wojak)"
+0xa6c0c097741d55ecd9a3a7def3a8253fd022ceb9,0,etherscan_top_tokens,1.0,"AVA
+(AVA)"
+0x5fab9761d60419c9eeebe3915a8fa1ed7e8d2e1b,0,etherscan_top_tokens,1.0,"Dimo
+(DIMO)"
+0x0655977feb2f289a4ab78af67bab0d17aab84367,0,etherscan_top_tokens,1.0,"Savings crvUSD
+(scrvUSD)"
+0x090185f2135308bad17527004364ebcc2d37e5f6,0,etherscan_top_tokens,1.0,"Spell Token
+(SPELL)"
+0xb6c3dc857845a713d3531cea5ac546f6767992f4,0,etherscan_top_tokens,1.0,"Advertise Coin
+(ADCO)"
+0x94314a14df63779c99c0764a30e0cd22fa78fc0e,0,etherscan_top_tokens,1.0,"Epic Chain
+(EPIC)"
+0xae12c5930881c53715b369cec7606b70d8eb229f,0,etherscan_top_tokens,1.0,"Coin98
+(C98)"
+0x4f2b33840227ddd0e28da8d4185d6fa07adfed87,0,etherscan_top_tokens,1.0,"Based Token
+(BASED)"
+0x584bc13c7d411c00c01a62e8019472de68768430,0,etherscan_top_tokens,1.0,"Hegic
+(HEGIC)"
+0xa0df17b5ac76ababa36e1450e2cbcd18a620c845,0,etherscan_top_tokens,1.0,"Fake World Assets
+(FWA)"
+0xa9e8acf069c58aec8825542845fd754e41a9489a,0,etherscan_top_tokens,1.0,"pepeCoin
+(pepecoin)"
+0xc9746f73cc33a36c2cd55b8aefd732586946cedd,0,etherscan_top_tokens,1.0,"BOB
+(BOB)"
+0x38e68a37e401f7271568cecaac63c6b1e19130b4,0,etherscan_top_tokens,1.0,"Banana
+(BANANA)"
+0x8238884ec9668ef77b90c6dff4d1a9f4f4823bfe,0,etherscan_top_tokens,1.0,"OpenEden Open Dollar
+(USDO)"
+0x70bef3bb2f001da2fddb207dae696cd9faff3f5d,0,etherscan_top_tokens,1.0,"Ninja Squad Token
+(NST)"
+0xc79eb575ce6027f3671400b6b2df8c13f81a36b4,0,etherscan_top_tokens,1.0,"Chemed xStock
+(CHEx)"
+0x9ce84f6a69986a83d92c324df10bc8e64771030f,0,etherscan_top_tokens,1.0,"Chintai Exchange Token
+(CHEX)"
+0xe3a46b2bc1d83c731d58cab765d3b45bce789095,0,etherscan_top_tokens,1.0,"DAYSTARTER
+(DST)"
+0xf695df6c0f3bb45918a7a82e83348fc59517734e,0,etherscan_top_tokens,1.0,"Spiko Digital Assets Cash & Carry Fund
+(UKTBL)"
+0x030ba81f1c18d280636f32af80b9aad02cf0854e,0,etherscan_top_tokens,1.0,"Aave interest bearing WETH
+(aWETH)"
+0xabd4c63d2616a5201454168269031355f4764337,0,etherscan_top_tokens,1.0,"Orderly Network
+(ORDER)"
+0xba61dabc6eca684273e0a21a4fe34a86e8efffab,0,etherscan_top_tokens,1.0,"ICON
+(ICX)"
+0x4e72025984424e52838cf8953e2863eff036b67a,0,etherscan_top_tokens,1.0,"Midas Wellington Income Opportunities
+(mWIN)"
+0x8f051ca72a3440d83b18e71c3e59676203ab8f91,0,etherscan_top_tokens,1.0,"Katana
+(KAT)"
+0xc7283b66eb1eb5fb86327f08e1b5816b0720212b,0,etherscan_top_tokens,1.0,"Tribe
+(TRIBE)"
+0xf9902edfca4f49dcaebc335c73aebd82c79c2886,0,etherscan_top_tokens,1.0,"ADO Protocol
+(ADO)"
+0xde2f7766c8bf14ca67193128535e5c7454f8387c,0,etherscan_top_tokens,1.0,"Metadium
+(META)"
+0xb23d80f5fefcddaa212212f028021b41ded428cf,0,etherscan_top_tokens,1.0,"Prime
+(PRIME)"
+0x2781246fe707bb15cee3e5ea354e2154a2877b16,0,etherscan_top_tokens,1.0,"ELYSIA
+(EL)"
+0x1bbe973bef3a977fc51cbed703e8ffdefe001fed,0,etherscan_top_tokens,1.0,"PORTAL
+(PORTAL)"
+0xdddddd4301a082e62e84e43f474f044423921918,0,etherscan_top_tokens,1.0,"DeversiFi Token
+(DVF)"
+0x6df0e641fc9847c0c6fde39be6253045440c14d3,0,etherscan_top_tokens,1.0,"Dinero Governance Token
+(DINERO)"
+0x997408c01aaa6396af806115dafdebe4fad879fd,0,etherscan_top_tokens,1.0,"MovieBloc
+(MBL)"
+0xb879da8b24c9b8685de8526cf492e954f165d74b,0,etherscan_top_tokens,1.0,"MovieBloc
+(MBL)"
+0x3f80b1c54ae920be41a77f8b902259d48cf24ccf,0,etherscan_top_tokens,1.0,"KERNEL
+(KERNEL)"
+0x0c5d9fae8670cfa0aa5f57b42ccd630c46bbe498,0,etherscan_top_tokens,1.0,"Peoples Reserve
+(PRN)"
+0xff7cf16aa2ffc463b996db2f7b7cf0130336899d,0,etherscan_top_tokens,1.0,"iShares Core US Aggregate Bond ETF (Ondo Tokenized)
+(AGGon)"
+0xf8a80d1cb9cfd70d03d655d9df42339846f3b3c8,0,etherscan_top_tokens,1.0,"Intel xStock
+(INTCx)"
+0x936facdf10c8c36294e7b9d28345255539d81bc7,0,etherscan_top_tokens,1.0,"RockSolid rETH Vault
+(rock.rETH)"
+0x57b946008913b82e4df85f501cbaed910e58d26c,0,etherscan_top_tokens,1.0,"Marlin POND
+(POND)"
+0x6c76de483f1752ac8473e2b4983a873991e70da7,0,etherscan_top_tokens,1.0,"BTR token
+(BTR)"
+0x32b77729cd87f1ef2bea4c650c16f89f08472c69,0,etherscan_top_tokens,1.0,"DeBoxToken
+(BOX)"
+0xba5bde662c17e2adff1075610382b9b691296350,0,etherscan_top_tokens,1.0,"SuperRare
+(RARE)"
+0x667102bd3413bfeaa3dffb48fa8288819e480a88,0,etherscan_top_tokens,1.0,"Tokenize Emblem
+(TKX)"
+0x14862c03a0caccc1ab328b062e64e31b2a1afcd7,0,etherscan_top_tokens,1.0,"SEDA
+(SEDA)"
+0xba25b2281214300e4e649fead9a6d6acd25f1c0a,0,etherscan_top_tokens,1.0,"Tree
+(TREE)"
+0xbbbbca6a901c926f240b89eacb641d8aec7aeafd,0,etherscan_top_tokens,1.0,"LoopringCoin V2
+(LRC)"
+0x9d275685dc284c8eb1c79f6aba7a63dc75ec890a,0,etherscan_top_tokens,1.0,"Apple xStock
+(AAPLx)"
+0x44f49ff0da2498bcb1d3dc7c0f999578f67fd8c6,0,etherscan_top_tokens,1.0,"Corn
+(CORN)"
+0x0001a500a6b18995b03f44bb040a5ffc28e45cb0,0,etherscan_top_tokens,1.0,"Autonolas
+(OLAS)"
+0x364f210f430ec2448fc68a49203040f6124096f0,0,etherscan_top_tokens,1.0,"Coinbase xStock
+(COINx)"
+0x7448c7456a97769f6cd04f1e83a4a23ccdc46abd,0,etherscan_top_tokens,1.0,"Maverick Token
+(MAV)"
+0xd8a271974e8edae9d7b58e3370dc1669427503f4,0,etherscan_top_tokens,1.0,"Fluent
+(BLEND)"
+0x92e52a1a235d9a103d970901066ce910aacefd37,0,etherscan_top_tokens,1.0,"UCASH
+(UCASH)"
+0x70e8de73ce538da2beed35d14187f6959a8eca96,0,etherscan_top_tokens,1.0,"XSGD
+(XSGD)"
+0xb907aef1d25396c1e8a27746026d368ea508000a,0,etherscan_top_tokens,1.0,"Melrose Industries xStock
+(MROx)"
+0x67e1f506b148d0fc95a4e3ffb49068ceb6855c05,0,etherscan_top_tokens,1.0,"Midas Rockaway Market Neutral
+(mROX)"
+0xd101dcc414f310268c37eeb4cd376ccfa507f571,0,etherscan_top_tokens,1.0,"ResearchCoin
+(RSC)"
+0x0692481c369e2bdc728a69ae31b848343a4567be,0,etherscan_top_tokens,1.0,"iShares Core S&P Total US Stock Market ETF (Ondo Tokenized)
+(ITOTon)"
+0x399b29975cbe313c56269cd5097f5ae097fa2741,0,etherscan_top_tokens,1.0,"USDSM
+(USDSM)"
+0x593ccca4c4bf58b7526a4c164ceef4003c6388db,0,etherscan_top_tokens,1.0,"Nest Alpha Vault
+(nALPHA)"
+0xc9eef266834730340a55b6cc24621b31baf55581,0,etherscan_top_tokens,1.0,"SpaceX (Ondo Tokenized)
+(SPCXon)"
+0xb64ef51c888972c908cfacf59b47c1afbc0ab8ac,0,etherscan_top_tokens,1.0,"Storj
+(STORJ)"
+0xbd356a39bff2cada8e9248532dd879147221cf76,0,etherscan_top_tokens,1.0,"WOM Token
+(WOM)"
+0x3a43aec53490cb9fa922847385d82fe25d0e9de7,0,etherscan_top_tokens,1.0,"yoVaultETH
+(yoETH)"
+0x0f81001ef0a83ecce5ccebf63eb302c70a39a654,0,etherscan_top_tokens,1.0,"Dolomite
+(DOLO)"
+0x4d1c297d39c5c1277964d0e3f8aa901493664530,0,etherscan_top_tokens,1.0,"PUFFER
+(PUFFER)"
+0xad55aebc9b8c03fc43cd9f62260391c13c23e7c0,0,etherscan_top_tokens,1.0,"Compounding Open Dollar
+(cUSDO)"
+0xcc40965d3621362c3ee1dd946ba98d6a708ea86b,0,etherscan_top_tokens,1.0,"PDD Holdings (Ondo Tokenized)
+(PDDon)"
+0x2380f2673c640fb67e2d6b55b44c62f0e0e69da9,0,etherscan_top_tokens,1.0,"Gold xStock
+(GLDx)"
+0xe9fa21e671bcfb04e6868784b89c19d5aa2424ea,0,etherscan_top_tokens,1.0,"EurocoinToken
+(ECTE)"
+0x8d6cebd76f18e1558d4db88138e2defb3909fad6,0,etherscan_top_tokens,1.0,"Mai Stablecoin
+(MAI)"
+0x246908bff0b1ba6ecadcf57fb94f6ae2fcd43a77,0,etherscan_top_tokens,1.0,"Divi
+(DIVI)"
+0x0fc2a55d5bd13033f1ee0cdd11f60f7efe66f467,0,etherscan_top_tokens,1.0,"Lagrange
+(LA)"
+0xac3211a5025414af2866ff09c23fc18bc97e79b1,0,etherscan_top_tokens,1.0,"DOVU
+(DOV)"
+0x2aeabde1ab736c59e9a19bed67681869eef39526,0,etherscan_top_tokens,1.0,"Dovu
+(DOVU[eth])"
+0x66a0f676479cee1d7373f3dc2e2952778bff5bd6,0,etherscan_top_tokens,1.0,"Wise Token
+(WISE)"
+0x41545f8b9472d758bb669ed8eaeeecd7a9c4ec29,0,etherscan_top_tokens,1.0,"Forta
+(FORT)"
+0x6b0b3a982b4634ac68dd83a4dbf02311ce324181,0,etherscan_top_tokens,1.0,"Artificial Liquid Intelligence Token
+(ALI)"
+0x000006c2a22ff4a44ff1f5d0f2ed65f781f55555,0,etherscan_top_tokens,1.0,"ZK Coin
+(ZKC)"
+0xa6773c4f26c80c86bc04aa6506533693a39d1195,0,etherscan_top_tokens,1.0,"Zenchain
+(ZTC)"
+0x06b964d96f5dcf7eae9d7c559b09edce244d4b8e,0,etherscan_top_tokens,1.0,"USUALX
+(USUALX)"
+0x06c84db1f9899e1203ef3c9f05b2300ba47e4023,0,etherscan_top_tokens,1.0,"BounceBit Token
+(BB)"
+0xeeb4d8400aeefafc1b2953e0094134a887c76bd8,0,etherscan_top_tokens,1.0,"Avail
+(AVAIL)"
+0x7977bf3e7e0c954d12cdca3e013adaf57e0b06e0,0,etherscan_top_tokens,1.0,"OPINION
+(OPN)"
+0xe2ad0bf751834f2fbdc62a41014f84d67ca1de2a,0,etherscan_top_tokens,1.0,"Caldera
+(ERA)"
+0x4111b60bc87f2bd1e81e783e271d7f0ec6ee088b,0,etherscan_top_tokens,1.0,"iShares MSCI EAFE ETF (Ondo Tokenized)
+(EFAon)"
+0x9f2e3eb0160117c56b07652fe66a08a48b5bd7b5,0,etherscan_top_tokens,1.0,"SoFi Technologies (Ondo Tokenized)
+(SOFIon)"
+0x9ce115f0341ae5dabc8b477b74e83db2018a6f42,0,etherscan_top_tokens,1.0,"HairDAO Token
+(HAIR)"
+0x40eb746dee876ac1e78697b7ca85142d178a1fc8,0,etherscan_top_tokens,1.0,"IAGON
+(IAG)"
+0xcbb8f1bda10b9696c57e13bc128fe674769dcec0,0,etherscan_top_tokens,1.0,"MOR
+(MOR)"
+0x90ce5720c17587d28e4af120ae2d313b3bad1722,0,etherscan_top_tokens,1.0,"Overtime DAO Token
+(OVER)"
+0xe1385fdd5ffb10081cd52c56584f25efa9084015,0,etherscan_top_tokens,1.0,"Robinhood xStock
+(HOODx)"
+0x19ebd191f7a24ece672ba13a302212b5ef7f35cb,0,etherscan_top_tokens,1.0,"YieldFi yUSD
+(yUSD)"
+0x2df38ca485d01fc15e4fd85847ed26b7ef871c1c,0,etherscan_top_tokens,1.0,"iShares TIPS Bond ETF (Ondo Tokenized)
+(TIPon)"
+0x18b5c15e5196a38a162b1787875295b76e4313fb,0,etherscan_top_tokens,1.0,"Spiko Amundi Overnight Swap Fund (CHF)
+(chfSAFO)"
+0x71ffb6a81786ec285d429d531cf655107b9d878d,0,etherscan_top_tokens,1.0,"Galaxy USDT Quality
+(gUSDTq)"
+0x04c46e830bb56ce22735d5d8fc9cb90309317d0f,0,etherscan_top_tokens,1.0,"Ekubo Protocol
+(EKUBO)"
+0xe1bad922f84b198a08292fb600319300ae32471b,0,etherscan_top_tokens,1.0,"[FCT] FirmaChain Token
+(FCT)"
+0xfc209eeba3d744aa741cc5c2a73ebf9c977b5f82,0,etherscan_top_tokens,1.0,"Brickken
+(BKN)"
+0xade00c28244d5ce17d72e40330b1c318cd12b7c3,0,etherscan_top_tokens,1.0,"heyAura
+(ADX)"
+0xb66a5d30d04f076e78ffb0d045c55846fdcde928,0,etherscan_top_tokens,1.0,"Energy Web Token
+(EWT)"
+0x178c820f862b14f316509ec36b13123da19a6054,0,etherscan_top_tokens,1.0,"Energy Web Token Bridged
+(EWTB)"
+0xc50673edb3a7b94e8cad8a7d4e0cd68864e33edf,0,etherscan_top_tokens,1.0,"PunkStrategy
+(PNKSTR)"
+0xe72b141df173b999ae7c1adcbf60cc9833ce56a8,0,etherscan_top_tokens,1.0,"ETHPlus
+(ETH+)"
+0x1bbf25e71ec48b84d773809b4ba55b6f4be946fb,0,etherscan_top_tokens,1.0,"Vow
+(VOW)"
+0xa2c2c937333165d4c5f2dc5f31a43e1239fecfeb,0,etherscan_top_tokens,1.0,"Hera Token
+(HERA)"
+0x91600e31fbedc72433d4a57f16639cfe661be7d8,0,etherscan_top_tokens,1.0,"Galaxy USDC Quality
+(gUSDCq)"
+0x42bbfa2e77757c645eeaad1655e0911a7553efbc,0,etherscan_top_tokens,1.0,"Boba Token
+(BOBA)"
+0x4f0ca3df1c2e6b943cf82e649d576ffe7b2fabcf,0,etherscan_top_tokens,1.0,"iShares Gold Trust (Ondo Tokenized)
+(IAUon)"
+0x4575f41308ec1483f3d399aa9a2826d74da13deb,0,etherscan_top_tokens,1.0,"Orchid
+(OXT)"
+0x0c1f3412a44ff99e40bf14e06e5ea321ae7b3938,0,etherscan_top_tokens,1.0,"AMD (Ondo Tokenized)
+(AMDon)"
+0x24d7ad9402717f429a81925fe7643b78918eda8b,0,etherscan_top_tokens,1.0,"XION
+(XION)"
+0xccc8cb5229b0ac8069c51fd58367fd1e622afd97,0,etherscan_top_tokens,1.0,"Gods Unchained
+(GODS)"
+0xa9299c296d7830a99414d1e5546f5171fa01e9c8,0,etherscan_top_tokens,1.0,"Digital Gold
+(DGLD)"
+0x4c11249814f11b9346808179cf06e71ac328c1b5,0,etherscan_top_tokens,1.0,"Oraichain Token
+(ORAI)"
+0xf8f173e20e15f3b6cb686fb64724d370689de083,0,etherscan_top_tokens,1.0,"Heima
+(HEI)"
+0x590f820444fa3638e022776752c5eef34e2f89a6,0,etherscan_top_tokens,1.0,"Alephium (AlphBridge)
+(ALPH)"
+0xbc6da0fe9ad5f3b0d58160288917aa56653660e9,0,etherscan_top_tokens,1.0,"Alchemix USD
+(alUSD)"
+0xcdd60d15125bf3362b6838d2506b0fa33bc1a515,0,etherscan_top_tokens,1.0,"iShares Core MSCI Emerging Markets ETF (Ondo Tokenized)
+(IEMGon)"
+0x888888848b652b3e3a0f34c96e00eec0f3a23f72,0,etherscan_top_tokens,1.0,"Alien Worlds Trilium
+(TLM)"
+0x8d05432c2786e3f93f1a9a62b9572dbf54f3ea06,0,etherscan_top_tokens,1.0,"iShares Russell 1000 Growth ETF (Ondo Tokenized)
+(IWFon)"
+0xd0ec028a3d21533fdd200838f39c85b03679285d,0,etherscan_top_tokens,1.0,"Newton
+(NEWT)"
+0xbb97e381f1d1e94ffa2a5844f6875e6146981009,0,etherscan_top_tokens,1.0,"WiBX Utility Token
+(WBX)"
+0x95bf7e307bc1ab0ba38ae10fc27084bc36fcd605,0,etherscan_top_tokens,1.0,"ColossusXT
+(eCOLX)"
+0x28d38df637db75533bd3f71426f3410a82041544,0,etherscan_top_tokens,1.0,"Prompt
+(PROMPT)"
+0xa91ac63d040deb1b7a5e4d4134ad23eb0ba07e14,0,etherscan_top_tokens,1.0,"Bella
+(BEL)"
+0x998ffe1e43facffb941dc337dd0468d52ba5b48a,0,etherscan_top_tokens,1.0,"Rupiah Token
+(IDRT)"
+0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc,0,etherscan_top_tokens,1.0,"DeFi Janus Henderson Anemoy AAA CLO Fund Token
+(deJAAA)"
+0xdef1b2d939edc0e4d35806c59b3166f790175afe,0,etherscan_top_tokens,1.0,"Infinex
+(INX)"
+0x14fee680690900ba0cccfc76ad70fd1b95d10e16,0,etherscan_top_tokens,1.0,"PAAL AI
+($PAAL)"
+0xd5cce260e7a755ddf0fb9cdf06443d593aaeaa13,0,etherscan_top_tokens,1.0,"kpk USDC Yield
+(kpk_USDC_YieldV2)"
+0xe5b826ca2ca02f09c1725e9bd98d9a8874c30532,0,etherscan_top_tokens,1.0,"ZEON
+(ZEON)"
+0xe1be424f442d0687129128c6c38aace44f8c8dbc,0,etherscan_top_tokens,1.0,"zkPass
+(ZKP)"
+0x1223334444a7466fbf985b14e1f4edaf3883bca6,0,etherscan_top_tokens,1.0,"Grow
+(GROW)"
+0xa258c4606ca8206d8aa700ce2143d7db854d168c,0,etherscan_top_tokens,1.0,"WETH yVault
+(yvWETH)"
+0x4afc4522e896aeacc83ea5322708ab64a9de5d1d,0,etherscan_top_tokens,1.0,"COQINU
+(COQ)"
+0x420fca0121dc28039145009570975747295f2329,0,etherscan_top_tokens,1.0,"COQINU
+(COQ)"
+0x3557ba345b01efa20a1bddc61f573bfd87195081,0,etherscan_top_tokens,1.0,"Amazon.com xStock
+(AMZNx)"
+0x8de5d49725550f7b318b2fa0f1b1f118e98e8d0f,0,etherscan_top_tokens,1.0,"iShares 0-3 Month Treasury Bond ETF (Ondo Tokenized)
+(SGOVon)"
+0xa5f2211b9b8170f694421f2046281775e8468044,0,etherscan_top_tokens,1.0,"THORSwap Token
+(THOR)"
+0x259338656198ec7a76c729514d3cb45dfbf768a1,0,etherscan_top_tokens,1.0,"Resolv
+(RESOLV)"
+0xa29c9a740de8194e4016747e9a04a84946ada0a5,0,etherscan_top_tokens,1.0,"NUMINE Token
+(NUMI)"
+0x14c3abf95cb9c93a8b82c1cdcb76d72cb87b2d4c,0,etherscan_top_tokens,1.0,"Apple (Ondo Tokenized)
+(AAPLon)"
+0x4e352cf164e64adcbad318c3a1e222e9eba4ce42,0,etherscan_top_tokens,1.0,"MCDEX Token
+(MCB)"
+0x88800092ff476844f74dc2fc427974bbee2794ae,0,etherscan_top_tokens,1.0,"Ambire Wallet
+(WALLET)"
+0xc20d9413bb7c03cb147a5590960ddaf389afaaa4,0,etherscan_top_tokens,1.0,"TAC Token
+(TAC)"
+0x5c8d0c48810fd37a0a824d074ee290e64f7a8fa2,0,etherscan_top_tokens,1.0,"AVL
+(AVL)"
+0xba100000625a3754423978a60c9317c58a424e3d,0,etherscan_top_tokens,1.0,"Balancer
+(BAL)"
+0x044d078f1c86508e13328842cc75ac021b272958,0,etherscan_top_tokens,1.0,"WrappedPeercoin
+(wPPC)"
+0x1d88713b483a8e45cff0e5cd7c2e15e5fab4534d,0,etherscan_top_tokens,1.0,"StakeStone
+(STO)"
+0x2565ae0385659badcada1031db704442e1b69982,0,etherscan_top_tokens,1.0,"ASSEMBLE
+(ASM)"
+0xb753428af26e81097e7fd17f40c88aaa3e04902c,0,etherscan_top_tokens,1.0,"Spice
+(SFI)"
+0xea60cd69f2b9fd6eb067bddbbf86a5bdeffbbc55,0,etherscan_top_tokens,1.0,"Wecan
+(WECAN)"
+0x657d9aba1dbb59e53f9f3ecaa878447dcfc96dcb,0,etherscan_top_tokens,1.0,"ynETH MAX
+(ynETHx)"
+0xe868084cf08f3c3db11f4b73a95473762d9463f7,0,etherscan_top_tokens,1.0,"Yala stablecoin
+(YU)"
+0xf042cfa86cf1d598a75bdb55c3507a1f39f9493b,0,etherscan_top_tokens,1.0,"Coinbase (Ondo Tokenized)
+(COINon)"
+0x30d20208d987713f46dfd34ef128bb16c404d10f,0,etherscan_top_tokens,1.0,"Stader
+(SD)"
+0xf5581dfefd8fb0e4aec526be659cfab1f8c781da,0,etherscan_top_tokens,1.0,"HOPR Token
+(HOPR)"
+0x16a3543fa6b32cac3b0a755f64a729e84f89a75c,0,etherscan_top_tokens,1.0,"Wrapped Hypertensor
+(TENSOR)"
+0xb1f66997a5760428d3a87d68b90bfe0ae64121cc,0,etherscan_top_tokens,1.0,"LuaToken
+(LUA)"
+0x50614cc8e44f7814549c223aa31db9296e58057c,0,etherscan_top_tokens,1.0,"Aligned Token
+(ALIGN)"
+0x9fc65df3997073b8551ffd617154b5102facbb88,0,etherscan_top_tokens,1.0,"TEXITcoin
+(wTXC)"
+0x54991328ab43c7d5d31c19d1b9fa048e77b5cd16,0,etherscan_top_tokens,1.0,"Soil
+(SOIL)"
+0x87c9053c819bb28e0d73d33059e1b3da80afb0cf,0,etherscan_top_tokens,1.0,"Midas Re7 Yield
+(mRe7YIELD)"
+0xb812837b81a3a6b81d7cd74cfb19a7f2784555e5,0,etherscan_top_tokens,1.0,"Microsoft (Ondo Tokenized)
+(MSFTon)"
+0xc5bddf9843308380375a611c18b50fb9341f502a,0,etherscan_top_tokens,1.0,"veCRV-DAO yVault
+(yveCRV-DAO)"
+0x420a24c9c65bd44c48bfb1cc8d6cd1ea8b1ac840,0,etherscan_top_tokens,1.0,"JumpToken
+(JMPT)"
+0xbbcb0356bb9e6b3faa5cbf9e5f36185d53403ac9,0,etherscan_top_tokens,1.0,"Backed Coinbase Global
+(bCOIN)"
+0x8400d94a5cb0fa0d041a3788e395285d61c9ee5e,0,etherscan_top_tokens,1.0,"UniBright
+(UBT)"
+0x5621737f42dae558b81269fcb9e9e70c19aa6b35,0,etherscan_top_tokens,1.0,"Microsoft xStock
+(MSFTx)"
+0x7046933234a82af77f14625e8d0fa9bcc5044a7e,0,etherscan_top_tokens,1.0,"MAP Protocol
+(MAPO)"
+0x68025a4615407993a680102b08a23a61d11c657c,0,etherscan_top_tokens,1.0,"WETH ARM
+(ARM-WETH)"
+0xb9a7da9e90d3b428083bae04b860faa6325b721e,0,etherscan_top_tokens,1.0,"yoUSDT
+(yoUSDT)"
+0x193f4a4a6ea24102f49b931deeeb931f6e32405d,0,etherscan_top_tokens,1.0,"TLOS
+(TLOS)"
+0xb72e76ccf005313868db7b48070901a44629da98,0,etherscan_top_tokens,1.0,"SquidGrow
+(SQGROW)"
+0x218f4cf85ac26909a1b2a37205bd054f7dd0c11f,0,etherscan_top_tokens,1.0,"Guardant Health xStock
+(GHx)"
+0x93ed3fbe21207ec2e8f2d3c3de6e058cb73bc04d,0,etherscan_top_tokens,1.0,"Pinakion
+(PNK)"
+0xc210b2cb65ed3484892167f5e05f7ab496ab0598,0,etherscan_top_tokens,1.0,"Bridged LUKSO (Hyperlane)
+(LYX)"
+0xe866c6222bf253d1da2cc6a0520c96fdca2e5b5e,0,etherscan_top_tokens,1.0,"DitGold
+(DitAu)"
+0x77a1a02e4a888ada8620b93c30de8a41e621126c,0,etherscan_top_tokens,1.0,"iShares MSCI Emerging Markets ETF (Ondo Tokenized)
+(EEMon)"
+0x2e44f3f609ff5aa4819b323fd74690f07c3607c4,0,etherscan_top_tokens,1.0,"PinLink
+(Pin)"
+0x39aa39c021dfbae8fac545936693ac917d5e7563,0,etherscan_top_tokens,1.0,"Compound USD Coin
+(cUSDC)"
+0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c,0,etherscan_top_tokens,1.0,"HeyAnon
+(Anon)"
+0xbe9f61555f50dd6167f2772e9cf7519790d96624,0,etherscan_top_tokens,1.0,"SX Network
+(SX)"
+0xeae00d6f9b16deb1bd584c7965e4c7d762f178a1,0,etherscan_top_tokens,1.0,"XBorg Token
+(XBG)"
+0xa469b7ee9ee773642b3e93e842e5d9b5baa10067,0,etherscan_top_tokens,1.0,"USDz
+(USDz)"
+0xa2b4c0af19cc16a6cfacce81f192b024d625817d,0,etherscan_top_tokens,1.0,"Kishu Inu
+(KISHU)"
+0x70b7f7044d2ca8e2f1e999b90ef16d7cb7a0cda1,0,etherscan_top_tokens,1.0,"Quai Network
+(QUAI)"
+0x41d5d79431a913c4ae7d69a668ecdfe5ff9dfb68,0,etherscan_top_tokens,1.0,"Inverse DAO
+(INV)"
+0x228bec415ade4b61d7caf0adf8c91eac587ba369,0,etherscan_top_tokens,1.0,"TRIA
+(TRIA)"
+0x675b68aa4d9c2d3bb3f0397048e62e6b7192079c,0,etherscan_top_tokens,1.0,"FUEL
+(FUEL)"
+0xc58d044404d8b14e953c115e67823784dea53d8f,0,etherscan_top_tokens,1.0,"Strata Junior USDe
+(jrUSDe)"
+0xeaad46f4146ded5a47b55aa7f6c48c191deaec88,0,etherscan_top_tokens,1.0,"Marvell xStock
+(MRVLx)"
+0x28ff2e4dd1b58efeb0fc138602a28d5ae81e44e2,0,etherscan_top_tokens,1.0,"Cronos zkEVM CRO
+(zkCRO)"
+0x33483a58079b4225b10e57958ca28ad7b9cdbaf7,0,etherscan_top_tokens,1.0,"BitMine Immersion Technologies (Ondo Tokenized)
+(BMNRon)"
+0x8db2350d78abc13f5673a411d4700bcf87864dde,0,etherscan_top_tokens,1.0,"swBTC
+(swBTC)"
+0xc86d054809623432210c107af2e3f619dcfbf652,0,etherscan_top_tokens,1.0,"SENTINEL PROTOCOL
+(UPP)"
+0x728f30fa2f100742c7949d1961804fa8e0b1387d,0,etherscan_top_tokens,1.0,"GamerCoin
+(GHX)"
+0x020940df9f5e77338a094d55b5b5914122a804a5,0,etherscan_top_tokens,1.0,"Redbelly Network coin
+(RBNT)"
+0xd2ba23de8a19316a638dc1e7a9adda1d74233368,0,etherscan_top_tokens,1.0,"QuickSwap
+(QUICK)"
+0xdf574c24545e5ffecb9a659c229253d4111d87e1,0,etherscan_top_tokens,1.0,"HUSD
+(HUSD)"
+0xa37db5456b5938aa50b33575ae2eb8048ca5959b,0,etherscan_top_tokens,1.0,"Data Ownership Protocol
+(DOP)"
+0x814e0908b12a99fecf5bc101bb5d0b8b5cdf7d26,0,etherscan_top_tokens,1.0,"Measurable Data Token
+(MDT)"
+0x38bac69cbbd28156796e4163b2b6dcb81e336565,0,etherscan_top_tokens,1.0,"Broadcom xStock
+(AVGOx)"
+0xc360e625f19a7ea47e47810b13e386221d5187d1,0,etherscan_top_tokens,1.0,"NUVA nvPRIME
+(nvPRIME)"
+0x77146784315ba81904d654466968e3a7c196d1f3,0,etherscan_top_tokens,1.0,"Treehouse
+(TREE)"
+0x38c87aa89b2b8cd9b95b736e1fa7b612ea972169,0,etherscan_top_tokens,1.0,"AMO Coin
+(AMO)"
+0x5d3a536e4d6dbd6114cc1ead35777bab948e3643,0,etherscan_top_tokens,1.0,"Compound Dai
+(cDAI)"
+0x871ab8e36cae9af35c6a3488b049965233deb7ed,0,etherscan_top_tokens,1.0,"Dialectic ETH
+(DETH)"
+0x236eb848c95b231299b4aa9f56c73d6893462720,0,etherscan_top_tokens,1.0,"Yellow
+(YELLOW)"
+0x6e6f6d696e61decd6605bd4a57836c5db6923340,0,etherscan_top_tokens,1.0,"Nomina
+(NOM)"
+0x340d2bde5eb28c1eed91b2f790723e3b160613b7,0,etherscan_top_tokens,1.0,"BLOCKv
+(VEE)"
+0xd26114cd6ee289accf82350c8d8487fedb8a0c07,0,etherscan_top_tokens,1.0,"OMG Network
+(OMG)"
+0xbb8774fb97436d23d74c1b882e8e9a69322cfd31,0,etherscan_top_tokens,1.0,"Amazon (Ondo Tokenized)
+(AMZNon)"
+0x7cf9dec92ca9fd46f8d86e7798b72624bc116c05,0,etherscan_top_tokens,1.0,"Midas Apollo Crypto
+(mAPOLLO)"
+0x2a3bff78b79a009976eea096a51a948a3dc00e34,0,etherscan_top_tokens,1.0,"Wilder
+(WILD)"
+0x92d6c1e31e14520e676a687f0a93788b716beff5,0,etherscan_top_tokens,1.0,"dYdX
+(DYDX)"
+0xdb25f211ab05b1c97d595516f45794528a807ad8,0,etherscan_top_tokens,1.0,"STASIS EURS Token
+(EURS)"
+0x73968b9a57c6e53d41345fd57a6e6ae27d6cdb2f,0,etherscan_top_tokens,1.0,"Stake DAO Token
+(SDT)"
+0x0abdace70d3790235af448c88547603b945604ea,0,etherscan_top_tokens,1.0,"district0x
+(DNT)"
+0x58100046a4afcd4ee4fadbd4244f3f895a341c56,0,etherscan_top_tokens,1.0,"SK hynix xStock
+(SKHYx)"
+0xb3999f658c0391d94a37f7ff328f3fec942bcadc,0,etherscan_top_tokens,1.0,"Hashflow
+(HFT)"
+0x71e2400cf1cb83204f33794ed326636a71a9aafc,0,etherscan_top_tokens,1.0,"SanDisk (Ondo Tokenized)
+(SNDKon)"
+0x3cafdbfe682aec17d5ace2f97a2f3ab3dcf6a4a9,0,etherscan_top_tokens,1.0,"Taiwan Semiconductor Manufacturing (Ondo Tokenized)
+(TSMon)"
+0x0a5e677a6a24b2f1a2bf4f3bffc443231d2fdec8,0,etherscan_top_tokens,1.0,"dForce USD
+(USX)"
+0xe346c29b5b60ef870b9724c57ccfbbc631e47dee,0,etherscan_top_tokens,1.0,"Wrapped iTRY
+(wiTRY)"
+0x36ac219f90f5a6a3c77f2a7b660e3cc701f68e25,0,etherscan_top_tokens,1.0,"CoinMetro Token
+(XCM)"
+0xae53d5bdc95e83e956a2f29771b18175abb8273f,0,etherscan_top_tokens,1.0,"POFU
+(POFU)"
+0x92d5942f468447f1f21c2092580f15544923b434,0,etherscan_top_tokens,1.0,"Vestra DAO
+(VSTR)"
+0x628a3b2e302c7e896acc432d2d0dd22b6cb9bc88,0,etherscan_top_tokens,1.0,"LimeWire Token
+(LMWR)"
+0xf2b2f7b47715256ce4ea43363a867fdce9353e3a,0,etherscan_top_tokens,1.0,"Bitgert
+(BRISE)"
+0xdbdb4d16eda451d0503b854cf79d55697f90c8df,0,etherscan_top_tokens,1.0,"Alchemix
+(ALCX)"
+0xd4fa1460f537bb9085d22c7bccb5dd450ef28e3a,0,etherscan_top_tokens,1.0,"Populous
+(PPT)"
+0x66fd8de541c0594b4dccdfc13bf3a390e50d3afd,0,etherscan_top_tokens,1.0,"Turtle
+(TURTLE)"
+0xb788144df611029c60b859df47e79b7726c4deba,0,etherscan_top_tokens,1.0,"Vultisig Token
+(VULT)"
+0x3472a5a71965499acd81997a54bba8d852c6e53d,0,etherscan_top_tokens,1.0,"Badger
+(BADGER)"
+0x51cb253744189f11241becb29bedd3f1b5384fdb,0,etherscan_top_tokens,1.0,"Dimitra Token
+(DMTR)"
+0x76e222b07c53d28b89b0bac18602810fc22b49a8,0,etherscan_top_tokens,1.0,"Joe Coin
+(JOE)"
+0x3597bfd533a99c9aa083587b074434e61eb0a258,0,etherscan_top_tokens,1.0,"DENT
+(DENT)"
+0xdc7404100a092c898e93708ef73f3322a7acc213,0,etherscan_top_tokens,1.0,"SUPRA
+(SUPRA)"
+0x2270f71bfd8f3396d9b28ecf2eae7f0e6d48caff,0,etherscan_top_tokens,1.0,"RENEC
+(RENEC)"
+0x5b423e07dfba087d72840851f63a51cbe1967cda,0,etherscan_top_tokens,1.0,"Staked NXM
+(stNXM)"
+0xbaac2b4491727d78d2b78815144570b9f2fe8899,0,etherscan_top_tokens,1.0,"The Doge NFT
+(DOG)"
+0xb30fe1cf884b48a22a50d22a9282004f2c5e9406,0,etherscan_top_tokens,1.0,"Grove
+(GROVE)"
+0x81f8f0bb1cb2a06649e51913a151f0e7ef6fa321,0,etherscan_top_tokens,1.0,"VitaDAO Token
+(VITA)"
+0x14cf922aa1512adfc34409b63e18d391e4a86a2f,0,etherscan_top_tokens,1.0,"ETH Strategy
+(STRAT)"
+0x7b43e3875440b44613dc3bc08e7763e6da63c8f8,0,etherscan_top_tokens,1.0,"StablR USD
+(USDR)"
+0x13119e34e140097a507b07a5564bde1bc375d9e6,0,etherscan_top_tokens,1.0,"MoneyToken
+(IMT)"
+0x7575c2e267a1a2ff98ac65bc26d40c948989031b,0,etherscan_top_tokens,1.0,"WAT Income token
+(INC)"
+0xba3335588d9403515223f109edc4eb7269a9ab5d,0,etherscan_top_tokens,1.0,"Gearbox
+(GEAR)"
+0x2a8e1e676ec238d8a992307b495b45b3feaa5e86,0,etherscan_top_tokens,1.0,"Origin Dollar
+(OUSD)"
+0xcb86c6a22cb56b6cf40cafedb06ba0df188a416e,0,etherscan_top_tokens,1.0,"inSure
+(SURE)"
+0xc08512927d12348f6620a698105e1baac6ecd911,0,etherscan_top_tokens,1.0,"GMO JPY
+(GYEN)"
+0xd4f4d0a10bcae123bb6655e8fe93a30d01eebd04,0,etherscan_top_tokens,1.0,"LinqAI
+(LNQ)"
+0x8143182a775c54578c8b7b3ef77982498866945d,0,etherscan_top_tokens,1.0,"Wrapped QUIL
+(wQUIL)"
+0x6d57b2e05f26c26b549231c866bdd39779e4a488,0,etherscan_top_tokens,1.0,"VNX Gold
+(VNXAU)"
+0x321c2fe4446c7c963dc41dd58879af648838f98d,0,etherscan_top_tokens,1.0,"Cryptex
+(CTX)"
+0x01ba69727e2860b37bc1a2bd56999c1afb4c15d8,0,etherscan_top_tokens,1.0,"YieldNest RWA MAX
+(ynRWAx)"
+0x975da7b2325f815f1de23c8b68f721fb483b8071,0,etherscan_top_tokens,1.0,"LooPIN
+(LOOPIN)"
+0x2925ac3be7d585874b88ea51ed50add376ad8239,0,etherscan_top_tokens,1.0,"AxCNH
+(AxCNH)"
+0xfb7b4564402e5500db5bb6d63ae671302777c75a,0,etherscan_top_tokens,1.0,"DEXTools
+(DEXT)"
+0x1494ca1f11d487c2bbe4543e90080aeba4ba3c2b,0,etherscan_top_tokens,1.0,"DefiPulse Index
+(DPI)"
+0xf3527ef8de265eaa3716fb312c12847bfba66cef,0,etherscan_top_tokens,1.0,"USDX
+(USDX)"
+0x908ddb096bfb3acb19e2280aad858186ea4935c4,0,etherscan_top_tokens,1.0,"eesee
+(ESE)"
+0x83e6f1e41cdd28eaceb20cb649155049fac3d5aa,0,etherscan_top_tokens,1.0,"PolkastarterToken
+(POLS)"
+0x12970e6868f88f6557b76120662c1b3e50a646bf,0,etherscan_top_tokens,1.0,"Milady
+(LADYS)"
+0x59644165402b611b350645555b50afb581c71eb2,0,etherscan_top_tokens,1.0,"Meta Platforms (Ondo Tokenized)
+(METAon)"
+0x27702a26126e0b3702af63ee09ac4d1a084ef628,0,etherscan_top_tokens,1.0,"aleph.im v2
+(ALEPH)"
+0xa45cd7ac9865b9539166ebaf2abc362df4736580,0,etherscan_top_tokens,1.0,"ProShares UltraPro QQQ (Ondo Tokenized)
+(TQQQon)"
+0x4f33acf823e6eeb697180d553ce0c710124c8d59,0,etherscan_top_tokens,1.0,"Spiko Digital Assets Cash and Carry Fund
+(SPKCC)"
+0xcf6a0a7826fa124b7705d6f3c675ead76f1e540d,0,etherscan_top_tokens,1.0,"Reputation
+(REPv2_Yes_1)"
+0x464ebe77c293e473b48cfe96ddcf88fcf7bfdac0,0,etherscan_top_tokens,1.0,"Kryll
+(KRL)"
+0x04acaf8d2865c0714f79da09645c13fd2888977f,0,etherscan_top_tokens,1.0,"Wrapped Frax
+(WFRAX)"
+0x1410434b0346f5be678d0fb554e5c7ab620f8f4a,0,etherscan_top_tokens,1.0,"KAN
+(KAN)"
+0xba83b5ed3f12bfa44f066f03ee0433419b74f469,0,etherscan_top_tokens,1.0,"Best Wallet Token
+(BEST)"
+0xb4a3b0faf0ab53df58001804dda5bfc6a3d59008,0,etherscan_top_tokens,1.0,"Sperax
+(SPA)"
+0x12bb890508c125661e03b09ec06e404bc9289040,0,etherscan_top_tokens,1.0,"Radio Caca V2
+(RACA)"
+0x0000000000c5dc95539589fbd24be07c6c14eca4,0,etherscan_top_tokens,1.0,"Milady Cult Coin
+(CULT)"
+0x00813e3421e1367353bfe7615c7f7f133c89df74,0,etherscan_top_tokens,1.0,"Splintershards
+(SPS)"
+0xb9f599ce614feb2e1bbe58f180f370d05b39344e,0,etherscan_top_tokens,1.0,"PepeFork
+(PORK)"
+0xf7f00d598b2a651404993e93df7ae16c3c736f3c,0,etherscan_top_tokens,1.0,"Secret (IBC)
+(SCRT)"
+0x1b2b24bb39c20cb2cd9704b3e68f3d6a57ab3747,0,etherscan_top_tokens,1.0,"Wrapped IRON
+(wIRON)"
+0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066,0,etherscan_top_tokens,1.0,"Strata Senior USDat
+(srUSDat)"
+0x04c154b66cb340f3ae24111cc767e0184ed00cc6,0,etherscan_top_tokens,1.0,"Pirex Ether
+(pxETH)"
+0x0f51bb10119727a7e5ea3538074fb341f56b09ad,0,etherscan_top_tokens,1.0,"DAO Maker
+(DAO)"
+0x6e5970dbd6fc7eb1f29c6d2edf2bc4c36124c0c1,0,etherscan_top_tokens,1.0,"Polytrade
+(TRADE)"
+0x88909d489678dd17aa6d9609f89b0419bf78fd9a,0,etherscan_top_tokens,1.0,"Layer3
+(L3)"
+0xb3cb8d5aeff0f4d1f432f353309f47b885e404e3,0,etherscan_top_tokens,1.0,"MEVerse
+(MEV)"
+0x2a8c22e3b10036f3aef5875d04f8441d4188b656,0,etherscan_top_tokens,1.0,"Midas Basis Trading Token
+(mBASIS)"
+0xc71104001a3ccda1bef1177d765831bd1bfe8ee6,0,etherscan_top_tokens,1.0,"Native Decentralized Euro Protocol Share
+(nDEPS)"
+0x9dcf7f739b8c0270e2fc0cc8d0dabe355a150dba,0,etherscan_top_tokens,1.0,"iShares Russell 2000 Value ETF (Ondo Tokenized)
+(IWNon)"
+0xa0246c9032bc3a600820415ae600c6388619a14d,0,etherscan_top_tokens,1.0,"FARM Reward Token
+(FARM)"
+0xf1df7305e4bab3885cab5b1e4dfc338452a67891,0,etherscan_top_tokens,1.0,"PaLM AI
+(PALM)"
+0x26e550ac11b26f78a04489d5f20f24e3559f7dd9,0,etherscan_top_tokens,1.0,"Kekius Maximus
+(KEKIUS)"
+0x8df723295214ea6f21026eeeb4382d475f146f9f,0,etherscan_top_tokens,1.0,"Quantoz EURQ
+(EURQ)"
+0x3f14920c99beb920afa163031c4e47a3e03b3e4a,0,etherscan_top_tokens,1.0,"/send
+(send)"
+0xb1f1ee126e9c96231cc3d3fad7c08b4cf873b1f1,0,etherscan_top_tokens,1.0,"Beefy
+(BIFI)"
+0xc19d38925f9f645337b1d1f37baf3c0647a48e50,0,etherscan_top_tokens,1.0,"GAIB
+(GAIB)"
+0x1985365e9f78359a9b6ad760e32412f4a445e862,0,etherscan_top_tokens,1.0,"Reputation
+(REP)"
+0xd55c9fb62e176a8eb6968f32958fefdd0962727e,0,etherscan_top_tokens,1.0,"MindNetwork FHE Token
+(FHE)"
+0xf192957ae52db3eb088654403cc2eded014ae556,0,etherscan_top_tokens,1.0,"Eli Lilly (Ondo Tokenized)
+(LLYon)"
+0x1f57da732a77636d913c9a75d685b26cc85dcc3a,0,etherscan_top_tokens,1.0,"OPENLOOT
+(OL)"
+0x8c9984b06281f1ca9416e493c2e602aab08513db,0,etherscan_top_tokens,1.0,"Sectora
+(SECT)"
+0x098697ba3fee4ea76294c5d6a466a4e3b3e95fe6,0,etherscan_top_tokens,1.0,"USP Yield Optimized Stablecoin
+(USP)"
+0xa831a4e181f25d3b35949e582ff27cc44e703f37,0,etherscan_top_tokens,1.0,"ALEX
+(ALEX)"
+0x49fb8ad7578148e17c3ef0c344ce23a66ed372c4,0,etherscan_top_tokens,1.0,"tao.bot
+(TAOBOT)"
+0x79d4f0232a66c4c91b89c76362016a1707cfbf4f,0,etherscan_top_tokens,1.0,"VNX Franc
+(VCHF)"
+0x5cf04716ba20127f1e2297addcf4b5035000c9eb,0,etherscan_top_tokens,1.0,"NKN
+(NKN)"
+0xeb4c2781e4eba804ce9a9803c67d0893436bb27d,0,etherscan_top_tokens,1.0,"renBTC
+(renBTC)"
+0x594daad7d77592a2b97b725a7ad59d7e188b5bfa,0,etherscan_top_tokens,1.0,"Apu Apustaja
+(APU)"
+0x5732046a883704404f284ce41ffadd5b007fd668,0,etherscan_top_tokens,1.0,"Bluzelle
+(BLZ)"
+0x8c15ef5b4b21951d50e53e4fbda8298ffad25057,0,etherscan_top_tokens,1.0,"Function X
+(FX)"
+0xfa704148d516b209d52c2d75f239274c8f8eaf1a,0,etherscan_top_tokens,1.0,"wOCTA
+(wOCTA)"
+0x08d967bb0134f2d07f7cfb6e246680c53927dd30,0,etherscan_top_tokens,1.0,"MATH Token
+(MATH)"
+0xfd418e42783382e86ae91e445406600ba144d162,0,etherscan_top_tokens,1.0,"Zircuit
+(ZRC)"
+0x9ff58067bd8d239000010c154c6983a325df138e,0,etherscan_top_tokens,1.0,"Propchain Token
+(PROPC)"
+0x0d54d4279b9e8c54cd8547c2c75a8ee81a0bcae8,0,etherscan_top_tokens,1.0,"Broadcom (Ondo Tokenized)
+(AVGOon)"
+0x87d73e916d7057945c9bcd8cdd94e42a6f47f776,0,etherscan_top_tokens,1.0,"NFTX
+(NFTX)"
+0x1ec8eaa3f68261e793c48486b12092336a03c479,0,etherscan_top_tokens,1.0,"AUTOfinance
+(AUTO)"
+0x9a8bc3b04b7f3d87cfc09ba407dced575f2d61d8,0,etherscan_top_tokens,1.0,"MEV Capital wETH
+(MCwETH)"
+0x817162975186d4d53dbf5a7377dd45376e2d2fc5,0,etherscan_top_tokens,1.0,"Wrapped REACT
+(REACT)"
+0x3429d03c6f7521aec737a0bbf2e5ddcef2c3ae31,0,etherscan_top_tokens,1.0,"PIXEL
+(PIXEL)"
+0x998f02a9e343ef6e3e6f28700d5a20f839fd74e6,0,etherscan_top_tokens,1.0,"Robinhood Markets (Ondo Tokenized)
+(HOODon)"
+0xec67005c4e498ec7f55e092bd1d35cbc47c91892,0,etherscan_top_tokens,1.0,"Melon Token
+(MLN)"
+0x4cce605ed955295432958d8951d0b176c10720d5,0,etherscan_top_tokens,1.0,"AUDD
+(AUDD)"
+0x123ffe0a3c62878dcbee2742227dc8990058d9e1,0,etherscan_top_tokens,1.0,"Matrixdock Silver
+(XAGM)"
+0x31f69de127c8a0ff10819c0955490a4ae46fcc2a,0,etherscan_top_tokens,1.0,"Imported GBYTE
+(GBYTE)"
+0x1204371ac0e5176f4b8c5b2f16c2bec551b6fc1a,0,etherscan_top_tokens,1.0,"Tokenized BNY High-yield Bond Fund
+(HYBOND)"
+0x22b48e1f20043d1db5f2a11cbf1d520a4f20b198,0,etherscan_top_tokens,1.0,"Okuru Token
+(XOT)"
+0xd433138d12beb9929ff6fd583dc83663eea6aaa5,0,etherscan_top_tokens,1.0,"Bitrue Coin
+(BTR)"
+0x3f99231dd03a9f0e7e3421c92b7b90fbe012985a,0,etherscan_top_tokens,1.0,"Startale USD
+(USDSC)"
+0xe2fc85bfb48c4cf147921fbe110cf92ef9f26f94,0,etherscan_top_tokens,1.0,"Staked Stream USD
+(xUSD)"
+0x9ac9468e7e3e1d194080827226b45d0b892c77fd,0,etherscan_top_tokens,1.0,"Yee Token
+(Yee)"
+0x63230728bc219d991d2995ce92e96c16fcf8beb6,0,etherscan_top_tokens,1.0,"Konnect
+(KCT)"
+0x0aa8a7d1fb4c64b3b1dcea9a7ade81c59c25b95b,0,etherscan_top_tokens,1.0,"AstraAI
+(ASTRA)"
+0x2ebd53d035150f328bd754d6dc66b99b0edb89aa,0,etherscan_top_tokens,1.0,"Metronome2
+(MET)"
+0xb755506531786c8ac63b756bab1ac387bacb0c04,0,etherscan_top_tokens,1.0,"ZARP Stablecoin
+(ZARP)"
+0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9,0,etherscan_top_tokens,1.0,"Nest Treasury Vault
+(nTBILL)"
+0xfc60fc0145d7330e5abcfc52af7b043a1ce18e7d,0,etherscan_top_tokens,1.0,"GVNR
+(GVNR)"
+0x8a23c6baadb88512b30475c83df6a63881e33e1e,0,etherscan_top_tokens,1.0,"Oracle (Ondo Tokenized)
+(ORCLon)"
+0xf7d85ec4e7710f71992752eac2111312e73e9c9c,0,etherscan_top_tokens,1.0,"Flying Tulip USD
+(ftUSD)"
+0xe4babaa960ba7d37860f3fe00d7b95d3868e8edc,0,etherscan_top_tokens,1.0,"Nebius Group (Ondo Tokenized)
+(NBISon)"
+0xf59257e961883636290411c11ec5ae622d19455e,0,etherscan_top_tokens,1.0,"Floor
+(FLOOR)"
+0x772358ef6ed3e18bde1263f7d229601c5fa81875,0,etherscan_top_tokens,1.0,"SNP adverse
+(SNPAD)"
+0x051fb509e4a775fabd257611eea1efaed8f91359,0,etherscan_top_tokens,1.0,"CateCoin
+(CATE)"
+0x9e3bf4ecfc44eedd624f26656b6736a3f093b073,0,etherscan_top_tokens,1.0,"TSMC xStock
+(TSMx)"
+0x53ee7f58cf031ea4d897fdfcdafad124b3160689,0,etherscan_top_tokens,1.0,"Direxion Semiconductor Bull 3X xStock
+(SOXLx)"
+0xf09dea9375ecd3500c565973d21822f0383f1099,0,etherscan_top_tokens,1.0,"Impossible Decentralized Incubat
+(IDIA)"
+0xfdddb57878ef9d6f681ec4381dcb626b9e69ac86,0,etherscan_top_tokens,1.0,"TQQQ xStock
+(TQQQx)"
+0xe33fbe7584eb79e2673abe576b7ac8c0de62565c,0,etherscan_top_tokens,1.0,"HousePartyProtocol
+(HPP)"
+0xda2ffa104356688e74d9340519b8c17f00d7752e,0,etherscan_top_tokens,1.0,"Hamilton Lane SCOPE Securitize Tokenized Feeder Fund LP
+(HLSCOPE)"
+0x9126236476efba9ad8ab77855c60eb5bf37586eb,0,etherscan_top_tokens,1.0,"Checkmate
+(CHECK)"
+0xe636f94a71ec52cc61ef21787ae351ad832347b7,0,etherscan_top_tokens,1.0,"CreoEngine
+(CREO)"
+0x358d94b5b2f147d741088803d932acb566acb7b6,0,etherscan_top_tokens,1.0,"rSWELL
+(rSWELL)"
+0x5de8ab7e27f6e7a1fff3e5b337584aa43961beef,0,etherscan_top_tokens,1.0,"SmarDex Token
+(SDEX)"
+0x7c07f7abe10ce8e33dc6c5ad68fe033085256a84,0,etherscan_top_tokens,1.0,"Interest Compounding ETH Index
+(icETH)"
+0x3106a0a076bedae847652f42ef07fd58589e001f,0,etherscan_top_tokens,1.0,"Alkimi Exchange
+($ADS)"
+0x74a03d741226f738098c35da8188e57aca50d146,0,etherscan_top_tokens,1.0,"Coca-Cola (Ondo Tokenized)
+(KOon)"
+0xc770eefad204b5180df6a14ee197d99d808ee52d,0,etherscan_top_tokens,1.0,"FOX
+(FOX)"
+0xfe2e637202056d30016725477c5da089ab0a043a,0,etherscan_top_tokens,1.0,"StakeWise Staked ETH2
+(sETH2)"
+0x95af4af910c28e8ece4512bfe46f1f33687424ce,0,etherscan_top_tokens,1.0,"Manyu
+(MANYU)"
+0x1878805799273d10ae96a58201a6f5254cf9824f,0,etherscan_top_tokens,1.0,"Galaxy WETH Quality
+(gWETHq)"
+0xaa5b0fb7fa0ba99ad615cff4b7cc2106275efa54,0,etherscan_top_tokens,1.0,"PlatON LAT
+(LAT)"
+0xd2a530170d71a9cfe1651fb468e2b98f7ed7456b,0,etherscan_top_tokens,1.0,"Forte AUD
+(AUDF)"
+0x06ea695b91700071b161a434fed42d1dcbad9f00,0,etherscan_top_tokens,1.0,"Hemi Bitcoin
+(hemiBTC)"
+0xa4e8c3ec456107ea67d3075bf9e3df3a75823db0,0,etherscan_top_tokens,1.0,"Loom
+(LOOM)"
+0xcfb98637bcae43c13323eaa1731ced2b716962fd,0,etherscan_top_tokens,1.0,"NimiqNetwork
+(NET)"
+0xea17df5cf6d172224892b5477a16acb111182478,0,etherscan_top_tokens,1.0,"elizaOS
+(elizaOS)"
+0x678e840c640f619e17848045d23072844224dd37,0,etherscan_top_tokens,1.0,"Cratos
+(CRTS)"
+0x000000fa00b200406de700041cfc6b19bbfb4d13,0,etherscan_top_tokens,1.0,"Towns
+(TOWNS)"
+0x5bf1b2a808598c0ef4af1673a5457d86fe6d7b3d,0,etherscan_top_tokens,1.0,"Arm Holdings plc
+(ARMon)"
+0x691b126cf619707ed5d16cab1b27c000aa8de300,0,etherscan_top_tokens,1.0,"Lockheed (Ondo Tokenized)
+(LMTon)"
+0x5c697fee285b513711a816018dbb34dc0cfc4875,0,etherscan_top_tokens,1.0,"Minutes Network Token
+(MNTx)"
+0x075f23b9cdfce2cc0ca466f4ee6cb4bd29d83bef,0,etherscan_top_tokens,1.0,"Pundi AIFX Token
+(PUNDIAI)"
+0xb9f747162ab1e95d07361f9048bcdf6edda9eea7,0,etherscan_top_tokens,1.0,"Star Atlas (Wormhole)
+(ATLAS)"
+0x2c3b62cdeab213ff58ad24fe8bbdf224c7f66dce,0,etherscan_top_tokens,1.0,"MusmeCoin
+(MSM)"
+0x4957805230831401caad5b690aa138143b711358,0,etherscan_top_tokens,1.0,"Dorayaki
+(DORA)"
+0x70b790d0948a760e80bc3f892b142f7779b538b2,0,etherscan_top_tokens,1.0,"Dorayaki
+(DORA)"
+0x881ba05de1e78f549cc63a8f6cabb1d4ad32250d,0,etherscan_top_tokens,1.0,"00 Token
+(00)"
+0xe2dc070524a6e305ddb64d8513dc444b6a1ec845,0,etherscan_top_tokens,1.0,"Nash Exchange Token
+(NEX)"
+0x423d42e505e64f99b6e277eb7ed324cc5606f139,0,etherscan_top_tokens,1.0,"SPDR Gold Shares (Ondo Tokenized)
+(GLDon)"
+0xad05253a381feade280ca50bf875dc8113e8a746,0,etherscan_top_tokens,1.0,"Propbase
+(PROPS)"
+0xf411903cbc70a74d22900a5de66a2dda66507255,0,etherscan_top_tokens,1.0,"VERA
+(VRA)"
+0xc71b5f631354be6853efe9c3ab6b9590f8302e81,0,etherscan_top_tokens,1.0,"Polyhedra Network
+(ZKJ)"
+0x956f47f50a910163d8bf957cf5846d573e7f87ca,0,etherscan_top_tokens,1.0,"Fei USD
+(FEI)"
+0x5ba19d656b65f1684cfea4af428c23b9f3628f97,0,etherscan_top_tokens,1.0,"AAG
+(AAG)"
+0x7a250d5630b4cf539739df2c5dacb4c659f2488d,0,defi_protocol,1.0,Uniswap V2 Router
+0xe592427a0aece92de3edee1f18e0157c05861564,0,defi_protocol,1.0,Uniswap V3 Router
+0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45,0,defi_protocol,1.0,Uniswap V3 Router 2
+0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f,0,defi_protocol,1.0,Sushiswap Router
+0x7d2768de32b0b80b7a3454c06bdac94a69ddc7a9,0,defi_protocol,1.0,Aave V2 Pool
+0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2,0,defi_protocol,1.0,Aave V3 Pool
+0x3d9819210a31b4961b30ef54be2aed79b9c9cd3b,0,defi_protocol,1.0,Compound Comptroller
+0x99a58482bd75cbab83b27ec03ca68ff489b5788f,0,defi_protocol,1.0,Curve Registry
+0x90e00ace148ca3b23ac1bc8c240c2a7dd9c2d7f5,0,defi_protocol,1.0,Curve Pool Proxy
+0x1111111254eeb25477b68fb85ed929f73a960582,0,defi_protocol,1.0,1inch V5 Router
+0xba12222222228d8ba445958a75a0704d566bf2c8,0,defi_protocol,1.0,Balancer Vault
+0x9759a6ac90977b93b58547b4a71c78317f391a28,0,defi_protocol,1.0,MakerDAO DSS
+0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0,0,defi_protocol,1.0,MATIC Token
+0xd8da6bf26964af9d7eed9e03e53415d37aa96045,0,defi_protocol,1.0,vitalik.eth
+0xab5801a7d398351b8be11c439e05c5b3259aec9b,0,defi_protocol,1.0,Vitalik Buterin
+0x00000000219ab540356cbb839cbe05303d7705fa,0,defi_protocol,1.0,ETH2 Deposit Contract
+0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d,0,nft_project,1.0,Bored Ape Yacht Club
+0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb,0,nft_project,1.0,CryptoPunks
+0x60e4d786628fea6478f785a6d7e704777c86a7c6,0,nft_project,1.0,Mutant Ape Yacht Club
+0xed5af388653567af2f388e6224dc7c4b3241c544,0,nft_project,1.0,Azuki
+0x8a90cab2b38dba80c64b7734e58ee1db38b8992e,0,nft_project,1.0,Doodles
+0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b,0,nft_project,1.0,CloneX
+0x23581767a106ae21c074b2276d25e5c3e136a68b,0,nft_project,1.0,Moonbirds
+0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7,0,nft_project,1.0,Meebits

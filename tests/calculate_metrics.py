@@ -92,7 +92,9 @@ def calculate_metrics():
     print("="*80)
     print()
     
-    detector = HybridDetector()
+    detector_base = HybridDetector()
+    from src.detection.precision_detector import PrecisionDetector
+    detector = PrecisionDetector(detector_base)
     
     # Store results
     y_true = []  # Actual labels

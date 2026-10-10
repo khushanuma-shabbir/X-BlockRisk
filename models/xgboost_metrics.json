@@ -1,0 +1,43 @@
+{
+  "model_type": "XGBoost",
+  "train_accuracy": 1.0,
+  "test_accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1_score": 1.0,
+  "roc_auc": 1.0,
+  "false_positive_rate": 0.0,
+  "best_params": {
+    "learning_rate": 0.01,
+    "max_depth": 3,
+    "n_estimators": 100,
+    "scale_pos_weight": 1
+  },
+  "feature_importance": {
+    "total_txs": 0.0,
+    "total_value_eth": 0.0,
+    "avg_tx_value": 0.0,
+    "unique_senders": 0.0,
+    "unique_receivers": 0.0,
+    "is_contract": 0.0,
+    "first_tx_age_days": 0.0,
+    "last_tx_age_days": 0.0,
+    "tx_frequency": 1.0,
+    "incoming_tx_count": 0.0,
+    "outgoing_tx_count": 0.0,
+    "avg_gas_price": 0.0,
+    "failed_tx_ratio": 0.0
+  },
+  "confusion_matrix": [
+    [
+      2,
+      0
+    ],
+    [
+      0,
+      2
+    ]
+  ],
+  "training_size": 16,
+  "test_size": 4
+}

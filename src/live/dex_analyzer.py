@@ -54,7 +54,7 @@ class DexAnalyzer:
             
             # Make API call
             url = f"{self.coingecko_url}/coins/ethereum/contract/{token_address.lower()}"
-            response = requests.get(url, timeout=10)
+            response = requests.get(url, timeout=30)  # Increased timeout
             
             if response.status_code == 200:
                 data = response.json()

@@ -10,6 +10,8 @@ from dotenv import load_dotenv
 from src.live.fetch_ethereum import fetch_ethereum_wallet, compute_features
 from src.detection.hybrid_detector import HybridDetector
 from src.analysis.context_aware_analyzer import ContextAwareAnalyzer
+from src.ml.xgboost_detector import XGBoostFraudDetector
+from src.models.gnn_detector import GNNFraudDetector
 import torch
 
 load_dotenv()
@@ -17,8 +19,29 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
-# Initialize detector and analyzer
-detector = HybridDetector()
+# Initialize detector with XGBoost and GNN
+base_detector = HybridDetector()
+
+# Load XGBoost model
+try:
+    xgboost_model = XGBoostFraudDetector()
+    xgboost_model.load()
+    base_detector.ml_detector = xgboost_model
+    print("✓ XGBoost model loaded successfully")
+except Exception as e:
+    print(f"⚠ XGBoost not available: {e}")
+
+# Load GNN model
+try:
+    gnn_model = GNNFraudDetector()
+    if gnn_model.load():
+        base_detector.gnn_detector = gnn_model
+        print("✓ GNN model loaded successfully")
+except Exception as e:
+    print(f"⚠ GNN not available: {e}")
+
+from src.detection.precision_detector import PrecisionDetector
+detector = PrecisionDetector(base_detector)
 analyzer = ContextAwareAnalyzer()
 
 @app.route('/')
@@ -95,27 +118,50 @@ def analyze():
                 'error': 'Unable to fetch address data from Etherscan. Please try again.'
             }), 500
         
-        # Get GNN prediction (placeholder if model not loaded)
+        # Get GNN prediction with rug pull detection
         try:
-            # Try to load GNN model if available
-            gnn_score = 15.0  # Default fallback
-            # You can add actual GNN prediction here if model exists
-        except:
+            if hasattr(base_detector, 'gnn_detector') and base_detector.gnn_detector:
+                gnn_proba, gnn_conf = base_detector.gnn_detector.predict(features_dict)
+                gnn_score = gnn_proba * 100
+                
+                # Get rug pull indicators
+                rug_pull_indicators = base_detector.gnn_detector.get_rug_pull_indicators(features_dict)
+                
+                print(f"[GNN] Score: {gnn_score:.1f}, Confidence: {gnn_conf}")
+                print(f"[GNN] Rug Pull Risk: {rug_pull_indicators['risk_score']}/100")
+            else:
+                gnn_score = 15.0  # Default fallback
+                rug_pull_indicators = None
+        except Exception as e:
+            print(f"GNN error: {e}")
             gnn_score = 15.0
+            rug_pull_indicators = None
         
-        # Run hybrid detection
+        # Run hybrid detection with precision detector
         final_score, category, explanations = detector.detect(
             address,
             features_dict,
             gnn_score
         )
         
-        # Get detailed summary
+        print(f"[DEBUG] Precision Detector returned:")
+        print(f"        Score: {final_score}")
+        print(f"        Category: {category}")
+        
+        # Get detailed summary (but use precision detector's score!)
         summary = detector.get_detection_summary(
             address,
             features_dict,
             gnn_score
         )
+        
+        print(f"[DEBUG] Base summary returned score: {summary.get('final_score', 'N/A')}")
+        
+        # Override summary scores with precision detector's final score
+        summary['final_score'] = final_score  # Use precision-adjusted score!
+        summary['category'] = category
+        
+        print(f"[DEBUG] After override, final_score: {final_score}")
         
         # Generate context-aware professional analysis
         try:
@@ -146,7 +192,7 @@ def analyze():
             'address': address,
             'final_score': float(final_score),
             'category': category,
-            'gnn_score': float(summary.get('gnn_score', 0)),
+            'gnn_score': float(summary.get('gnn_score', gnn_score)),
             'gnn_confidence': summary.get('gnn_confidence', 'N/A'),
             'ml_score': 0,  # Will be populated by ML if available
             'ml_confidence': 'N/A',
@@ -158,6 +204,9 @@ def analyze():
             'admin_control_raw': float(summary.get('admin_control_raw', 0)),
             'admin_control_adjusted': float(summary.get('admin_control_adjusted', 0)),
             'is_contract': is_contract,
+            
+            # GNN Rug Pull Detection
+            'rug_pull_indicators': rug_pull_indicators if rug_pull_indicators else {},
             
             # Context-aware professional analysis
             'context_analysis': context_analysis,
@@ -179,6 +228,11 @@ def analyze():
         
         print(f"[DEBUG] Response keys before return: {list(response.keys())}")
         print(f"[DEBUG] context_analysis in response: {'context_analysis' in response}")
+        print(f"[DEBUG] rug_pull_indicators in response: {'rug_pull_indicators' in response}")
+        if rug_pull_indicators:
+            print(f"[DEBUG] rug_pull_indicators content: {rug_pull_indicators}")
+        else:
+            print(f"[DEBUG] rug_pull_indicators is None or empty")
         if 'context_analysis' in response:
             print(f"[DEBUG] context_analysis type: {type(response['context_analysis'])}")
             print(f"[DEBUG] context_analysis keys: {list(response['context_analysis'].keys()) if isinstance(response['context_analysis'], dict) else 'NOT A DICT'}")

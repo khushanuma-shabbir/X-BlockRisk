@@ -1,0 +1,10 @@
+{
+  "total_nodes": 6936,
+  "total_edges": 0,
+  "features": 38,
+  "fraud_nodes": 5904,
+  "legit_nodes": 1032,
+  "balance": 0.17479674796747968,
+  "source": "final_dataset.csv",
+  "method": "1-hop transaction graph"
+}
